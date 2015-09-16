@@ -2,9 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UMovie - Birdman</title>
+
+    <!-- Bootstrap -->
+    <link href="ressources/css/bootstrap.css" rel="stylesheet">
+    <!-- movie css-->
+    <link href="ressources/css/movie.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">UMovie</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Titles, peoples, genres">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <li><a href="#">My Watchlists</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!-- container-->
+</nav>
+<div class="container">
+    <div class="movie-content">
+        <div class="cover-movie">
+            <img src="http://static.rogerebert.com/uploads/movie/movie_poster/birdman-2014/large_yt5dLcIBQYodlComqy76Z3vwJ6e.jpg" class="img-responsive">
+        </div>
+        <div class="movie-info">
+            <h2>Birdman</h2>
+            <h3>The Unexpected Virtue Of Ignorance <em>(original title)</em></h3>
+            <p class="genre-movie"><strong>Genres:</strong> <a href="#">Comedy</a>, <a href="#">Drama</a></p>
+            <span class="rating-movie">
+                <span class="glyphicon glyphicon-star star-yellow"></span>
+                <span class="glyphicon glyphicon-star star-yellow"></span>
+                <span class="glyphicon glyphicon-star star-yellow"></span>
+                <span class="glyphicon glyphicon-star star-yellow"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </span>
+            <span class="separator-movie">|</span>
+            <span class="date-movie">2014</span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">119 min</span>
+
+            <p class="description-movie">
+                Illustrated upon the progress of his latest Broadway play, a former popular actor's struggle to cope with his current life as a wasted actor is shown.
+            </p>
+
+            <p class="director-movie">
+                <strong>Director:</strong> <a href="#">Alejandro Gonzalez Inarritu</a>
+            </p>
+            <p class="writers-movie">
+                <strong>Writers: </strong><a href="#">Alejandro Gonzalez Inarritu</a>, <a href="#">Nicolas Giacobone</a>, <a href="#">Alexander Dinelaris, Armando Bo</a>
+            </p>
+
+            <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
+            background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
+            no-repeat;width:165px;height:40px;" target="_blank"> </a>
+            <button type="button" class="btn btn-default btn-watchlist">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Add to Watchlist
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Bootstrap javascript -->
+<script src="ressources/js/bootstrap.js"></script>
 </body>
 </html>
