@@ -1,7 +1,7 @@
 div#carousel {
     perspective: 1200px;
     background: #100000;
-    padding-top: 10%;
+    padding-top: 20%;
     font-size:0;
     margin-bottom: 3rem;
     overflow: hidden;
@@ -13,7 +13,7 @@ figure#spinner {
     transition: 1s;
 }
 figure#spinner img {
-    width: 40%; max-width: 175px;
+    width: 40%; max-width: 225px;
     position: absolute; left: 30%;
     transform-origin: 50% 50% -500px;
     outline:1px solid transparent;
