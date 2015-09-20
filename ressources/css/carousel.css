@@ -8,12 +8,12 @@ div#carousel {
 }
 figure#spinner {
     transform-style: preserve-3d;
-    height: 300px;
+    height: 400px;
     transform-origin: 50% 50% -500px;
     transition: 1s;
 }
 figure#spinner img {
-    width: 40%; max-width: 425px;
+    width: 40%; max-width: 175px;
     position: absolute; left: 30%;
     transform-origin: 50% 50% -500px;
     outline:1px solid transparent;
