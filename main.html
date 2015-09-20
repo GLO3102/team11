@@ -4,53 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="ressources/css/styles.css" rel="stylesheet">
+    <link href="ressources/css/carousel.css" rel="stylesheet">
     <title>UMovie - Team11</title>
 </head>
 <body>
+<!-- Fixed navbar -->
+<nav class="navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar navbar-default" role="navigation">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
-                    <span class="sr-only">Activer la navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">UMovie</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbar-collapse-target">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Films</a></li>
-                    <li><a href="#">Series TV</a></li>
-                </ul>
-
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">UMovie</a>
         </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="">Menu avec nav</a></li>
-                    <li><a href="">Profil</a></li>
-                    <li><a href="">Messages</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-7">
-                Zone du centre
-            </div>
-            <div class="col-xs-2">
-                <div class="list-group">
-                    <a class="list-group-item" href="">Menu avec list-group</a>
-                    <a class="list-group-item active" href="">Profil</a>
-                    <a class="list-group-item" href="">Messages</a>
-                </div>
-            </div>
-        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Titles, peoples, genres">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <li><a href="#">My Watchlists</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!-- container-->
+</nav>
+<div class="container">
+    <div id=carousel>
+        <figure id=spinner>
+            <img src=http://img09.cdn.cinoche.com/images/e3fe074acdef4a3087cc6908bf30ec4a.jpg alt="">
+            <img src=http://img06.cdn.cinoche.com/images/48a27be341313348db68b609114ec854.jpg alt="">
+            <img src=http://img06.cdn.cinoche.com/images/94ffb7b1264b5e6927c14dc25c44d314.jpg alt="">
+            <img src=http://img02.cdn.cinoche.com/images/3180f21ba4f33acba5fc89ab76dcb6fa.jpg alt="">
+            <img src=http://img09.cdn.cinoche.com/images/a13026d5aa7986ceb87ecf82b1821636.jpg alt="">
+            <img src=http://img02.cdn.cinoche.com/images/3521f778009693866bdb69af0a95aafb.jpg alt="">
+            <img src=http://img04.cdn.cinoche.com/images/c3999bd500de847ecabaacae129dd03a.jpg alt="">
+            <img src=http://img05.cdn.cinoche.com/images/a6000cbd0ead03813ee17eeb3ddb7f15.jpg alt="">
+        </figure>
     </div>
-
+    <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
+    <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
+</div>
+<div class="container">
+    <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Adventure</a></li>
+            <li><a href="#">Comedies</a></li>
+            <li><a href="#">Dramas</a></li>
+            <li><a href="#">Suspense</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Children and Family</a></li>
+            <li><a href="#">Horror</a></li>
+            <li><a href="#">Sci-Fi</a></li>
+            <li><a href="#">Thrillers</a></li>
+            <li><a href="#">Romance</a></li>
+            <li><a href="#">Sports Movies</a></li>
+        </ul>
+    </li>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="ressources/js/carousel.js"></script>
 </body>
 </html>
