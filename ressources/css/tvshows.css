@@ -1,0 +1,63 @@
+/** COVER MOVIE **/
+.cover-movie {
+    width: auto;
+    display: inline-block;
+    float: left;
+}
+
+.cover-movie img {
+    width: 80%;
+    height: auto;
+    margin-top: 150px;
+}
+
+/** INFO MOVIE **/
+.movie-info {
+    width: 600px;
+    float: left;
+    margin-top: 200px;
+}
+
+/** CONTENT MOVIE */
+.movie-content {
+
+}
+
+.star-yellow{
+    color: #e1cb2b;
+}
+
+.rating-movie{
+    margin-right: 5px;
+}
+
+.date-movie{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.time-movie{
+    margin-left: 5px;
+}
+
+.description-movie {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.movie-info > p{
+    font-size: 1.1em;
+}
+
+.movie-info > span{
+    font-size: 1.1em;
+}
+
+.itunes-movie{
+    margin-top: 5px;
+}
+
+.btn-watchlist{
+    display: inline-block;
+    margin-bottom: 30px;
+}
