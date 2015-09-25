@@ -78,3 +78,13 @@ a:hover {
 .video-season {
     margin-top: 20px;
 }
+
+.center-itunes {
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.display-h3{
+    display: inline;
+}
