@@ -7,3 +7,13 @@ h2
 {
     color: azure;
 }
+
+.container.carousel
+{
+    margin-top: 85px;
+}
+
+.carousel-caption.title
+{
+    margin-top: 40px;
+}
