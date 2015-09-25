@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="ressources/css/tvshows.css" rel="stylesheet">
-    <script type="text/javascript" src="./ressources/js/conteneurSerie.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="./ressources/js/tvshows.js"></script>
+    <script src="ressources/js/bootstrap.js"></script>
     <title>UMovie</title>
 
 </head>
 <body>
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -46,14 +48,13 @@
     </div><!-- container-->
 </nav>
 <div class="container">
-    <div class="movie-content">
-        <div class="row">
-            <div class="cover-movie">
-                <img src="Images/img-tvshow.jpg" class="img-responsive"/>
+    <div class="row top-buffer row-bottom">
+        <div class="movie-content">
+            <div class="col-sm-4 cover-movie">
+                <img src="" class="img-responsive" id="cover-tvshows"/>
             </div>
-            <div class="movie-info">
-                <h2>Breaking Bad</h2>
-                <h3>"Breaking Bad Theme" <em>(Opening theme)</em></h3>
+            <div class="col-sm-8 description-movie">
+                <h2 class="title-tvshows">Breaking Bad</h2>
                 <p class="genre-movie"><strong>Genres:</strong> <a href="#">Crime</a>, <a href="#">Drama</a></p>
                 <strong>No. of seasons:</strong> <span class="date-movie">5</span>
                 <span class="separator-movie">|</span>
@@ -67,31 +68,747 @@
                     <strong>Created by: </strong> <a href="#">Vince Gilligan</a>
                 </p>
 
-                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
-                background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
-                no-repeat;width:165px;height:40px;" target="_blank"> </a>
-                <button type="button" class="btn btn-default btn-watchlist">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    Add to Watchlist
+                <button type="button" class="btn btn-default btn-season" target="1">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    Season 1
+                </button>
+                <button type="button" class="btn btn-default btn-season" target="2">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    Season 2
+                </button>
+                <button type="button" class="btn btn-default btn-season" target="3">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    Season 3
+                </button>
+                <button type="button" class="btn btn-default btn-season" target="4">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    Season 4
+                </button>
+                <button type="button" class="btn btn-default btn-season" target="5">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    Season 5
                 </button>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="col-xs-8 col-md-6">
-                <div class="panel-heading"><strong>Session 5</strong></div>
-                <div class="list-group">
-                    <a class="list-group-item"><img src="Images/episode1.jpg"/>
-                        <span class="badge"><strong>Episode 1 - Live free or Die</strong></span></a>
-                    <a class="list-group-item"><img src="Images/episode2.jpg"/>
-                        <span class="badge"><strong>Episode 2 - Madrigal</strong></span></a>
-                    <a class="list-group-item"><img src="Images/episode3.jpg"/>
-                        <span class="badge"><strong>Episode 3 - Hazar Pay</strong></span></a>
+    </div> <!-- row -->
+
+    <div class="row season1 target" id="season1">
+        <div class="col-sm-12">
+
+            <div class="no-season">
+                <h3 class="title-tvshows">Saison 1</h3>
+            </div>
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQzNDg0Mzc5OV5BMl5BanBnXkFtZTgwOTE0OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Pilot</h4>
+                    <p>A high school chemistry teacher is diagnosed with terminal lung cancer and resorts to selling methamphetamine to provide for his family when he is dead.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTcyOTU0MTIxNF5BMl5BanBnXkFtZTgwMzAwOTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Cat's in the bag...</h4>
+                    <p>Walt and Jesse try to decide what to do with the body of Emilio and their prisoner, Krazy 8.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjI4NjIxOTkwMl5BMl5BanBnXkFtZTgwNTAwOTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">...And the Bag's in the River</h4>
+                    <p>Walt is struggling to decide if it's best to kill Krazy 8 or let him go.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BODg5MTYzNzM4MV5BMl5BanBnXkFtZTgwNDAwOTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Cancer Man</h4>
+                    <p>Walt tells the rest of his family about his cancer. Jesse tries to make amends with his own parents.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNTkxMjg1MTU5MF5BMl5BanBnXkFtZTgwODAwOTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Gray Matter</h4>
+                    <p>Walt rejects everyone who tries to help him with the cancer. Jesse tries his best to create Walt's meth, with the help of an old friend.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTY0MzYxOTEwNV5BMl5BanBnXkFtZTgwNjAwOTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Crazy Handful of Nothin'</h4>
+                    <p>With the side effects and cost of his treatment mounting, Walt demands that Jesse finds a wholesaler to buy their drugs, which lands him in trouble.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTkwOTQ1MjA2NF5BMl5BanBnXkFtZTgwOTAwOTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">A No-Rough-Stuff-Type Deal</h4>
+                    <p>Walt and Jesse try to up their game by making more of the crystal every week for Tuco. Unfortunately, some of the ingredients they need are not easy to find. Meanwhile, Skyler realizes that her sister is a shoplifter.</p>
                 </div>
             </div>
         </div>
+        <div class="row video-season">
+            <div class="col-sm-12">
+                <h3 class="title-tvshows">Trailer</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HhesaQXLuRY"></iframe>
+
+                </div>
+            </div>
+        </div> <!-- row video -->
+    </div><!-- row season-->
+
+    <div class="row season2 target" id="season2">
+        <div class="col-sm-12">
+
+            <div class="no-season">
+                <h3 class="title-tvshows">Saison 2</h3>
+            </div>
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNzE4NDM2NjY5MF5BMl5BanBnXkFtZTgwMDcwNDc1NjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Seven Thirty-Seven</h4>
+                    <p>After witnessing Tuco murder one of his junkies, Walt and Jesse fear that he will kill them next, to tie up loose ends. Unless they kill Tuco first.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTkwODEyMTcxNl5BMl5BanBnXkFtZTcwMzM5NjA0Mg@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Grilled...</h4>
+                    <p>Tuco takes Walt and Jesse prisoner.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTc1NDYxMDM3OV5BMl5BanBnXkFtZTgwMzE4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Bit by a Dead Bee</h4>
+                    <p>Walt and Jesse try to come up with alibis for their disappearances.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjI0NzA3MDc0MF5BMl5BanBnXkFtZTgwMTE4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Down</h4>
+                    <p>Skyler keeps mysteriously leaving without talking to Walt. Jesse's parents throw him out of his own house.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTkyMjI5NjQ5Ml5BMl5BanBnXkFtZTgwNDE4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Breakage</h4>
+                    <p>Walt and Jesse decide to start their own little empire with the help of Jesse's friends: Skinny Pete, Combo, and Badger. Meanwhile, Hank tries to pull himself together after his encounter with Tuco.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTc3NzQ0NjQ1N15BMl5BanBnXkFtZTgwMjE4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Peekaboo</h4>
+                    <p>After Skinny Pete gets ripped off, Walt makes Jesse go get the money. Meanwhile, Walt's cover story on how Elliott and Gretchen are paying for his medical treatment is on the verge of collapsing.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQ0MDU0Nzc3M15BMl5BanBnXkFtZTgwMzI4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Negro Y Azul</h4>
+                    <p>Rumor is spreading that Jesse killed the man that ripped Skinny Pete off. Walt uses this to his advantage on expanding their territory.
+                        Meanwhile, Hank has been promoted to the El Paso office. But it's not all he hoped it would be.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQyNDIxMDcwMV5BMl5BanBnXkFtZTgwNjI4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Better Call Saul</h4>
+                    <p>Badger is caught by the DEA. Walt and Jesse hire the best criminal lawyer in town, Saul Goodman.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTg5MjIzODI4MV5BMl5BanBnXkFtZTgwMDI4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">4 Days Out</h4>
+                    <p>Walt and Jesse become stranded out in the middle of the desert after cooking more crystal.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTcyMTA2NzgxNV5BMl5BanBnXkFtZTgwMjI4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Over</h4>
+                    <p>Walt's cancer has greatly improved. Time to celebrate. Meanwhile Jesse tries to meet his new girlfriend's father.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjAxNjE0MTYzN15BMl5BanBnXkFtZTgwODI4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Mandala</h4>
+                    <p>Combo is found dead. Walt and Jesse's little empire begins to crumble. Saul tries to set them up with a mysterious distributor.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjA1OTI0NzUwNl5BMl5BanBnXkFtZTgwMzM4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Phoenix</h4>
+                    <p>Walt and Skyler have a baby girl. Now that Jesse is hooked on heroin, Walt refuses to give him his money until he gets clean.
+                        Meanwhile, as an excuse for his money, Walt decides to donate the money to himself through his son's new website.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTY2NjY3NzM0OF5BMl5BanBnXkFtZTgwNzE4OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">ABQ</h4>
+                    <p>Walt's lies have pushed Skyler to her limit. She leaves with the kids. Meanwhile, Jesse blames himself for Jane's death and goes into rehab.</p>
+                </div>
+            </div>
         </div>
+        <div class="row video-season">
+            <div class="col-sm-12">
+                <h3 class="title-tvshows">Trailer</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0t_tGu-Os70"></iframe>
 
-    </div>
+                </div>
+            </div>
+        </div> <!-- row video -->
+    </div><!-- row season-->
 
+    <div class="row season3 target" id="season3">
+        <div class="col-sm-12">
+
+            <div class="no-season">
+                <h3 class="title-tvshows">Saison 3</h3>
+            </div>
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTU0NTY0MDU2N15BMl5BanBnXkFtZTgwNDUzMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">No Más</h4>
+                    <p>Skyler is planning to divorce Walt now that she knows about the crystal meth. Jesse finishes rehab.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjAxMzg0NDE3OV5BMl5BanBnXkFtZTgwMDYxMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Caballo sin Nombre</h4>
+                    <p>Walter Jr is having a rough time accepting his parents' separation. Jesse buys his old house from his parents. Meanwhile, two mysterious men have come into town looking for Walt.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTMyMTgzNDA3MF5BMl5BanBnXkFtZTcwMTMwMTIzMw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">I.F.T.</h4>
+                    <p>Walt has moved back into the house without Skyler's consent. Now she can't get him out. Meanwhile, Jesse continues to cope with Jane's death.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTc5NzE3NTc0MV5BMl5BanBnXkFtZTcwMDk5MDIzMw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Green Light</h4>
+                    <p>Walt's world crumbles even more when he finds out that Skyler is cheating on him. Jesse tries to set up a meeting with Gus to try and sell his own version of the blue meth.
+                        Meanwhile, Hank is growing obsessed with finding Heisenberg.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjA1NzQ1ODM0Nl5BMl5BanBnXkFtZTcwMjg0MDYzMw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Más</h4>
+                    <p>Gus tries to get Walt back in the business by offering him three million dollars and a brand new lab. Jesse is furious that Walt received half of the money for his blue meth.
+                        Hank tries to track down the RV meth lab.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjEzNjI4MDI0M15BMl5BanBnXkFtZTcwNTkxMTgzMw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Sunset</h4>
+                    <p>Walt's new business and assistant, Gale, are making his life much easier. Hank trails the RV back to Jesse. When Walt finds out, he tries to destroy the RV.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQ1MjUxNDIwM15BMl5BanBnXkFtZTgwMDcxMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">One Minute</h4>
+                    <p>Jesse ends up in the hospital after getting beaten up by Hank. Now he is threatening to press charges against the DEA.
+                        To stop him, Walt decides to bring Jesse on as his partner, once again.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjI2NDU5OTI0MV5BMl5BanBnXkFtZTgwNzYxMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">I See You</h4>
+                    <p>Hank ends up in the hospital after being attacked by Tuco's cousins. Walt spends too much time by his family's side when he should be cooking meth.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTc2NjA4OTYyMl5BMl5BanBnXkFtZTgwNjYxMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Kafkaesque</h4>
+                    <p>Skyler hatches a plan as Hank's hospital bills stack up. Meanwhile, Walt and Gus come to a better understanding as Jesse, looking for more independence, pursues a new opportunity.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQ0MDczMDY4OV5BMl5BanBnXkFtZTgwMzYxMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Fly</h4>
+                    <p>There is a fly loose in the lab. Walt and Jesse must do whatever they can to kill it before it contaminates the meth.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTU5OTAxNTI3M15BMl5BanBnXkFtZTgwNTYxMDg5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Abiquiu</h4>
+                    <p>Skyler gets more involved in Walt's business, much to his chagrin as Hank struggles with his recovery.
+                        Meanwhile, Jesse takes an active role in his new enterprise, leading him to a startling discovery.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTM2NzA0MTExMV5BMl5BanBnXkFtZTcwMjczOTQ1Mw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Half Measures</h4>
+                    <p>Against Walt's advice, Jesse lashes out. Fearing for Jesse's safety, Walt takes drastic action to intervene. Meanwhile a tragic event leads to a shocking confrontation.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTM1Njc3OTkwOV5BMl5BanBnXkFtZTcwOTkyMDY1Mw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Full Measure</h4>
+                    <p>Jesse has disappeared and Walt is in big trouble with Gus. So Gus rehires Gale to learn from Walt's cooking so that they can dispose of Walt once and for all.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row video-season">
+            <div class="col-sm-12">
+                <h3 class="title-tvshows">Trailer</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TggkQXwe0Vk"></iframe>
+
+                </div>
+            </div>
+        </div> <!-- row video -->
+    </div><!-- row season-->
+
+    <div class="row season4 target" id="season4">
+        <div class="col-sm-12">
+
+            <div class="no-season">
+                <h3 class="title-tvshows">Saison 4</h3>
+            </div>
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTA2NzQzODA3OTdeQTJeQWpwZ15BbWU3MDY3NjU2NzU@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Box Cutter</h4>
+                    <p>Walt and Jesse are held captive for Gus, after Gale's death. Meanwhile, Skyler tries to find out what happened to Walt.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQ4NTM1OTI1MV5BMl5BanBnXkFtZTgwNzg5OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Thirty-Eight Snub</h4>
+                    <p>Walt attempts to form a new alliance as he plans his next move. Meanwhile Skyler pushes Walt towards a business opportunity, in hopes of protecting the family.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNzg1MTcxMDI2NV5BMl5BanBnXkFtZTcwMjE1MDMxNg@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Open House</h4>
+                    <p>While Walt worries about Gus's interference and Jesse's increasingly fragile state of mind, Skyler steps up the pressure to get what she wants.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTU2NzIyNjMyNV5BMl5BanBnXkFtZTgwODc5OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Bullet Points</h4>
+                    <p>As Skyler concocts an elaborate story to explain the Whites' finances, a worried Walt discovers that Hank has begun a new investigation.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjE4NDM3MzkzMl5BMl5BanBnXkFtZTcwNjEzODcyNg@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Shotgun</h4>
+                    <p>Jesse rides shotgun with Mike on a perilous run of pickups, prompting Walt to worry that his partner is about to be killed.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjE2NTQ1MDQ5MV5BMl5BanBnXkFtZTgwMTg5OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Cornered</h4>
+                    <p>Skyler adopts an aloof approach when she suspects that Walt isn't telling her the truth. Meanwhile, Jesse proves his worth to Mike and Gus.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjMyODYwNDQ5M15BMl5BanBnXkFtZTgwNDg5OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Problem Dog</h4>
+                    <p>Ordered to return the car he bought for his son, Walt strikes back by putting Skyler in a tough spot with their new money-laundering operation.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQxMzk0ODkwM15BMl5BanBnXkFtZTgwNjc5OTc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Hermanos</h4>
+                    <p>When Hank produces evidence that Gus is Albuquerque's crystal meth kingpin, Walt worries that he and Jesse will be killed to protect their boss.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQ0MTA3NTIxM15BMl5BanBnXkFtZTcwMDEwODE2Ng@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Bug</h4>
+                    <p>While Walt tries to subvert Hank's probe into the Albuquerque meth scene, a deadly warning forces Gus to consider a deal with the cartel.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTAwNDg2MjY5NjBeQTJeQWpwZ15BbWU3MDg2NzAwNzY@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Salud</h4>
+                    <p>Jesse, Gus, and Mike fly down to Mexico, and Jesse cooks the blue meth for the cartel. Walt misses his son's 16th birthday after his fight with Jesse.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTMzMTgzNzY4N15BMl5BanBnXkFtZTcwOTM5Nzc3Ng@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Crawl Space</h4>
+                    <p>Hank asks Walt to drive him to the laundry where the meth lab is hidden. Ted still won't pay the IRS so Skyler asks Saul for help, and Saul sends in his A-Team.
+                        Gus and Jesse return from Mexico, and Walt fears he is in trouble with Gus.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMzcwNzM5MDQ4NF5BMl5BanBnXkFtZTcwODc4MzU4Ng@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">End Times</h4>
+                    <p>The DEA is putting Hank and his family in protective custody; however, Walt refuses and awaits his fate in his house.
+                        Meanwhile, Brock has fallen terribly ill and Jesse suspects Walt may be behind it.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTkzMDU5MTcxNF5BMl5BanBnXkFtZTcwOTI2NTg4Ng@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Face Off</h4>
+                    <p>Jesse is brought to the FBI for questioning on his knowledge of Ricin. In a last effort to kill Gus, Walt must ask for help from an old enemy.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row video-season">
+            <div class="col-sm-12">
+                <h3 class="title-tvshows">Trailer</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aNQE9jrOLrA"></iframe>
+
+                </div>
+            </div>
+        </div> <!-- row video -->
+    </div><!-- row season-->
+
+    <div class="row season5 target" id="season5">
+        <div class="col-sm-12">
+
+            <div class="no-season">
+                <h3 class="title-tvshows">Saison 5</h3>
+            </div>
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjIwMzc0Mjk2N15BMl5BanBnXkFtZTcwODM5NzY5Nw@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Live Free or Die</h4>
+                    <p>Now that Gus is dead, Walt, Jesse, and Mike work to cover their tracks. Skyler panics when Ted Beneke wakes up.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNTc5NjQ0MTQwN15BMl5BanBnXkFtZTcwNDk2MzQxOA@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Madrigal</h4>
+                    <p>Walt and Jesse pursue an unlikely business partner; the DEA follows new leads.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNzE0MzM0ODc3NV5BMl5BanBnXkFtZTgwMzcyNzc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Hazard Pay</h4>
+                    <p>The guys put a business plan into action; Walt confesses to Marie.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BOTkwODc0MDU3NV5BMl5BanBnXkFtZTcwMzYxNTAyOA@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Fifty-One</h4>
+                    <p>It's Walt's 51st birthday. His return to the drug business causes Skyler to go into <depression class=""></depression></p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNTk2MjQ4Mzk3Nl5BMl5BanBnXkFtZTcwNDI0MTQyOA@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Dead Freight</h4>
+                    <p>The boys plan on robbing a train that has an entire car of methylamine.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjE4MDM4MTc3Nl5BMl5BanBnXkFtZTcwMjcxODgyOA@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Buyout</h4>
+                    <p>Walt, Jesse and Mike distress over the future of their business; occupational hazards weigh heavily on Jesse.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTM1MjcyMzIzMl5BMl5BanBnXkFtZTcwOTk4MzAzOA@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Say My Name</h4>
+                    <p>Mike and Jesse are out. Now Walt has to handle things on his own. Hank finally finds a rat in Mike's gang.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTU0NTU4NjQ5MV5BMl5BanBnXkFtZTcwOTM2MzQzOA@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Gliding Over All</h4>
+                    <p>Walt expands his business overseas, and the money is pouring in.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjI0MzMyMzg1MF5BMl5BanBnXkFtZTcwOTAyODc4OQ@@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Blood Money</h4>
+                    <p>Walt is out of the meth business and trying to move on with his life. Jesse tries to get rid of his money. Hank now knows that Walt is the famous Heisenberg.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTcxNzk4NzYyN15BMl5BanBnXkFtZTgwMDg5OTcxMDE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Buried</h4>
+                    <p>Hank is determined to bring down Walt. Walt scrambles to hide evidence before Hank gets to it, and Skyler tries to stop Hank and Marie from taking away the kids.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQxODQwNzIzOF5BMl5BanBnXkFtZTgwMDIxMDgxMDE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Confessions</h4>
+                    <p>Walt makes his next move against Hank, putting Hank in a tough position. Hank confronts Jesse and attempts to turn him against Walt, and Jesse decides it's time to move on.
+                        Meanwhile, Todd has taken over the business.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTgzMDYwNDAyOF5BMl5BanBnXkFtZTgwMzQ5OTcxMDE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Rabid Dog</h4>
+                    <p>Walt discovers Jesse broke into his house and attempted to burn it down. Walt wants to protect his family so he moves them into a hotel for a few nights. Jesse makes plans to take down Walt.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQxODA3NTE1N15BMl5BanBnXkFtZTgwMTEyMjEyMDE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">To'hajiilee</h4>
+                    <p>Jesse and Hank come up with an idea to take Walt down. Walt hires Todd's uncle to kill Jesse.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTM4NDcyNDMzMF5BMl5BanBnXkFtZTgwOTI0MTI2MDE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Ozymandias</h4>
+                    <p>Walt goes on the run. Jesse is taken hostage. Skyler believes it's time to tell Flynn the truth.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTY5MjI3MDg5NV5BMl5BanBnXkFtZTgwMDcyNzc5MjE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Granite State</h4>
+                    <p>Walt struggles as he adapts to aspects of his new identity. Jesse plans an escape against Jack and his crew.</p>
+                </div>
+            </div>
+
+            <div class="row episode">
+                <div class="col-sm-3 cover-season">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTQ3OTAwMTQzNl5BMl5BanBnXkFtZTgwMDQxMjUzMDE@._V1_UX200_CR0,0,200,112_AL_.jpg">
+                </div>
+                <div class="col-sm-9 title-episode-season">
+                    <h4 class="title-tvshows">Felina</h4>
+                    <p>Walter White makes one last attempt to secure his family's future, while also visiting some old enemies, during his final return to Albuquerque.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row video-season">
+            <div class="col-sm-12">
+                <h3 class="title-tvshows">Trailer</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/J2h9i_ipWig"></iframe>
+
+                </div>
+            </div>
+        </div> <!-- row video -->
+    </div><!-- row season-->
+
+
+
+
+</div><!-- container -->
 </body>
 </html>

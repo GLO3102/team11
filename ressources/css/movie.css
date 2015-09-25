@@ -10,6 +10,10 @@ body{
     color: white;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .top-buffer {
     margin-top: 100px;
 }

@@ -1,27 +1,26 @@
 /** COVER MOVIE **/
-.cover-movie {
-    width: auto;
-    display: inline-block;
-    float: left;
-}
-
-.cover-movie img {
-    width: 80%;
-    height: auto;
-    margin-top: 150px;
-}
-
-/** INFO MOVIE **/
-.movie-info {
-    width: 600px;
-    float: left;
-    margin-top: 200px;
+body{
+    background-color: #292929;
+    color: #9b9b9b;
 }
 
 /** CONTENT MOVIE */
-.movie-content {
-
+a:hover {
+    text-decoration: none;
 }
+
+.title-tvshows {
+    color: white;
+}
+
+.top-buffer {
+    margin-top: 100px;
+}
+
+.row-bottom {
+    margin-bottom: 20px;
+}
+
 
 .star-yellow{
     color: #e1cb2b;
@@ -57,19 +56,25 @@
     margin-top: 5px;
 }
 
-.btn-watchlist{
+.btn-season{
     display: inline-block;
     margin-bottom: 30px;
 }
 
-div#list-group-item
-{
-    width: 410px ;
-    background: #eed ;
-    border: 1px solid #dcb ;
-    padding: 15px ;
-    margin: 15px 30px ;
-    text-align: center ;
-    font: 0.9em Georgia, serif ;
+.cover-season img{
+    width: 200px;
+    height: 112px;
 }
 
+.cover-movie img {
+    width: 360px;
+    height: 480px;
+}
+
+.episode {
+    margin-bottom: 10px;
+}
+
+.video-season {
+    margin-top: 20px;
+}
