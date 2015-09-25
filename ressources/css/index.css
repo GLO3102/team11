@@ -1,0 +1,25 @@
+body
+{
+    background-color: black;
+}
+
+h2
+{
+    color: azure;
+}
+
+#logo{
+    max-width:115px;
+    margin-top: -10px;
+}
+
+.container.carousel
+{
+    margin-top: 85px;
+}
+
+.carousel-caption.title
+{
+    margin-top: 40px;
+}
+
