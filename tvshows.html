@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="ressources/css/tvshows.css" rel="stylesheet">
+    <script type="text/javascript" src="./ressources/js/conteneurSerie.js"></script>
     <title>UMovie</title>
 
 </head>
@@ -46,38 +47,51 @@
 </nav>
 <div class="container">
     <div class="movie-content">
-        <div class="cover-movie">
-            <img src="Images/img-tvshow.jpg" class="img-responsive">
-        </div>
-        <div class="movie-info">
-            <h2>Breaking Bad</h2>
-            <h3>"Breaking Bad Theme" <em>(Opening theme)</em></h3>
-            <p class="genre-movie"><strong>Genres:</strong> <a href="#">Crime</a>, <a href="#">Drama</a></p>
-            <strong>No. of seasons:</strong> <span class="date-movie">5</span>
-            <span class="separator-movie">|</span>
-            <strong>No. of episodes : </strong> <span class="time-movie">62</span>
+        <div class="row">
+            <div class="cover-movie">
+                <img src="Images/img-tvshow.jpg" class="img-responsive"/>
+            </div>
+            <div class="movie-info">
+                <h2>Breaking Bad</h2>
+                <h3>"Breaking Bad Theme" <em>(Opening theme)</em></h3>
+                <p class="genre-movie"><strong>Genres:</strong> <a href="#">Crime</a>, <a href="#">Drama</a></p>
+                <strong>No. of seasons:</strong> <span class="date-movie">5</span>
+                <span class="separator-movie">|</span>
+                <strong>No. of episodes : </strong> <span class="time-movie">62</span>
 
-            <p class="description-movie">
-                Breaking Bad is an American crime drama television series. The show originally aired on the AMC network for five seasons, from January 20, 2008, to September 29, 2013. It tells the story of Walter White (Bryan Cranston), a struggling high school chemistry teacher diagnosed with inoperable lung cancer, who, together with his former student Jesse Pinkman (Aaron Paul), turns to a life of crime, producing and selling crystallized methamphetamine to secure his family's financial future before he dies. The title is from a Southern colloquialism meaning to "raise hell". Breaking Bad is set and was filmed in Albuquerque, New Mexico.
-            </p>
+                <p class="description-movie">
+                    Breaking Bad is an American crime drama television series. The show originally aired on the AMC network for five seasons, from January 20, 2008, to September 29, 2013. It tells the story of Walter White (Bryan Cranston), a struggling high school chemistry teacher diagnosed with inoperable lung cancer, who, together with his former student Jesse Pinkman (Aaron Paul), turns to a life of crime, producing and selling crystallized methamphetamine to secure his family's financial future before he dies. The title is from a Southern colloquialism meaning to "raise hell". Breaking Bad is set and was filmed in Albuquerque, New Mexico.
+                </p>
 
-            <p class="director-movie">
-                <strong>Created by: </strong> <a href="#">Vince Gilligan</a>
-            </p>
+                <p class="director-movie">
+                    <strong>Created by: </strong> <a href="#">Vince Gilligan</a>
+                </p>
 
-            <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
-            background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
-            no-repeat;width:165px;height:40px;" target="_blank"> </a>
-            <button type="button" class="btn btn-default btn-watchlist">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                Add to Watchlist
-            </button>
+                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
+                background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
+                no-repeat;width:165px;height:40px;" target="_blank"> </a>
+                <button type="button" class="btn btn-default btn-watchlist">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    Add to Watchlist
+                </button>
+            </div>
         </div>
-        <div class="episodes-tvshow">
-            <img src="Images/img-tvshow.jpg" class="img-responsive">
+        <div class="panel panel-default">
+            <div class="col-xs-8 col-md-6">
+                <div class="panel-heading"><strong>Session 5</strong></div>
+                <div class="list-group">
+                    <a class="list-group-item"><img src="Images/episode1.jpg"/>
+                        <span class="badge"><strong>Episode 1 - Live free or Die</strong></span></a>
+                    <a class="list-group-item"><img src="Images/episode2.jpg"/>
+                        <span class="badge"><strong>Episode 2 - Madrigal</strong></span></a>
+                    <a class="list-group-item"><img src="Images/episode3.jpg"/>
+                        <span class="badge"><strong>Episode 3 - Hazar Pay</strong></span></a>
+                </div>
+            </div>
         </div>
+        </div>
+
     </div>
-</div>
 
 </body>
 </html>
