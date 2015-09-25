@@ -1,27 +1,23 @@
 /** COVER MOVIE **/
-.cover-movie {
-    width: auto;
-    display: inline-block;
-    float: left;
-}
-
-.cover-movie img {
-    width: 80%;
-    height: auto;
-    margin-top: 150px;
-}
-
-/** INFO MOVIE **/
-.movie-info {
-    width: 600px;
-    float: left;
-    margin-top: 200px;
+body{
+    background-color: #292929;
+    color: #9b9b9b;
 }
 
 /** CONTENT MOVIE */
-.movie-content {
 
+.title-movie {
+    color: white;
 }
+
+.top-buffer {
+    margin-top: 100px;
+}
+
+.row-bottom {
+    margin-bottom: 20px;
+}
+
 
 .star-yellow{
     color: #e1cb2b;
