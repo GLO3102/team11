@@ -8,7 +8,6 @@ h2
     color: azure;
 }
 
-
 #logo{
     max-width:115px;
     margin-top: -10px;
@@ -19,6 +18,16 @@ h2
     margin-top: 85px;
 }
 
+.video_link:hover
+{
+    border: 10px solid #aaa;
+    border-color: blue;
+}
+.cover
+{
+    width: 160px !important;
+    height: 240px !important;
+}
 .carousel-caption.title
 {
     margin-top: 40px;
