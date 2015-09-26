@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    /* Show or hide trailer movie */
    $('#video-trailer').hide();
     var show = false;
     $('#btn-trailer').click(function(){

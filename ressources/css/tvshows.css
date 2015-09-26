@@ -1,10 +1,10 @@
-/** COVER MOVIE **/
+/** BODY **/
 body{
     background-color: #292929;
     color: #9b9b9b;
 }
 
-/** CONTENT MOVIE */
+/** CONTENT TV SHOWS */
 a:hover {
     text-decoration: none;
 }
@@ -19,24 +19,6 @@ a:hover {
 
 .row-bottom {
     margin-bottom: 20px;
-}
-
-
-.star-yellow{
-    color: #e1cb2b;
-}
-
-.rating-movie{
-    margin-right: 5px;
-}
-
-.date-movie{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.time-movie{
-    margin-left: 5px;
 }
 
 .description-movie {
@@ -61,16 +43,6 @@ a:hover {
     margin-bottom: 30px;
 }
 
-.cover-season img{
-    width: 200px;
-    height: 112px;
-}
-
-.cover-movie img {
-    width: 360px;
-    height: 480px;
-}
-
 .episode {
     margin-bottom: 10px;
 }
@@ -87,4 +59,15 @@ a:hover {
 
 .display-h3{
     display: inline;
+}
+
+/* IMG COVER TV SHOWS */
+.cover-season img{
+    width: 200px;
+    height: 112px;
+}
+
+.cover-movie img {
+    width: 360px;
+    height: 480px;
 }

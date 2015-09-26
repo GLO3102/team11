@@ -1,10 +1,10 @@
-/** COVER MOVIE **/
+/** BODY **/
 body{
     background-color: #292929;
     color: #9b9b9b;
 }
 
-/** CONTENT MOVIE */
+/** DESCRIPTION MOVIE */
 
 .title-movie {
     color: white;
@@ -63,4 +63,10 @@ a:hover {
 
 .btn-trailer {
     margin-left: 30px;
+}
+
+/* COVER MOVIE */
+.cover-movie img {
+    width: 360px;
+    height: 560px;
 }
