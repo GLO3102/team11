@@ -17,5 +17,8 @@ var cover = ['ressources/img/tvshows/breaking_bad_season1.jpg',
         $('.target').hide();
         $('#season' + $(this).attr('target')).show(); // show the list of episode of a season
         $('#cover-tvshows').attr('src',cover[$(this).attr('target')-1]); // display the cover of a tvshows season
+        $('html, body').animate({
+            scrollTop: $('#season' +$(this).attr('target')).offset().top
+        }, 1000);
     });
 });
