@@ -57,7 +57,10 @@ a:hover {
     margin-top: 5px;
 }
 
-.btn-watchlist{
-    display: inline-block;
+.btn-margin-bottom{
     margin-bottom: 30px;
+}
+
+.btn-trailer {
+    margin-left: 30px;
 }

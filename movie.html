@@ -78,20 +78,26 @@
                     <p class="writers-movie">
                         <strong>Writers: </strong><a href="#">Alejandro Gonzalez Inarritu</a>, <a href="#">Nicolas Giacobone</a>, <a href="#">Alexander Dinelaris, Armando Bo</a>
                     </p>
-
+                <div class="button-utils">
                     <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
-                background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
-                no-repeat;width:165px;height:40px;" target="_blank"> </a>
-                    <button type="button" class="btn btn-default btn-watchlist">
+                    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
+                    no-repeat;width:165px;height:40px;" target="_blank"> </a>
+                    <button type="button" class="btn btn-default btn-margin-bottom">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         Add to Watchlist
                     </button>
+                    <button id="btn-trailer" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        Show trailer
+                    </button>
+                </div>
             </div>
 
         </div>
     </div><!-- row -->
-    <div class="row">
+    <div class="row" id="video-trailer">
         <div class="col-sm-12">
+            <h3 class="title-movie">Trailer</h3>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uJfLoE6hanc"></iframe>
 
@@ -107,5 +113,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Bootstrap javascript -->
 <script src="ressources/js/bootstrap.js"></script>
+<script src="ressources/js/movie.js"></script>
 </body>
 </html>
