@@ -8,6 +8,9 @@ $(document).ready(function(){
         if(show == false){
             $('#video-trailer').show();
             show = true;
+            $('html, body').animate({
+                scrollTop: $("#video-trailer").offset().top
+            }, 1000);
         }
 
         else {
