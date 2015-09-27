@@ -59,3 +59,7 @@
 {
     opacity: 0.5;
 }
+
+#Container .mix{
+    display: none;
+}
