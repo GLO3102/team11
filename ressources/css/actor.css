@@ -2,35 +2,6 @@
     height: 255px;
 }
 
-
-body{
-    background-color: #f3f3f3;
-    color: #9b9b9b;
-}
-
-
-
-.title-movie {
-    color: #101010;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.top-buffer {
-    margin-top: 100px;
-}
-
-.row-bottom {
-    margin-bottom: 20px;
-}
-
-
-.star-yellow{
-    color: #e1cb2b;
-}
-
 .rating-movie{
     margin-right: 5px;
 }
@@ -49,7 +20,7 @@ a:hover {
     text-align: justify;
 }
 
-.movie-info > p{
+.description-movie > p{
     font-size: 1.1em;
 }
 
@@ -76,9 +47,4 @@ a:hover {
 
 .filmography{
     padding: 20px;
-}
-
-.img-movie{
-    height:298px;
-    width:220px;
 }
