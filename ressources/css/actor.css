@@ -69,12 +69,16 @@ a:hover {
     margin-left: 30px;
 }
 
-/* COVER MOVIE */
-.cover-movie img {
-    width: 360px;
-    height: 560px;
+.img-actor{
+    height:350px;
+    width:300px;
 }
 
 .filmography{
     padding: 20px;
+}
+
+.img-movie{
+    height:298px;
+    width:220px;
 }
