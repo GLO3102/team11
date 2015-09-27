@@ -1,13 +1,13 @@
 /** BODY **/
 body{
-    background-color: #292929;
+    background-color: #f3f3f3;
     color: #9b9b9b;
 }
 
 /** DESCRIPTION MOVIE */
 
 .title-movie {
-    color: white;
+    color: #f3f3f3;
 }
 
 a:hover {
