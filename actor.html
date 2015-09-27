@@ -2,115 +2,194 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Actor</title>
-    <link rel="stylesheet" href="Theme_exemple/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Theme_exemple/css/freelancer.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UMovie - Actor</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- movie css-->
+    <link href="ressources/css/style.css" rel="stylesheet">
+    <link href="ressources/css/actor.css" rel="stylesheet">
 </head>
-<style>
-    .circular {
-        width: 300px;
-        height: 300px;
-        border-radius: 150px;
-        -webkit-border-radius: 150px;
-        -moz-border-radius: 150px;
-        background: url(http://link-to-your/image.jpg) no-repeat;
-        box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    }
 
-
-
-</style>
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <img class="img-responsive circular" alt="actor" src="images/morgan.jpg">
-                <div class="intro-text">
-                    <span class="name">Morgan Freeman</span>
-                </div>
-            </div>
+<nav class="navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img id="logo" alt="Brand" src="Images/logo.png">
+            </a>
         </div>
-    </header>
-    <section id="bio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Bio</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-        </div>
-    </section>
-    <section id="photo">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Gallerie</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <img class="img-responsive" alt="" src="images/photo-1.jpg">
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img class="img-responsive" alt="" src="images/photo-2.jpg">
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img class="img-responsive" alt="" src="images/photo-3.jpg">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <img class="img-responsive" alt="" src="images/photo-4.jpg">
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img class="img-responsive" alt="" src="images/photo-5.jpg">
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img class="img-responsive" alt="" src="images/photo-6.jpg">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="filmography">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Filmographie</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
+        <div id="navbar" class="navbar-collapse collapse">
 
-                <div class="col-sm-4 ">
-                    <ul class="list-group">
-                        <li class="list-group-item">Impitoyable</li>
-                        <li class="list-group-item">Seven</li>
-                        <li class="list-group-item">Amistad</li>
-                        <li class="list-group-item">Invictus</li>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Movies, TV, Actors...">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="#">My Watchlists</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My settings</a></li>
+                        <li><a href="#">Logout</a></li>
                     </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!-- container-->
+</nav>
+<div class="container">
+    <div class="row top-buffer row-bottom">
+        <div class="movie-content">
+            <div class="col-sm-4 cover-movie">
+                <img src="ressources/img/actor/bryan-cranston-1.jpg" class="img-responsive">
+            </div>
+            <div class="col-sm-8 description-movie">
+                <h2 class="title-movie">Bryan Cranston</h2>
+
+                <h3>Bio</h3>
+                <p class="description-movie">Bryan Lee Cranston (born March 7, 1956)[1] is an American actor, voice actor, screenwriter, director and producer.
+                    Cranston is best known for portraying Walter White in the AMC crime drama series Breaking Bad,
+                    Hal in the Fox comedy series Malcolm in the Middle and Dr. Tim Whatley in the NBC comedy series Seinfeld. </p>
+
+
+
+                <div class="button-utils col-sm-8">
+                    <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
+                    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
+                    no-repeat;width:165px;height:40px;" target="_blank"> </a>
                 </div>
+
+            </div>
+
+        </div>
+    </div><!-- row -->
+
+</div> <!-- container -->
+
+
+<div class="container">
+    <h2>Filmography</h2>
+    <div class="row filmography">
+
+        <div class="col-sm-4 mainzone">
+
+            <img src="ressources/img/actor/drive.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 mainzone">
+            <h4>Drive</h4>
+
+            <span class="date-movie">September 2011</span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">100 min</span>
+            <h3 class="title-movie">Trailer</h3>
+            <button id="btn-trailer" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
+                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                Show trailer
+            </button>
+            <div class="embed-responsive embed-responsive-16by9 video-trailer">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KBiOF3y1W0Y"></iframe>
+
             </div>
         </div>
-    </section>
-    <section id="tv">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Télévision</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
+    </div>
+    <div class="row filmography">
+        <div class="col-sm-4 mainzone">
+
+            <img src="ressources/img/actor/argo.gif" class="img-responsive">
         </div>
-    </section>
+        <div class="col-sm-4 mainzone">
+            Argo
+
+            <span class="date-movie">October 2012</span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">120 min</span>
+            <h3 class="title-movie">Trailer</h3>
+            <!--<div class="embed-responsive embed-responsive-16by9 video-trailer">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JW3WfSFgrVY"></iframe>
+
+            </div>-->
+        </div>
+    </div>
+    <div class="row filmography">
+        <div class="col-sm-4 mainzone">
+
+            <img src="ressources/img/actor/godzilla.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 mainzone">
+            Godzilla
+            <span class="separator-movie">|</span>
+            <span class="date-movie">May 2014</span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">100 min</span>
+            <h3 class="title-movie">Trailer</h3>
+           <!-- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vIu85WQTPRc"></iframe>
+
+            </div>-->
+        </div>
+    </div>
+    <div class="row filmography">
+        <div class="col-sm-4 mainzone">
+
+            <img src="ressources/img/actor/malcolm.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 mainzone">
+            Malcolm
+            <span class="separator-movie">|</span>
+            <span class="date-movie">September 2011</span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">100 min</span>
+            <h3 class="title-movie">Trailer</h3>
+           <!-- <div class="embed-responsive embed-responsive-16by9 video-trailer">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o6gPg-P5FPg"></iframe>
+
+            </div>-->
+        </div>
+    </div>
+    <div class="row filmography">
+        <div class="col-sm-4 mainzone">
+
+            <img src="ressources/img/actor/breakingbad.png" class="img-responsive">
+        </div>
+        <div class="col-sm-4 mainzone">
+            Breaking Bad
+            <span class="separator-movie">|</span>
+            <span class="date-movie">September 2011</span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">100 min</span>
+            <h3 class="title-movie">Trailer</h3>
+            <!--<div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HhesaQXLuRY"></iframe>
+
+            </div>-->
+        </div>
+    </div>
+</div><!-- container -->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Bootstrap javascript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="ressources/js/actor.js"></script>
 </body>
+<footer>
+    <div class="container">
+        <p>Help Us | Contacts<br>Advanced Search | Customers Service | FAQ | Legal Informations<br><br>Help us to keep UMovie healthy - <a href="#">Report all bugs</a> (ver. 1.0.0)<br>Copirights UMovie Website. All Rights Reserved</p>
+    </div>
+</footer>
 </html>

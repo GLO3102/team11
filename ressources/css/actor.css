@@ -1,0 +1,80 @@
+.mainzone img{
+    height: 255px;
+}
+
+
+body{
+    background-color: #f3f3f3;
+    color: #9b9b9b;
+}
+
+
+
+.title-movie {
+    color: #101010;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.top-buffer {
+    margin-top: 100px;
+}
+
+.row-bottom {
+    margin-bottom: 20px;
+}
+
+
+.star-yellow{
+    color: #e1cb2b;
+}
+
+.rating-movie{
+    margin-right: 5px;
+}
+
+.date-movie{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.time-movie{
+    margin-left: 5px;
+}
+
+.description-movie {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.movie-info > p{
+    font-size: 1.1em;
+}
+
+.movie-info > span{
+    font-size: 1.1em;
+}
+
+.itunes-movie{
+    margin-top: 5px;
+}
+
+.btn-margin-bottom{
+    margin-bottom: 30px;
+}
+
+.btn-trailer {
+    margin-left: 30px;
+}
+
+/* COVER MOVIE */
+.cover-movie img {
+    width: 360px;
+    height: 560px;
+}
+
+.filmography{
+    padding: 20px;
+}
