@@ -55,7 +55,7 @@
     height: 600px;
 }
 
-.video_link:hover
+.picturezone:hover img
 {
-    border: 10px solid blue;
+    opacity: 0.5;
 }
