@@ -1,5 +1,6 @@
 .mainzone img{
     height: 255px;
+    width: 180px;
 }
 
 .rating-movie{
@@ -40,9 +41,9 @@
     margin-left: 30px;
 }
 
-.img-actor{
+.actor{
     height:350px;
-    width:300px;
+    width:260px;
 }
 
 .filmography{
