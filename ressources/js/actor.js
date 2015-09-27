@@ -5,20 +5,10 @@
 $(document).ready(function(){
     /* Show or hide trailer movie */
     $('.video-trailer').hide();
-    var show = false;
     $('.btn-trailer').click(function(){
 
+    $(".trailer" + $(this).attr('target')).show();
 
-        if(show == false){
-            $('.video-trailer').show();
-            show = true;
-
-        }
-
-        else {
-            $('.video-trailer').hide();
-            show = false;
-        }
     });
 });
 

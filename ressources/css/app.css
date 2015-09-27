@@ -18,8 +18,12 @@ body{
 
 /* title and paragraph */
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,h5 {
     color: black;
+}
+
+h5 {
+    font-weight: bold;
 }
 
 p {
@@ -46,7 +50,6 @@ a:hover {
 
 footer {
     width: 100%;
-    height: 120px;
     color: #666;
     background-color: #222;
     text-align: center;
