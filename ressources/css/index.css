@@ -92,10 +92,6 @@ p {
     height: 600px;
 }
 
-.video_link:hover
-{
-    /*border: 10px solid blue;*/
-}
 .picturezone:hover img
 {
     opacity: 0.5;
