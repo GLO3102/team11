@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UMovie - team11</title>
-    <link rel="icon" type="image/png" href="ressources/img/logo/favicon.png" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <!-- movie css-->
-    <link href="ressources/css/app.css" rel="stylesheet">
-    <link href="ressources/css/movie.css" rel="stylesheet">
+    <link href="ressources/css/style.css" rel="stylesheet">
+    <link href="ressources/css/index.css" rel="stylesheet">
+    <title>UMovie - Team11</title>
 </head>
 <body>
 <!-- Fixed navbar -->
@@ -25,7 +23,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img id="logo" alt="Brand" src="Images/logo.png">
+                <img id="logo" alt="Brand" src="ressources/img/logo.png">
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -65,19 +63,19 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="Images/carousel/breakingbad.jpg" class="img-responsive center-block poster" alt="Responsive image">
+                    <img src="ressources/img/carousel/breakingbad.jpg" class="img-responsive center-block poster" alt="Responsive image">
                 </div>
                 <div class="item">
-                    <img src="Images/carousel/twd.jpg" class="img-responsive center-block poster" alt="Responsive image">
+                    <img src="ressources/img/carousel/twd.jpg" class="img-responsive center-block poster" alt="Responsive image">
                 </div>
                 <div class="item">
-                    <img src="Images/carousel/ultraamerican.jpg" class="img-responsive center-block poster" alt="Responsive image">
+                    <img src="ressources/img/carousel/ultraamerican.jpg" class="img-responsive center-block poster" alt="Responsive image">
                 </div>
                 <div class="item">
-                    <img src="Images/carousel/birdman.jpg" class="img-responsive center-block poster" alt="Responsive image">
+                    <img src="ressources/img/carousel/birdman.jpg" class="img-responsive center-block poster" alt="Responsive image">
                 </div>
                 <div class="item">
-                    <img src="Images/carousel/antman.jpg" class="img-responsive center-block poster" alt="Responsive image">
+                    <img src="ressources/img/carousel/antman.jpg" class="img-responsive center-block poster" alt="Responsive image">
                 </div>
             </div>
 
@@ -92,10 +90,14 @@
             </a>
         </div>
     </div>
-<div class="container">
+<div class="container middlePage">
+    <div class="dropdown">
+     <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
-        <ul class="dropdown-menu">
+        Browse
+    <span class="caret"></span>
+     </button>
+       <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Adventure</a></li>
             <li><a href="#">Comedies</a></li>
@@ -110,26 +112,25 @@
             <li><a href="#">Sports Movies</a></li>
         </ul>
     </li>
-</div>
+    </div>
 
-<div class="container">
     <h2>Recently added</h2>
 </div >
 <div class="container">
     <div class="row">
-        <div class="col-sm-3 mainzone">
+        <div class="col-sm-3 mainzone mix category-1">
             <div class="picturezone">
-                <img src="Images/Birdman.jpg" class="img-responsive center-block video_link" onclick="changePage('movie.html')" alt="Responsive image">
+                <img src="ressources/img/movie/birdman.jpg" class="img-responsive center-block video_link" onclick="changePage('movie.html')" alt="Responsive image">
             </div>
             <div class="datazone">
-                <a href="#">Birdman</a><br>
+                <a href="movie.html">Birdman</a><br>
                 <p>By Alejandro González Iñárritu<br>
                 With Michael Keaton, Emma Stone, Edward Norton<br></p>
             </div>
         </div>
-        <div class="col-sm-3 mainzone">
+        <div class="col-sm-3 mainzone mix category-1">
             <div class="picturezone">
-                <img src="Images/AntMan_2015.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/AntMan_2015.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Antman</a><br>
@@ -137,9 +138,9 @@
                     With Paul Rudd, Michael Doulas, Corey Stoll<br></p>
             </div>
         </div>
-        <div class="col-sm-3 mainzone">
+        <div class="col-sm-3 mainzone mix category-2">
             <div class="picturezone">
-                <img src="Images/American_Ultra2015.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/American_Ultra2015.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">American ULTRA</a><br>
@@ -147,9 +148,9 @@
                     With Topher Grace, Kristen Stewart, Jesse Eisenberg<br></p>
             </div>
         </div>
-        <div class="col-sm-3 mainzone">
+        <div class="col-sm-3 mainzone mix category-3">
             <div class="picturezone">
-                <img src="Images/Black_Mass.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/Black_Mass.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Black Mass</a><br>
@@ -165,17 +166,17 @@
     <div class="row">
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Breaking_Bad.jpg" class="img-responsive center-block video_link"  onclick="changePage('tvshow.html')" alt="Responsive image">
+                <img src="ressources/img/tvshows/Breaking_Bad/Breaking_Bad.jpg" class="img-responsive center-block video_link"  onclick="changePage('tvshows.html')" alt="Responsive image">
             </div>
             <div class="datazone">
-                <a href="#">Breaking Bad</a><br>
+                <a href="tvshows.html">Breaking Bad</a><br>
                 <p>By Vince Gilligan<br>
                     With Brian Cranston, Aeron Paul, Anna Gunn<br></p>
             </div>
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/CodeNameUncle2015.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/CodeNameUncle2015.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Code name U.N.C.L.E</a><br>
@@ -185,7 +186,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Vacation_2015.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/Vacation_2015.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Vacation</a><br>
@@ -195,7 +196,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Walking_Dead.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/tvshows/TWD/Walking_Dead.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">The Walking Dead</a><br>
@@ -210,7 +211,7 @@
     <div class="row">
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Everest.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/Everest.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Everest</a><br>
@@ -220,7 +221,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Fear_of_the_walking_dead.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/tvshows/FWD/Fear_of_the_walking_dead.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Fear of the Walking Dead</a><br>
@@ -230,7 +231,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Homeland.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/tvshows/Homeland/Homeland.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Homeland</a><br>
@@ -240,7 +241,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Mission_Impossible_Rogue_Nation.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/Mission_Impossible_Rogue_Nation.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Mission Impossible</a><br>
@@ -256,7 +257,7 @@
 
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Suits.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/tvshows/Suits/Suits.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Suits</a><br>
@@ -266,7 +267,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/The_Avenger_Age_of_Ultron.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/The_Avenger_Age_of_Ultron.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">The Avengers</a><br>
@@ -276,7 +277,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Star_Wars_7.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/movie/Star_Wars_7.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Star wars 7</a><br>
@@ -286,7 +287,7 @@
         </div>
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Narcos.jpg" class="img-responsive center-block" alt="Responsive image">
+                <img src="ressources/img/tvshows/Narcos/Narcos.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
             <div class="datazone">
                 <a href="#">Narcos</a><br>
@@ -304,10 +305,11 @@
         </ul>
     </nav>
 </div>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="ressources/js/index.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+<!-- Bootstrap javascript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <script src="ressources/js/index.js"></script>
 </body>
 <footer>
     <div class="container">

@@ -3,11 +3,11 @@
  */
 $(document).ready(function(){
 
-var cover = ['ressources/img/tvshows/breaking_bad_season1.jpg',
-    'ressources/img/tvshows/breaking_bad_season2.jpg',
-    'ressources/img/tvshows/breaking_bad_season3.jpg',
-    'ressources/img/tvshows/breaking_bad_season4.jpg',
-    'ressources/img/tvshows/breaking_bad_season5.jpg'];
+var cover = ['ressources/img/tvshows/Breaking_Bad/breaking_bad_season1.jpg',
+    'ressources/img/tvshows/Breaking_Bad/breaking_bad_season2.jpg',
+    'ressources/img/tvshows/Breaking_Bad/breaking_bad_season3.jpg',
+    'ressources/img/tvshows/Breaking_Bad/breaking_bad_season4.jpg',
+    'ressources/img/tvshows/Breaking_Bad/breaking_bad_season5.jpg'];
 
     $('#cover-tvshows').attr('src',cover[0]);
 
