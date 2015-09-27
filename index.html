@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -90,14 +88,10 @@
             </a>
         </div>
     </div>
-<div class="container middlePage">
-    <div class="dropdown">
-     <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<div class="container">
     <li class="dropdown">
-        Browse
-    <span class="caret"></span>
-     </button>
-       <ul class="dropdown-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+        <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Adventure</a></li>
             <li><a href="#">Comedies</a></li>
@@ -112,27 +106,24 @@
             <li><a href="#">Sports Movies</a></li>
         </ul>
     </li>
-    </div>
-
-    <h2>Recently added</h2>
-</div >
-
-
-
+</div>
 
 <div class="container">
+    <h2>Recently added</h2>
+</div >
+<div class="container">
     <div class="row">
-        <div class="col-sm-3 mainzone mix category-1">
+        <div class="col-sm-3 mainzone">
             <div class="picturezone">
                 <img src="Images/Birdman.jpg" class="img-responsive center-block video_link" onclick="changePage('movie.html')" alt="Responsive image">
             </div>
             <div class="datazone">
-                <a href="movie.html">Birdman</a><br>
+                <a href="#">Birdman</a><br>
                 <p>By Alejandro González Iñárritu<br>
                 With Michael Keaton, Emma Stone, Edward Norton<br></p>
             </div>
         </div>
-        <div class="col-sm-3 mainzone mix category-1">
+        <div class="col-sm-3 mainzone">
             <div class="picturezone">
                 <img src="Images/AntMan_2015.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
@@ -142,7 +133,7 @@
                     With Paul Rudd, Michael Doulas, Corey Stoll<br></p>
             </div>
         </div>
-        <div class="col-sm-3 mainzone mix category-2">
+        <div class="col-sm-3 mainzone">
             <div class="picturezone">
                 <img src="Images/American_Ultra2015.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
@@ -152,7 +143,7 @@
                     With Topher Grace, Kristen Stewart, Jesse Eisenberg<br></p>
             </div>
         </div>
-        <div class="col-sm-3 mainzone mix category-3">
+        <div class="col-sm-3 mainzone">
             <div class="picturezone">
                 <img src="Images/Black_Mass.jpg" class="img-responsive center-block" alt="Responsive image">
             </div>
@@ -170,10 +161,10 @@
     <div class="row">
         <div class="col-sm-3 mainzone">
             <div class="picturezone">
-                <img src="Images/Breaking_Bad.jpg" class="img-responsive center-block video_link"  onclick="changePage('tvshows.html')" alt="Responsive image">
+                <img src="Images/Breaking_Bad.jpg" class="img-responsive center-block video_link"  onclick="changePage('tvshow.html')" alt="Responsive image">
             </div>
             <div class="datazone">
-                <a href="tvshows.html">Breaking Bad</a><br>
+                <a href="#">Breaking Bad</a><br>
                 <p>By Vince Gilligan<br>
                     With Brian Cranston, Aeron Paul, Anna Gunn<br></p>
             </div>
@@ -309,11 +300,10 @@
         </ul>
     </nav>
 </div>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
-<!-- Bootstrap javascript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="ressources/js/index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </body>
 <footer>
     <div class="container">
