@@ -94,5 +94,9 @@ p {
 
 .video_link:hover
 {
-    border: 10px solid blue;
+    /*border: 10px solid blue;*/
+}
+.picturezone:hover img
+{
+    opacity: 0.5;
 }
