@@ -60,6 +60,7 @@
     opacity: 0.5;
 }
 
-#Container .mix{
-    display: none;
+.middlePage
+{
+    margin-top: 20px;
 }
