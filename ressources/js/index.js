@@ -1,4 +1,3 @@
-function imageClick(page)
-{
-    window.location.href =  page;
-}
+/**
+ * Created by Francis on 2015-09-25.
+ */
