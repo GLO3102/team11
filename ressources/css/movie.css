@@ -6,23 +6,6 @@ body{
 
 /** DESCRIPTION MOVIE */
 
-.title-movie {
-    color: #101010;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.top-buffer {
-    margin-top: 100px;
-}
-
-.row-bottom {
-    margin-bottom: 20px;
-}
-
-
 .star-yellow{
     color: #e1cb2b;
 }
@@ -45,11 +28,11 @@ a:hover {
     text-align: justify;
 }
 
-.movie-info > p{
+.description-movie > p{
     font-size: 1.1em;
 }
 
-.movie-info > span{
+.description-movie > span{
     font-size: 1.1em;
 }
 
