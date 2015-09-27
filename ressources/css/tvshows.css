@@ -1,0 +1,73 @@
+/** BODY **/
+body{
+    background-color: #f3f3f3;
+    color: #9b9b9b;
+}
+
+/** CONTENT TV SHOWS */
+a:hover {
+    text-decoration: none;
+}
+
+.title-tvshows {
+    color: #101010;
+}
+
+.top-buffer {
+    margin-top: 100px;
+}
+
+.row-bottom {
+    margin-bottom: 20px;
+}
+
+.description-movie {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.movie-info > p{
+    font-size: 1.1em;
+}
+
+.movie-info > span{
+    font-size: 1.1em;
+}
+
+.itunes-movie{
+    margin-top: 5px;
+}
+
+.btn-season{
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.episode {
+    margin-bottom: 10px;
+}
+
+.video-season {
+    margin-top: 20px;
+}
+
+.center-itunes {
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.display-h3{
+    display: inline;
+}
+
+/* IMG COVER TV SHOWS */
+.cover-season img{
+    width: 200px;
+    height: 112px;
+}
+
+.cover-movie img {
+    width: 360px;
+    height: 480px;
+}
