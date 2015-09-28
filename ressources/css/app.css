@@ -45,6 +45,11 @@ a:hover {
 .row-bottom {
     margin-bottom: 20px;
 }
+/* button */
+
+.btn-margin-bottom{
+    margin-bottom: 30px;
+}
 
 /* footer */
 
