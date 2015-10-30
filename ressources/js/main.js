@@ -13,9 +13,6 @@ require.config({
 
 });
 
-require(['view/menu','view/carousel','view/recentlyAdded','view/footer'],function(MenuView,CarouselView,RAView,FooterView){
-    new MenuView;
-    new CarouselView;
-    new RAView;
-    new FooterView;
+require(['app'],function(App){
+   App.initialize();
 });

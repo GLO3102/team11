@@ -10,7 +10,6 @@ define([
         },
         render: function(){
             this.$el.html(MenuBarTemplate);
-            console.log('allo!');
         }
 
     });
