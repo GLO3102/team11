@@ -9,8 +9,7 @@ define([
             this.$el.html(RATemplate);
         },
         render: function(){
-            //this.$el.html(menuBarTemplate);
-            console.log('allo!');
+            this.$el.html(RATemplate);
         }
 
     });

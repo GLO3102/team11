@@ -9,8 +9,7 @@ define([
             this.$el.html(CarouselTemplate);
         },
         render: function(){
-            //this.$el.html(menuBarTemplate);
-            console.log('allo!');
+            this.$el.html(CarouselTemplate);
         }
 
     });

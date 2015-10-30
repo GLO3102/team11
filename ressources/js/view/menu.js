@@ -9,7 +9,7 @@ define([
             this.$el.html(MenuBarTemplate);
         },
         render: function(){
-            //this.$el.html(menuBarTemplate);
+            this.$el.html(MenuBarTemplate);
             console.log('allo!');
         }
 
