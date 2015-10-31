@@ -1,21 +1,24 @@
+<div class="row">
 <% _.each(results[0],function(result){ %>
 <% var index = 0 %>
-    <div class="row">
 <% _.each(result,function(data){ %>
         <% if (index < 4){ %>
-            <%= index++ %>
-            <div class="picturezone">
-                <img src="<%= data.artworkUrl100 %>" class="img-responsive center-block video_link" onclick="changePage('movie.html')" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="movie.html"><%= data.trackName %></a><br>
-                <p><%= data.artistName %><br>
-                    <%= data.shortDescription %><br></p>
+            <% index++ %>
+            <div class="col-sm-3 mainzone mix category-1">
+                <div class="picturezone">
+                    <img src="<%= data.artworkUrl100 %>" class="img-responsive center-block video_link" onclick="'movie.html'" alt="Responsive image">
+                </div>
+                <div class="datazone">
+                    <a href="movie.html"><%= data.trackName %></a><br>
+                    <p><%= data.artistName %><br>
+                        <%= data.shortDescription %><br></p>
+                </div>
             </div>
        <% } else { %>
-        <%= index = 0 %>
+        <% index = 0 %>
             </div>
             <div class="row">
     <% } }) %>
-            </div>
+
 <% }) %>
+</div>
