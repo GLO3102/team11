@@ -1,6 +1,6 @@
 define([
     'backbone',
-    'text!template/footer.html'
+    'text!template/footer_Template.html'
 ], function(Backbone,FooterTemplate){
 
     var FooterView = Backbone.View.extend({

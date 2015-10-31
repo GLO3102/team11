@@ -2,15 +2,15 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'view/menu',
-    'view/carousel',
-    'view/recentlyAdded',
+    'view/home',
     'view/footer'
-], function($, _, Backbone, MenuView, CarouselView, RAView, FooterView) {
+], function($, _, Backbone,HomeView, FooterView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
+            'home':'home',
             'movie/id:id': 'movie',
+            'search/query:q':'search',
             // Default
             '*actions': 'defaultAction'
         }
@@ -20,17 +20,21 @@ define([
 
         var app_router = new AppRouter;
 
-        app_router.on('route:defaultAction', function(){
-            new MenuView().render();
-            new CarouselView().render();
-            new RAView().render();
-            new FooterView().render();
-            app_router.navigate('home',{trigger:true});
+        app_router.on('route:home', function(){
+            new HomeView().render();
+        });
 
+        app_router.on('route:defaultAction', function(){
+            // Ici on va mettre la page de login
+            app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
 
         });
+        app_router.on('route:search', function(q){
+                console.log('search : ' + q);
+        });
+
 
 
 

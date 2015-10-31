@@ -1,15 +1,18 @@
 define([
-'backbone',
-    'text!template/carousel.html'
-], function(Backbone,CarouselTemplate){
+    'backbone',
+    'underscore',
+    'jquery',
+    'bootstrap',
+    'text!template/carousel_Template.html'
+], function(Backbone,_,$,Bootstrap,CarouselTemplate){
 
     var CarouselView = Backbone.View.extend({
         el: $("#carourel"),
         initialize:function(){
-            this.$el.html(CarouselTemplate);
         },
         render: function(){
             this.$el.html(CarouselTemplate);
+            $('.carousel').carousel();
         }
 
     });

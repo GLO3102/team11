@@ -1,8 +1,15 @@
-/**
- * Created by Francis on 2015-10-29.
- */
-$(function(){
-    MenuBarModel = Backbone.Model.extend({
+define([
+    'backbone',
+    'underscore',
+    'jquery',
+    'bootstrap'
+], function(Backbone,_,$,Bootstrap){
+
+    var MenuModel = Backbone.Model.extend({
+
 
     });
+
+    return MenuModel;
+
 });
