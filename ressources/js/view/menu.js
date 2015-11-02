@@ -21,14 +21,14 @@ define([
         render: function(){
             this.$el.html(MenuBarTemplate);
         },
-        general_search : function()
-        {
-
-            var text_to_search = $('#search_text').val();
-            var generalSearch = SearchableCollection.extend({url:'http://localhost:3000/unsecure/'});
-            generalSearch.search(text_to_search).done(function(results){
-                new GSView({collection:results}).render();
-            });
+        general_search : function() {
+            if ($('#search_text').val() != '') {
+                var text_to_search = $('#search_text').val();
+                var generalSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
+                generalSearch.search(text_to_search).done(function (results) {
+                    new GSView({collection: results}).render();
+                });
+        }
             $('#search_text').val('');
             return false;
         }

@@ -9,7 +9,7 @@ define([
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
-            'movie/id:id': 'movie',
+            'movies/:id': 'movie',
             'search/query:q':'search',
             // Default
             '*actions': 'defaultAction'
@@ -29,17 +29,11 @@ define([
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
-
+            console.log('movie ' + id);
         });
         app_router.on('route:search', function(q){
                 console.log('search : ' + q);
         });
-
-
-
-
-
-
 
         // Unlike the above, we don't call render on this view as it will handle
         // the render call internally after it loads data. Further more we load it
