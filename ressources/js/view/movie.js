@@ -3,7 +3,7 @@
  */
 define([
     'backbone',
-    'utils/utils',
+    'model/movie',
     'text!template/movie_template.html'
 ], function(Backbone,MovieTemplate) {
 

@@ -29,7 +29,7 @@ define([
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
-            console.log('movie ' + id);
+
         });
         app_router.on('route:search', function(q){
                 console.log('search : ' + q);
