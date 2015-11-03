@@ -3,28 +3,40 @@
  */
 define([
     'backbone',
+    'underscore',
+    'jquery',
+    'bootstrap',
     'model/movie',
-    'text!template/movie_template.html'
-], function(Backbone,MovieTemplate) {
+    'text!template/movie_template.html',
+    'utils/utils'
+], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils) {
 
     var MovieView = Backbone.View.extend({
         template: _.template(MovieTemplate),
-
+        model: Movie,
         el: '#main_container',
 
         initialize: function () {
-            _.bindAll(this, 'render');
-
-            var that = this;
-
-            this.model.bind('sync', function () {
-                that.render();
-            });
         },
 
-        render: function () {
+        render: function (options) {
+            var that = this;
+            var movie = new Movie({id: options.id});
+            movie.fetch({
+                success: function(printMovie){
+                    that.$el.html(that.template({results:printMovie.toJSON()}))
+                }
+            })
+            /*if(options){
+                var movie = new Movie({id : options});
+                movie.fetch({
+                    success: function(movie){
+                        console.log(movie.toJSON());
+                    }
+                })
+            }
             this.$el.html(MovieTemplate);
-            return this;
+            return this;*/
         }
     });
 

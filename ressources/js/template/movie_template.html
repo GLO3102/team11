@@ -1,17 +1,17 @@
 <div class="row top-buffer row-bottom">
     <div class="movie-content">
         <div class="col-sm-4 cover-movie">
-            <img src=<%= artworkUrl100 %> class="img-responsive">
+            <img src=<%= results.artworkUrl100 %> class="img-responsive">
         </div>
         <div class="col-sm-8 description-movie">
-            <h2 class="title-movie"><%= trackName %></h2>
-            <p class="genre-movie"><strong>Genres:</strong> <%= primaryGenreName %> </p>
-            <span class="date-movie"><%= _.template.formatdate(releaseDate) %></span>
+            <h2 class="title-movie"><%= results.trackName %></h2>
+            <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
+            <span class="date-movie"><%= _.template.formatdate(results.releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%=_.template.formattime(trackTimeMillis)%></span>
-            <p class="description-movie"><%= longDescription %></p>
+            <span class="time-movie"><%=_.template.formattime(results.trackTimeMillis)%></span>
+            <p class="description-movie"><%= results.longDescription %></p>
             <p class="director-movie">
-                <strong>Director:</strong> <%= artistName %>
+                <strong>Director:</strong> <%= results.artistName %>
             </p>
             <div class="button-utils col-sm-8">
                 <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;

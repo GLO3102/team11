@@ -1,7 +1,13 @@
 /**
  * Created by Timothée on 02/11/2015.
  */
-$(function(){
+define([
+    'backbone',
+    'underscore',
+    'jquery',
+    'bootstrap'
+], function(Backbone,_,$,Bootstrap){
+
     var Movie = Backbone.Model.extend({
         urlRoot: 'http://localhost:3000/unsecure/movies',
 

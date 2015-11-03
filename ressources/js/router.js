@@ -3,8 +3,9 @@ define([
     'underscore',
     'backbone',
     'view/home',
+    'view/movie',
     'view/footer'
-], function($, _, Backbone,HomeView, FooterView) {
+], function($, _, Backbone,HomeView,MovieView, FooterView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -29,7 +30,8 @@ define([
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
-
+            var movieView = new MovieView();
+            movieView.render({id: id});
         });
         app_router.on('route:search', function(q){
                 console.log('search : ' + q);
