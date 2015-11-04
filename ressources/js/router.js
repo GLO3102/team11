@@ -6,13 +6,14 @@ define([
     'view/footer',
     'collection/SearchableCollection',
     'view/general_search',
+    'view/movie',
     'view/menu'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MenuView) {
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView,MenuView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
-            'movies/id:id': 'movie',
+            'movies/:id': 'movie',
             'search/query:q':'search',
             'search/query:q/genre:g':'search',
             // Default
@@ -32,8 +33,9 @@ define([
             // Ici on va mettre la page de login
             app_router.navigate('home',{trigger:true});
         });
-        app_router.on('route:movies', function(id){
-            console.log(id);
+        app_router.on('route:movie', function(id){
+            var movieView = new MovieView();
+            movieView.render({id: id});
         });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
