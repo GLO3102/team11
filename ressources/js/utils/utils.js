@@ -1,7 +1,7 @@
 /**
  * Created by Timothée on 02/11/2015.
  */
-_.template.formatdate = function(date){
+formatdate = function(date){
     var monthNames = [
         "January", "February", "March",
         "April", "May", "June", "July",
@@ -15,7 +15,7 @@ _.template.formatdate = function(date){
     return day + ' ' + monthNames[month] + ' ' + year;
 };
 
-_.template.formattime = function(time){
+formattime = function(time){
     var x = Math.floor(time / 1000);
     var seconds = x % 60;
     x = Math.floor(x / 60);
@@ -23,4 +23,9 @@ _.template.formattime = function(time){
     x = Math.floor(x / 60);
     var hours = x %24;
     return hours + ' ' + 'hours' + ' ' + minutes + ' ' + 'minutes' + ' ' + seconds + ' ' + 'seconds';
+}
+
+formatImageSize = function(str){
+    var cpy = str.replace("100x100", "500x500");
+    return cpy;
 }

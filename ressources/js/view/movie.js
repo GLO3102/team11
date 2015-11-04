@@ -27,16 +27,6 @@ define([
                     that.$el.html(that.template({results:printMovie.toJSON()}))
                 }
             })
-            /*if(options){
-                var movie = new Movie({id : options});
-                movie.fetch({
-                    success: function(movie){
-                        console.log(movie.toJSON());
-                    }
-                })
-            }
-            this.$el.html(MovieTemplate);
-            return this;*/
         }
     });
 
