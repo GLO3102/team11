@@ -3,33 +3,33 @@
     width: 180px;
 }
 
-.rating-movie{
+.rating-actor{
     margin-right: 5px;
 }
 
-.date-movie{
+.date-actor{
     margin-left: 5px;
     margin-right: 5px;
 }
 
-.time-movie{
+.time-actor{
     margin-left: 5px;
 }
 
-.description-movie {
+.description-actor {
     margin-top: 10px;
     text-align: justify;
 }
 
-.description-movie > p{
+.description-actor > p{
     font-size: 1.1em;
 }
 
-.movie-info > span{
+.actor-info > span{
     font-size: 1.1em;
 }
 
-.itunes-movie{
+.itunes-actor{
     margin-top: 5px;
 }
 
@@ -44,4 +44,16 @@
 
 .filmography{
     padding: 20px;
+}
+
+
+/* COVER MOVIE */
+.cover-actor img {
+    width: 360px;
+    height: 560px;
+}
+
+/* VIDEO MOVIE */
+#video-trailer {
+    margin-bottom: 20px;
 }

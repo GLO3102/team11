@@ -41,6 +41,7 @@ define([
         app_router.on('route:actor', function(id){
             var actorView = new ActorView();
             actorView.render({id: id});
+            console.log('actor: '+id);
         });
         // Unlike the above, we don't call render on this view as it will handle
         // the render call internally after it loads data. Further more we load it

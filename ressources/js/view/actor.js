@@ -4,8 +4,9 @@ define([
     'jquery',
     'bootstrap',
     'model/actor',
-    'text!template/actor_Template.html'
-], function(Backbone,_,$,Bootstrap,Actor, ActorTemplate) {
+    'text!template/actor_Template.html',
+    'utils/utils'
+], function(Backbone,_,$,Bootstrap,Actor, ActorTemplate,Utils) {
 
     var ActorView = Backbone.View.extend({
         template: _.template(ActorTemplate),
