@@ -1,3 +1,4 @@
+<%= console.log(genres)  %>
 <% _.each(genres,function(genre){ %>
     <li><a href="#/search/movies/id<%= genre.id %>" id="<%= genre.id %>"><%= genre.name  %></a></li>
 <% }) %>

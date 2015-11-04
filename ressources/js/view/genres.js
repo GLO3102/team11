@@ -11,12 +11,9 @@ define([
         initialize:function(){
             _.bindAll(this,'render');
             var self = this;
-            self.collection.bind('sync',function(){
-                self.render();
-            })
+            this.collection.bind('sync', function(){self.render();});
         },
         render: function(){
-            console.log(this.collection);
            this.$el.html(this.template({genres:this.collection.toJSON()}));
         }
 

@@ -15,16 +15,21 @@ define([
             "click #tabTVshows": "tabTVshowsGenres"
         },
         initialize:function(){
+            _.bindAll(this,'render');
+
         },
         render: function(){
             this.$el.html(BrowseTemplate);
 
-            var moviesGenreCol = new CollectionGenre({url: 'http://localhost:3000/unsecure/genres/movies'});
-            var genremovie = new GenreView({el:'#listMovies'},{collection:moviesGenreCol});
+            var moviesGenreCol = new CollectionGenre();
+            moviesGenreCol.url ='http://localhost:3000/unsecure/genres/movies';
+            var genremovie = new GenreView({el:'#listMovies',collection:moviesGenreCol});
             moviesGenreCol.fetch();
 
-            var tvshowsGenreCol = new CollectionGenre({url: 'http://localhost:3000/unsecure/genres/tvshows'});
-            var genretvshows = new GenreView({el:'#listTVshows'},{collection:tvshowsGenreCol});
+
+            var tvshowsGenreCol = new CollectionGenre();
+            tvshowsGenreCol.url = 'http://localhost:3000/unsecure/genres/tvshows';
+            var genretvshows = new GenreView({el:'#listTVshows',collection:tvshowsGenreCol});
             tvshowsGenreCol.fetch();
         },
         tabMoviesGenres: function(event){
