@@ -1,14 +1,14 @@
 <div class="row top-buffer row-bottom">
     <div class="movie-content">
         <div class="col-sm-4 cover-movie">
-            <img src=<%= results.artworkUrl100 %> class="img-responsive">
+            <img src=<%= formatImageSize(results.artworkUrl100) %> class="img-responsive">
         </div>
         <div class="col-sm-8 description-movie">
             <h2 class="title-movie"><%= results.trackName %></h2>
             <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
-            <span class="date-movie"><%= _.template.formatdate(results.releaseDate) %></span>
+            <span class="date-movie"><%= formatdate(results.releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%=_.template.formattime(results.trackTimeMillis)%></span>
+            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span>
             <p class="description-movie"><%= results.longDescription %></p>
             <p class="director-movie">
                 <strong>Director:</strong> <%= results.artistName %>
