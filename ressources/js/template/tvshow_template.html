@@ -1,0 +1,31 @@
+<div class="row top-buffer row-bottom">
+    <div class="movie-content">
+        <div class="col-sm-4 cover-movie">
+            <img src=<%= formatImageSize(results.artworkUrl100) %> class="img-responsive">
+        </div>
+        <div class="col-sm-8 description-movie">
+            <h2 class="title-movie"><%= results.trackName %></h2>
+            <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
+            <span class="date-movie"><%= formatdate(results.releaseDate) %></span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span>
+            <p class="description-movie"><%= results.longDescription %></p>
+            <p class="director-movie">
+                <strong>Director:</strong> <%= results.artistName %>
+            </p>
+            <div class="button-utils col-sm-8">
+                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/birdman/id928582124?mt=6" style="display:inline-block;overflow:hidden;
+                    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
+                    no-repeat;width:165px;height:40px;" target="_blank"> </a>
+                <button type="button" class="btn btn-default btn-margin-bottom">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    Add to Watchlist
+                </button>
+                <button id="btn-trailer" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    Show trailer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

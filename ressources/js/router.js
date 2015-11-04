@@ -7,12 +7,15 @@ define([
     'collection/SearchableCollection',
     'view/general_search',
     'view/movie',
-    'view/menu'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView,MenuView) {
+    'view/menu',
+    'view/tvshow'
+
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView,MenuView, TvShowView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
+            'tvshows/season/:id': 'tvshows',
             'movies/:id': 'movie',
             'search/query:q':'search',
             'search/query:q/genre:g':'search',
@@ -37,6 +40,12 @@ define([
             var movieView = new MovieView();
             movieView.render({id: id});
         });
+        app_router.on('route:tvshows', function(id){
+            console.log("LOL");
+            var tvshowView = new TvShowView();
+            tvshowView.render({id: id});
+        });
+
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
             gSearch.search(q).done(function(results){
