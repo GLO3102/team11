@@ -4,16 +4,15 @@ define([
     'jquery',
     'bootstrap',
     'text!template/menuBar_Template.html',
-    'model/menu',
-    'collection/SearchableCollection',
-    'view/general_search'
-], function(Backbone,_,$,Bootstrap,MenuBarTemplate,MenuModel,SearchableCollection,GSView){
+    'model/menu'
+], function(Backbone,_,$,Bootstrap,MenuBarTemplate,MenuModel){
 
      var MenuView = Backbone.View.extend({
         model:MenuModel,
         el: $("#menubar"),
         initialize:function(){
             var self = this;
+            this.$el.html(MenuBarTemplate);
         },
         events: {
              "click #search_button": "general_search"
@@ -24,10 +23,7 @@ define([
         general_search : function() {
             if ($('#search_text').val() != '') {
                 var text_to_search = $('#search_text').val();
-                var generalSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
-                generalSearch.search(text_to_search).done(function (results) {
-                    new GSView({collection: results}).render();
-                });
+                location.href='#/search/query' + text_to_search;
         }
             $('#search_text').val('');
             return false;
