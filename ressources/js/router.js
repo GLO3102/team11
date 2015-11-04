@@ -14,6 +14,7 @@ define([
             'home':'home',
             'movies/id:id': 'movie',
             'search/query:q':'search',
+            'search/query:q/genre:g':'search',
             // Default
             '*actions': 'defaultAction'
         }
@@ -39,8 +40,12 @@ define([
             gSearch.search(q).done(function(results){
                 new GSView({collection:results}).render();
             });
-
-//     url:'http://localhost:3000/unsecure/genres'
+        });
+        app_router.on('route:search', function(q){
+            var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
+            gSearch.search(q).done(function(results){
+               new GSView({collection:results}).render();
+            });
         });
 
         // Unlike the above, we don't call render on this view as it will handle
