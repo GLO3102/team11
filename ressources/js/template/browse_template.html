@@ -42,12 +42,12 @@
                 <% title = data.artistName %>
                 <%  by = data.collectionName %>
                 <%  shortDesc = '' %>
-                <%  url = '#/movies/' + data.collectionId %>
+                <%  url = '#/tvshows/' + data.collectionId %>
             <% } %>
 
-            <div class="col-sm-6 col-md-4 picturezone datazone">
+            <div class="col-sm-6 col-md-4 datazone datazone">
                 <div class="thumbnail">
-                    <img src="<%= formatImageSize(data.artworkUrl100) %>"  alt="">
+                    <img src="<%= formatImageSize(data.artworkUrl100) %>" class="picturezone" alt="">
                     <div class="caption">
                         <h3> <a href="<%=  url  %>" class=""> <%= title %></a></h3>
                         <p>By: <%= by %></p>

@@ -45,23 +45,27 @@ define([
         app_router.on('route:tvshow', function(id){
             var tvshowView = new TvShowView();
             tvshowView  .render({id: id});
+            app_router.navigate('tvshow');
         });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
             gSearch.search(q).done(function(results){
                 new GSView({collection:results}).render();
             });
+            app_router.navigate('search');
         });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
             gSearch.search(q).done(function(results){
                new GSView({collection:results}).render();
             });
+            app_router.navigate('search');
         });
 
         app_router.on('route:watchlist', function(id){
             var watchListView = new WatchListView();
             watchListView.render();
+            app_router.navigate('watchlist');
         });
 
         // Unlike the above, we don't call render on this view as it will handle

@@ -1,5 +1,5 @@
 /**
- * Created by Timothée on 02/11/2015.
+ * Created by Timothï¿½e on 02/11/2015.
  */
 formatdate = function(date){
     var monthNames = [
@@ -26,6 +26,6 @@ formattime = function(time){
 }
 
 formatImageSize = function(str){
-    var cpy = str.replace("100x100", "500x500");
+    var cpy = str.replace("100x100", "400x400");
     return cpy;
 }
