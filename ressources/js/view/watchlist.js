@@ -18,15 +18,26 @@ define([
 
         el: '#main_container',
 
+        initialize: function () {
+
+            _.bindAll(this, 'render');
+
+            var self = this;
+
+            this.collection.bind('sync', function () {
+                self.render();
+            });
+        },
+
         render: function () {
             var that = this;
-            var watchListCollection = new WatchListCollection({});
-            this.$el.html(this.template());
-            /*watchListCollection.fetch({
+            var watchListCollection = new WatchListCollection();
+            //this.$el.html(this.template());
+            watchListCollection.fetch({
                 success: function(){
-                    that.$el.html(that.template({}))
+                    that.$el.html(that.template({results: this.collection.toJSON()}))
                 }
-            })*/
+            })
         }
     });
 
