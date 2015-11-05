@@ -19,26 +19,47 @@
     </ul>
 
 
-    <h2>Recently added</h2>
+    <h2>Browse</h2>
 </div >
 
 <div class="container">
     <div class="row">
-        <% _.each(resultsCol,function(data){ %>
-            <div class="col-sm-6 col-md-4">
+        <% var index = 0;
+           var title = '';
+           var by = '';
+           var shortDesc = '';
+           var url = '';
+        %>
+        <% _.each(resultsCol[0].results,function(data){ %>
+            <% if (index < 4){ %>
+            <% index++ %>
+            <% if (data.wrapperType == "track"){ %>
+                <% title = data.trackName %>
+                <%  by = data.artistName %>
+                <%  shortDesc = data.shortDescription %>
+                <%  url = '#/movies/' + data.trackId %>
+            <% } else { %>
+                <% title = data.artistName %>
+                <%  by = data.collectionName %>
+                <%  shortDesc = '' %>
+                <%  url = '#/movies/' + data.collectionId %>
+            <% } %>
+
+            <div class="col-sm-6 col-md-4 picturezone datazone">
                 <div class="thumbnail">
-                    <img src="<%= formatImageSize(data.artworkUrl100) %>" alt="">
+                    <img src="<%= formatImageSize(data.artworkUrl100) %>"  alt="">
                     <div class="caption">
-                        <h3>data.trackName</h3>
-                        <p>NA</p>
-                        <p>
-                           <a href="#" class="btn btn-primary" role="button">Button</a>
-                           <a href="#" class="btn btn-default" role="button">Button</a>
-                        </p>
+                        <h3> <a href="<%=  url  %>" class=""> <%= title %></a></h3>
+                        <p>By: <%= by %></p>
+                        <p><%= shortDesc %>
                     </div>
                 </div>
             </div>
-        <% }); %>
+        <% } else { %>
+        <% index = 0 %>
+    </div>
+    <div class="row">
+        <% } }) %>
     </div>
 </div>
 

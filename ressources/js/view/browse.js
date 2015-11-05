@@ -6,21 +6,21 @@ define([
     'text!template/browse_template.html',
     'view/genres',
     'collection/genres',
-    'collection/browseCollection'
+    'collection/SearchableCollection'
 ], function(Backbone,_,$,Bootstrap,BrowseTemplate,GenreView,CollectionGenre,BrowseCollection){
 
     var BrowseView = Backbone.View.extend({
         template: _.template(BrowseTemplate),
-        collection:new BrowseCollection(),
         el: $("#browse"),
         initialize:function(){
             _.bindAll(this,'render');
-            var self = this;
-            this.collection.bind('sync', function(){self.render();});
-            //this.collection.fetch();
         },
         render: function(){
-            this.$el.html(this.template({resultsCol:this.collection.toJSON()}));
+            var self = this;
+            var gSearch = BrowseCollection.extend({url: 'http://localhost:3000/unsecure/'});
+            gSearch.search('all&limit=20').done(function(results){
+                self.$el.html(self.template({resultsCol:results.toJSON()}));
+            });
 
             var moviesGenreCol = new CollectionGenre();
             moviesGenreCol.url ='http://localhost:3000/unsecure/genres/movies';

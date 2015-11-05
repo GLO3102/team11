@@ -10,12 +10,8 @@ define([
             var search = $.Deferred();
             options = options || {};
             var collection = new this([], options);
-            collection.url = _.result(collection, 'url') + 'search';
-            var fetch = collection.fetch({
-                data: {
-                    q: query
-                }
-            });
+            collection.url = _.result(collection, 'url') + 'search?q=' +query;
+            var fetch = collection.fetch();
             fetch.done(_.bind(function(){
                 Backbone.Events.trigger('search:done');
                 search.resolveWith(this, [collection]);
@@ -26,6 +22,7 @@ define([
             });
             return search.promise();
         }
+
 
     });
 
