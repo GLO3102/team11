@@ -7,15 +7,19 @@ define([
     'collection/SearchableCollection',
     'view/general_search',
     'view/movie',
-    'view/menu'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView,MenuView) {
+    'view/menu',
+    'view/watchlist',
+    'view/tvshow'
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, TvShowView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
             'movies/:id': 'movie',
+            'tvshows/seasons/:id' : 'tvshow',
             'search/query:q':'search',
             'search/query:q/genre:g':'search',
+            'watchlist/:id' : 'watchlist',
             // Default
             '*actions': 'defaultAction'
         }
@@ -37,6 +41,11 @@ define([
             var movieView = new MovieView();
             movieView.render({id: id});
         });
+
+        app_router.on('route:tvshow', function(id){
+            var tvshowView = new TvShowView();
+            tvshowView  .render({id: id});
+        });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
             gSearch.search(q).done(function(results){
@@ -48,6 +57,11 @@ define([
             gSearch.search(q).done(function(results){
                new GSView({collection:results}).render();
             });
+        });
+
+        app_router.on('route:watchlist', function(id){
+            var watchListView = new WatchListView();
+            watchListView.render();
         });
 
         // Unlike the above, we don't call render on this view as it will handle
