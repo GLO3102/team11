@@ -6,7 +6,7 @@
             <% index++ %>
             <div class="col-sm-3 mainzone mix category-1">
                 <div class="picturezone">
-                    <img src="<%= data.artworkUrl100 %>" class="img-responsive center-block video_link">
+                    <img src="<%= formatImageSize(data.artworkUrl100) %>" class="img-responsive center-block video_link">
                 </div>
                 <div class="datazone">
                     <a href="#/movies/<%= data.trackId%>"><%= data.trackName %></a><br>
