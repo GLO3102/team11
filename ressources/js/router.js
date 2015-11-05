@@ -7,8 +7,9 @@ define([
     'collection/SearchableCollection',
     'view/general_search',
     'view/movie',
-    'view/menu'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView,MenuView) {
+    'view/menu',
+    'view/watchlist'
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView,MenuView, WatchListView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -16,6 +17,7 @@ define([
             'movies/:id': 'movie',
             'search/query:q':'search',
             'search/query:q/genre:g':'search',
+            'watchlist/:id' : 'watchlist',
             // Default
             '*actions': 'defaultAction'
         }
@@ -48,6 +50,11 @@ define([
             gSearch.search(q).done(function(results){
                new GSView({collection:results}).render();
             });
+        });
+
+        app_router.on('route:watchlist', function(id){
+            var watchListView = new WatchListView();
+            watchListView.render();
         });
 
         // Unlike the above, we don't call render on this view as it will handle
