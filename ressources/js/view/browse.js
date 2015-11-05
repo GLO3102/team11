@@ -5,21 +5,22 @@ define([
     'bootstrap',
     'text!template/browse_template.html',
     'view/genres',
-    'collection/genres'
-], function(Backbone,_,$,Bootstrap,BrowseTemplate,GenreView,CollectionGenre){
+    'collection/genres',
+    'collection/browseCollection'
+], function(Backbone,_,$,Bootstrap,BrowseTemplate,GenreView,CollectionGenre,BrowseCollection){
 
     var BrowseView = Backbone.View.extend({
+        template: _.template(BrowseTemplate),
+        collection:new BrowseCollection(),
         el: $("#browse"),
-        events:{
-            "click #tabMovies": "tabMoviesGenres",
-            "click #tabTVshows": "tabTVshowsGenres"
-        },
         initialize:function(){
             _.bindAll(this,'render');
-
+            var self = this;
+            this.collection.bind('sync', function(){self.render();});
+            //this.collection.fetch();
         },
         render: function(){
-            this.$el.html(BrowseTemplate);
+            this.$el.html(this.template({resultsCol:this.collection.toJSON()}));
 
             var moviesGenreCol = new CollectionGenre();
             moviesGenreCol.url ='http://localhost:3000/unsecure/genres/movies';
@@ -31,12 +32,6 @@ define([
             tvshowsGenreCol.url = 'http://localhost:3000/unsecure/genres/tvshows';
             var genretvshows = new GenreView({el:'#listTVshows',collection:tvshowsGenreCol});
             tvshowsGenreCol.fetch();
-        },
-        tabMoviesGenres: function(event){
-
-        },
-        tabTVshowsGenres: function(event){
-
         }
 
     });
