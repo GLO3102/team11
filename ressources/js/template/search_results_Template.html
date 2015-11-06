@@ -9,7 +9,6 @@
                     <img src="<%= formatImageSize(data.artworkUrl100) %>" class="img-responsive center-block video_link">
                 </div>
                 <div class="datazone">
-                    <%console.log("hello");%>
                     <% if(data.wrapperType == "track"){ %>
                         <a href="#/movies/<%= data.trackId%>"><%= data.trackName %></a><br>
                     <% } else {%>
