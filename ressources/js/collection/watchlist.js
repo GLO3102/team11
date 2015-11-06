@@ -9,8 +9,8 @@ define([
     'model/WatchList'
 ], function(Backbone,_,$,Bootstrap, WatchListModel){
 
-    var WatchListsCollection = Backbone.Collection.extend({},{
-        url: 'http://localhost:3000/unsecure/watchlists/',
+    var WatchListCollection = Backbone.Collection.extend({},{
+        url: 'http://localhost:3000/unsecure/watchlists',
 
         model: WatchListModel,
 
@@ -19,5 +19,5 @@ define([
         }
 
     });
-    return WatchListsCollection;
+    return WatchListCollection;
 });
