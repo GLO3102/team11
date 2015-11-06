@@ -9,7 +9,7 @@ define([
 ], function(Backbone,_,$,Bootstrap){
 
     var Movie = Backbone.Model.extend({
-        urlRoot: 'http://localhost:3000/unsecure/movies',
+        urlRoot: URL + '/movies',
 
         parse: function(response) {
             return response.results[0];

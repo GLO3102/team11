@@ -1,5 +1,5 @@
 /**
- * Created by Timothée on 05/11/2015.
+ * Created by Timothï¿½e on 05/11/2015.
  */
 define([
     'backbone',
@@ -10,7 +10,7 @@ define([
 ], function(Backbone,_,$,Bootstrap,Movie){
 
     var MoviesCollection = Backbone.Collection.extend({
-        url: 'http://localhost:3000/unsecure/watchlists',
+        url: URL + '/watchlists',
         model: Movie,
 
         parse: function(response){
