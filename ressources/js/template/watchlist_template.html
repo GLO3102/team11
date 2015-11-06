@@ -2,9 +2,9 @@
     <div class="watchlist">
         <h2>Watchlist</h2   >
         <div class="watchlist-user">
-            <% _.each(results.owner, function(data) {%>
-            <% console.log(
-            <h4>Name : <%= data.name %></h4>
+            <% _.each(results, function(data) {%>
+            <% console.log(data) %>
+            <h4>Name : <%= data.owner.name %></h4>
             <% }) %>
         </div>
         <button type="button" class="btn btn-default">Create a watchlist</button>
