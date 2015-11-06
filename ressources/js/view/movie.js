@@ -38,8 +38,8 @@ define([
                     scrollTop: $("#video-trailer").offset().top
                 }, 1000);
 
-              //  var src = Utils.searchTrailer('Birdman');
-               // $('#trailer').src = src;
+                var src = Utils.searchTrailer('Birdman');
+                $('#trailer').src = src;
             }
 
             else {

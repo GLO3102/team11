@@ -40,14 +40,14 @@ define([
     'googleAPI'
 ], function($, _, Backbone,Auth, GoogleAPI){
     var searchTrailer = function(query){
-        //var request =  GoogleAPI ;//.client.youtube.search.list({
-         //   q:query,
-          //  part:'snippet'
-        //})
-        //request.execute(function(response) {
-         //   var str = JSON.stringify(response.result);
-          //  return str;
-        //});
+        var request =  gapi.client.youtube.search.list({
+            q:query,
+           part:'snippet'
+        })
+        request.execute(function(response) {
+           var str = JSON.stringify(response.result);
+            return str;
+        });
     }
 
     return {

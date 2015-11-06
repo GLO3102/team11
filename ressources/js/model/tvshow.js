@@ -9,7 +9,7 @@ define([
 ], function(Backbone,_,$,Bootstrap){
 
     var TvShow = Backbone.Model.extend({
-        urlRoot: 'http://localhost:3000/unsecure/tvshows/season/',
+        urlRoot: URL + '/tvshows/season/',
 
         parse: function(response) {
             return response.results[0];

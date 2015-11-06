@@ -1,5 +1,5 @@
 /**
- * Created by Timothée on 29/10/2015.
+ * Created by Timothï¿½e on 29/10/2015.
  */
 define([
     'backbone',
@@ -32,7 +32,7 @@ define([
         render: function () {
             var that = this;
             var watchListCollection = new WatchListCollection({});
-            watchListCollection.url = 'http://localhost:3000/unsecure/watchlists';
+            watchListCollection.url = URL + '/watchlists';
 
 
             //this.$el.html(this.template());
