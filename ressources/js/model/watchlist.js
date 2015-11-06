@@ -14,7 +14,9 @@ define([
         defaults: function() {
             return {
                 name: '',
-                owner: '',
+                email: '',
+                user: '',
+                id: '',
                 movies: new MoviesCollection()
             };
         },
