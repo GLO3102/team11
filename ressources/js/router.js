@@ -64,7 +64,7 @@ define([
         app_router.on('route:watchlist', function(id){
             var watchListView = new WatchListView();
             watchListView.render();
-            app_router.navigate('watchlist');
+
         });
 
         // Unlike the above, we don't call render on this view as it will handle

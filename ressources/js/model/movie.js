@@ -5,9 +5,8 @@ define([
     'backbone',
     'underscore',
     'jquery',
-    'bootstrap',
-    'googleAPI'
-], function(Backbone,_,$,Bootstrap,GoogleAPI){
+    'bootstrap'
+], function(Backbone,_,$,Bootstrap){
 
     var Movie = Backbone.Model.extend({
         urlRoot: 'http://localhost:3000/unsecure/movies',

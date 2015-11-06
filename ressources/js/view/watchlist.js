@@ -9,7 +9,7 @@ define([
     'text!template/watchlist_template.html',
     'collection/watchlist'
 
-], function(Backbone,_,$,Bootstrap,WatchListTemplate, WatchListCollection ) {
+], function(Backbone,_,$,Bootstrap,WatchListTemplate, WatchListCollection) {
 
     var WatchListView = Backbone.View.extend({
         template: _.template(WatchListTemplate),
@@ -31,11 +31,15 @@ define([
 
         render: function () {
             var that = this;
-            var watchListCollection = new WatchListCollection();
+            var watchListCollection = new WatchListCollection({});
+            watchListCollection.url = 'http://localhost:3000/unsecure/watchlists';
+
+
             //this.$el.html(this.template());
             watchListCollection.fetch({
-                success: function(){
-                    that.$el.html(that.template({results: this.collection.toJSON()}))
+                success: function(data){
+                    that.$el.html(that.template({results: data.toJSON()}))
+
                 }
             })
         }

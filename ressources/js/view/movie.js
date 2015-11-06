@@ -16,7 +16,7 @@ define([
         model: Movie,
         el: '#main_container',
         events:{
-            "click #btn-trailer": "showTrailer",
+            "click #btn-trailer": "showTrailer"
         },
         initialize: function () {
         },

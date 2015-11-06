@@ -15,11 +15,12 @@ define([
             return {
                 name: '',
                 owner: '',
-                movies: new MoviesCollection
+                movies: new MoviesCollection()
             };
         },
 
         parse: function(response){
+            console.log(response);
             this.id = response.id;
             return response;
         },

@@ -10,9 +10,13 @@ define([
 ], function(Backbone,_,$,Bootstrap,Movie){
 
     var MoviesCollection = Backbone.Collection.extend({
-        model: Movie
-    });
+        url: 'http://localhost:3000/unsecure/watchlists',
+        model: Movie,
 
+        parse: function(response){
+            return response.movies;
+        }
+    });
 
     return MoviesCollection ;
 

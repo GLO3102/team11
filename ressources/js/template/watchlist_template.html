@@ -1,5 +1,10 @@
-<div class="row top-buffer row-bottom">
+<% console.log(results[0].name) %>
+<div class="row top-buffer">
     <div class="watchlist">
         <h3>Watchlist</h3>
+        <div class="watchlist-user">
+            <h4>Nom : <%= results[0].name %></h4>
+        </div>
+        <button type="button" class="btn btn-default">Create a watchlist</button>
     </div>
 </div>
