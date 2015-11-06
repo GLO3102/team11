@@ -51,12 +51,14 @@ define([
             gSearch.search(q).done(function(results){
                 new GSView({collection:results}).render();
             });
+            app_router.navigate('search');
         });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
             gSearch.search(q).done(function(results){
                new GSView({collection:results}).render();
             });
+            app_router.navigate('search');
         });
 
         app_router.on('route:watchlist', function(id){
