@@ -7,7 +7,7 @@ define([
 ], function(Backbone,_,$,Bootstrap,CarouselTemplate){
 
     var CarouselView = Backbone.View.extend({
-        el: $("#carourel"),
+        el: $("#main_container"),
         initialize:function(){
         },
         render: function(){
