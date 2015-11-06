@@ -29,3 +29,28 @@ formatImageSize = function(str){
     var cpy = str.replace("100x100", "400x400");
     return cpy;
 }
+
+
+
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'auth',
+    'googleAPI'
+], function($, _, Backbone,Auth, GoogleAPI){
+    var searchTrailer = function(query){
+        //var request =  GoogleAPI ;//.client.youtube.search.list({
+         //   q:query,
+          //  part:'snippet'
+        //})
+        //request.execute(function(response) {
+         //   var str = JSON.stringify(response.result);
+          //  return str;
+        //});
+    }
+
+    return {
+        searchTrailer: searchTrailer
+    };
+});

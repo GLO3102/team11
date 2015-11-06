@@ -1,5 +1,5 @@
 /**
- * Created by Timothée on 29/10/2015.
+ * Created by Timothï¿½e on 29/10/2015.
  */
 define([
     'backbone',
@@ -15,7 +15,9 @@ define([
         template: _.template(MovieTemplate),
         model: Movie,
         el: '#main_container',
-
+        events:{
+            "click #btn-trailer": "showTrailer",
+        },
         initialize: function () {
         },
 
@@ -25,8 +27,24 @@ define([
             movie.fetch({
                 success: function(printMovie){
                     that.$el.html(that.template({results:printMovie.toJSON()}))
+                    $('#video-trailer').hide();
                 }
             })
+        },
+        showTrailer: function(){
+            if($('#video-trailer').is( ":hidden" )){
+                $('#video-trailer').show();
+                $('html, body').animate({
+                    scrollTop: $("#video-trailer").offset().top
+                }, 1000);
+
+              //  var src = Utils.searchTrailer('Birdman');
+               // $('#trailer').src = src;
+            }
+
+            else {
+                $('#video-trailer').hide();
+            }
         }
     });
 

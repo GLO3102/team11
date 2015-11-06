@@ -1,12 +1,13 @@
 /**
- * Created by Timothée on 02/11/2015.
+ * Created by Timothï¿½e on 02/11/2015.
  */
 define([
     'backbone',
     'underscore',
     'jquery',
-    'bootstrap'
-], function(Backbone,_,$,Bootstrap){
+    'bootstrap',
+    'googleAPI'
+], function(Backbone,_,$,Bootstrap,GoogleAPI){
 
     var Movie = Backbone.Model.extend({
         urlRoot: 'http://localhost:3000/unsecure/movies',
