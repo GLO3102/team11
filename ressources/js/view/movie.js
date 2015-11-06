@@ -1,5 +1,5 @@
 /**
- * Created by Timoth�e on 29/10/2015.
+ * Created by Timoth?e on 29/10/2015.
  */
 define([
     'backbone',
@@ -13,8 +13,8 @@ define([
 
     var MovieView = Backbone.View.extend({
         template: _.template(MovieTemplate),
-        model: Movie,
         el: '#main_container',
+
         events:{
             "click #btn-trailer": "showTrailer"
         },
@@ -23,23 +23,44 @@ define([
 
         render: function (options) {
             var that = this;
-            var movie = new Movie({id: options.id});
-            movie.fetch({
+            this.movie = new Movie({id: options.id});
+            this.movie.fetch({
                 success: function(printMovie){
                     that.$el.html(that.template({results:printMovie.toJSON()}))
                     $('#video-trailer').hide();
+                    googleApiClientReady();
                 }
             })
         },
         showTrailer: function(){
             if($('#video-trailer').is( ":hidden" )){
-                $('#video-trailer').show();
-                $('html, body').animate({
-                    scrollTop: $("#video-trailer").offset().top
-                }, 1000);
+                // Search for a specified string.
+                var that=this;
+                function search() {
 
-                //var src = Utils.searchTrailer('Birdman');
-                //$('#trailer').src = src;
+                    var q = that.movie.name + " trailer";
+                    if(gapi.client.youtube == undefined){
+                        $('#login-container').show();
+                    }else {
+                        var request = gapi.client.youtube.search.list({
+                            q: q,
+                            part: 'snippet'
+                        });
+
+                        request.execute(function (response) {
+                            var str = JSON.stringify(response.result);
+                            document.getElementById("trailer").src = 'https://www.youtube.com/v/' + response.items[0].id.videoId;
+                        });
+
+
+                        $('#video-trailer').show();
+                        $('html, body').animate({
+                            scrollTop: $("#video-trailer").offset().top
+                        }, 1000);
+                    }
+                }
+
+                search();
             }
 
             else {

@@ -1,5 +1,5 @@
 /**
- * Created by Timoth�e on 02/11/2015.
+ * Created by Timoth?e on 02/11/2015.
  */
 formatdate = function(date){
     var monthNames = [
@@ -39,15 +39,22 @@ define([
     'auth',
     'googleAPI'
 ], function($, _, Backbone,Auth, GoogleAPI){
-    var searchTrailer = function(query){
+    searchTrailer = function(query){
+
+        var that = this;
+
         var request =  gapi.client.youtube.search.list({
             q:query,
-           part:'snippet'
+            part:'snippet'
         })
         request.execute(function(response) {
-           var str = JSON.stringify(response.result);
-            return str;
+            var str = JSON.stringify(response.result);
+            console.log(that);
+            that.ret = str;
+            return that.ret;
         });
+
+
     }
 
     return {

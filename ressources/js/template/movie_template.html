@@ -8,7 +8,7 @@
             <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
             <span class="date-movie"><%= formatdate(results.releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span>
+            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span><br><br>
             <p class="description-movie"><%= results.longDescription %></p>
             <p class="director-movie">
                 <strong>Director:</strong> <%= results.artistName %>
@@ -29,6 +29,11 @@
         </div>
     </div>
 </div>
+<div id="login-container" class="pre-auth">
+    This application requires access to your YouTube account.
+    Please <a href="#" id="login-link">authorize</a> to continue.
+</div>
+
 <div class="row" id="video-trailer">
     <div class="col-sm-12">
         <h3 class="title-movie">Trailer</h3>
@@ -38,3 +43,4 @@
         </div>
     </div>
 </div>
+<br><br><br>
