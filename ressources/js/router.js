@@ -19,7 +19,7 @@ define([
             'tvshows/seasons/:id' : 'tvshow',
             'search/query:q':'search',
             'search/query:q/genre:g':'search',
-            'watchlist/:id' : 'watchlist',
+            'watchlist' : 'watchlist',
             // Default
             '*actions': 'defaultAction'
         }
@@ -61,7 +61,7 @@ define([
             app_router.navigate('search');
         });
 
-        app_router.on('route:watchlist', function(id){
+        app_router.on('route:watchlist', function(){
             var watchListView = new WatchListView();
             watchListView.render();
 

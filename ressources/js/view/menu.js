@@ -15,7 +15,7 @@ define([
             this.$el.html(MenuBarTemplate);
         },
         events: {
-             "click #search_button": "general_search"
+            "click #search_button": "general_search"
         },
         render: function(){
             this.$el.html(MenuBarTemplate);

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78de502f-1f70-4320-b69d-0acd997bc30c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/model/movie.js" afterPath="$PROJECT_DIR$/ressources/js/model/movie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/movie.js" afterPath="$PROJECT_DIR$/ressources/js/view/movie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/collection/moviesCollection.js" afterPath="$PROJECT_DIR$/ressources/js/collection/moviesCollection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/menu.js" afterPath="$PROJECT_DIR$/ressources/js/view/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/template/menuBar_Template.html" afterPath="$PROJECT_DIR$/ressources/js/template/menuBar_Template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/router.js" afterPath="$PROJECT_DIR$/ressources/js/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/collection/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/collection/watchlist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/model/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/model/watchlist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/view/watchlist.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/template/watchlist_template.html" afterPath="$PROJECT_DIR$/ressources/js/template/watchlist_template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,21 +27,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="watchlist_template.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ressources/js/template/watchlist_template.html">
+      <file leaf-file-name="menu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/view/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12180974">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie_template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ressources/js/template/movie_template.html">
+      <file leaf-file-name="menuBar_Template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/template/menuBar_Template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.533334">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state vertical-scroll-proportion="-16.1">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="watchlist_template.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ressources/js/template/watchlist_template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12180974">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="browse_template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/template/browse_template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-32.533333">
+              <caret line="66" column="15" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/model/menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,16 +131,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="watchlist.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ressources/js/view/watchlist.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -140,7 +166,6 @@
         <option value="$PROJECT_DIR$/ressources/js/template/movie_template.html" />
         <option value="$PROJECT_DIR$/ressources/js/collection/SearchableCollection.js" />
         <option value="$PROJECT_DIR$/ressources/js/view/general_search.js" />
-        <option value="$PROJECT_DIR$/ressources/js/router.js" />
         <option value="$PROJECT_DIR$/ressources/js/collection/moviesCollection.js" />
         <option value="$PROJECT_DIR$/ressources/js/model/watchlist.js" />
         <option value="$PROJECT_DIR$/ressources/js/view/movie.js" />
@@ -148,6 +173,10 @@
         <option value="$PROJECT_DIR$/ressources/js/collection/watchlist.js" />
         <option value="$PROJECT_DIR$/ressources/js/auth.js" />
         <option value="$PROJECT_DIR$/ressources/js/model/movie.js" />
+        <option value="$PROJECT_DIR$/ressources/js/router.js" />
+        <option value="$PROJECT_DIR$/ressources/js/model/menu.js" />
+        <option value="$PROJECT_DIR$/ressources/js/template/menuBar_Template.html" />
+        <option value="$PROJECT_DIR$/ressources/js/view/menu.js" />
         <option value="$PROJECT_DIR$/ressources/js/template/watchlist_template.html" />
       </list>
     </option>
@@ -640,7 +669,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446821389079</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="+ debut watchlist&#10;">
+      <created>1446838982988</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1446838982988</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -692,7 +727,8 @@
     <MESSAGE value="+ begin watchlist" />
     <MESSAGE value="test" />
     <MESSAGE value="bouton itunes : bon lien movie et tvshows + génération ID API youtube" />
-    <option name="LAST_COMMIT_MESSAGE" value="bouton itunes : bon lien movie et tvshows + génération ID API youtube" />
+    <MESSAGE value="+ debut watchlist&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ debut watchlist&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -823,13 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/model/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3295964">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../apiyoutube/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -877,14 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/view/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/view/genres.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -909,26 +930,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/template/menuBar_Template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/collection/genres.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/template/browse_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.933332">
-          <caret line="66" column="15" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -999,14 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1041,6 +1038,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1412556">
+          <caret line="6" column="80" selection-start-line="6" selection-start-column="80" selection-end-line="6" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09417041">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/view/watchlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/model/watchlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1059,22 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1412556">
-          <caret line="6" column="80" selection-start-line="6" selection-start-column="80" selection-end-line="6" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09417041">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/collection/watchlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1082,6 +1087,22 @@
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/model/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,10 +1114,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/view/watchlist.js">
+    <entry file="file://$PROJECT_DIR$/ressources/js/view/menu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/template/menuBar_Template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.1">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/template/browse_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.533333">
+          <caret line="66" column="15" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1104,7 +1141,7 @@
     <entry file="file://$PROJECT_DIR$/ressources/js/template/watchlist_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12180974">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding />
         </state>
       </provider>
