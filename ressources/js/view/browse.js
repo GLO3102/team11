@@ -22,17 +22,19 @@ define([
 
             gSearch.search('all&limit=20').done(function(results){
                 self.$el.append(self.template({resultsCol:results.toJSON()}));
+
+                var moviesGenreCol = new CollectionGenre();
+                moviesGenreCol.url = URL + '/genres/movies';
+                var genremovie = new GenreView({el:'#listMovies',collection:moviesGenreCol});
+                moviesGenreCol.fetch();
+
+
+                var tvshowsGenreCol = new CollectionGenre();
+                tvshowsGenreCol.url = URL + '/genres/tvshows';
+                var genretvshows = new GenreView({el:'#listTVshows',collection:tvshowsGenreCol});
+                tvshowsGenreCol.fetch();
             });
-            var moviesGenreCol = new CollectionGenre();
-            moviesGenreCol.url = URL + '/genres/movies';
-            var genremovie = new GenreView({el:'#listMovies',collection:moviesGenreCol});
-            moviesGenreCol.fetch();
 
-
-            var tvshowsGenreCol = new CollectionGenre();
-            tvshowsGenreCol.url = URL + '/genres/tvshows';
-            var genretvshows = new GenreView({el:'#listTVshows',collection:tvshowsGenreCol});
-            tvshowsGenreCol.fetch();
         }
 
     });
