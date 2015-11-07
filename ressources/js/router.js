@@ -9,14 +9,18 @@ define([
     'view/movie',
     'view/menu',
     'view/watchlist',
+	'view/actor',
+    'view/actorMovies',
     'view/tvshow'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, TvShowView) {
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
             'movies/:id': 'movie',
             'tvshows/seasons/:id' : 'tvshow',
+			'actors/:id': 'actor',
+            'actors/:id/movies': 'actorMovies',
             'search/query:q':'search',
             'search/query:q/genre:g':'search',
             'watchlist' : 'watchlist',
@@ -65,6 +69,15 @@ define([
             var watchListView = new WatchListView();
             watchListView.render();
 
+        });
+		
+		app_router.on('route:actor', function(id){
+            var actorView = new ActorView();
+            actorView.render({id: id});
+        });
+        app_router.on('route:actorMovies', function(id){
+            var actorMoviesView = new ActorMoviesView();
+            actorMoviesView.render({id: id});
         });
 
         // Unlike the above, we don't call render on this view as it will handle
