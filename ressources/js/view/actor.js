@@ -4,9 +4,8 @@ define([
     'jquery',
     'bootstrap',
     'model/actor',
-    'text!template/actor_Template.html',
-    'utils/utils'
-], function(Backbone,_,$,Bootstrap,Actor, ActorTemplate,Utils) {
+    'text!template/actor_Template.html'
+], function(Backbone,_,$,Bootstrap,Actor, ActorTemplate) {
 
     var ActorView = Backbone.View.extend({
         template: _.template(ActorTemplate),
@@ -14,6 +13,7 @@ define([
         el: '#main_container',
 
         initialize: function () {
+
         },
 
         render: function (options) {
@@ -21,6 +21,7 @@ define([
             var actor = new Actor({id: options.id});
             actor.fetch({
                 success: function(printActor){
+                    console.log("succes");
                     that.$el.html(that.template({results:printActor.toJSON()}))
                 }
             })
