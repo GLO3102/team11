@@ -28,39 +28,32 @@ define([
                 success: function(printMovie){
                     that.$el.html(that.template({results:printMovie.toJSON()}))
                     $('#video-trailer').hide();
-                    googleApiClientReady();
+                    gapi.client.setApiKey(API_Key);
                 }
             })
         },
         showTrailer: function(){
             if($('#video-trailer').is( ":hidden" )){
-                // Search for a specified string.
-                var that=this;
-                function search() {
 
-                    var q = that.movie.name + " trailer";
-                    if(gapi.client.youtube == undefined){
-                        $('#login-container').show();
-                    }else {
-                        var request = gapi.client.youtube.search.list({
-                            q: q,
-                            part: 'snippet'
-                        });
+                gapi.client.load('youtube', 'v3').then(search);
+                var self = this;
+                search : function search() {
 
-                        request.execute(function (response) {
-                            var str = JSON.stringify(response.result);
-                            document.getElementById("trailer").src = 'https://www.youtube.com/v/' + response.items[0].id.videoId;
-                        });
+                    var q = self.movie.name + " trailer";
+                    var request = gapi.client.youtube.search.list({
+                        q: q,
+                        part: 'snippet'
+                    });
 
-
+                    request.execute(function (response) {
+                        var src = 'https://www.youtube.com/v/' + response.items[0].id.videoId;
+                        $('#trailer').attr('src', src);
                         $('#video-trailer').show();
-                        $('html, body').animate({
-                            scrollTop: $("#video-trailer").offset().top
-                        }, 1000);
-                    }
+                    });
+
                 }
 
-                search();
+
             }
 
             else {
