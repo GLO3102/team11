@@ -17,13 +17,10 @@ define([
         el: '#main_container',
 
         events:{
-            "click #btn-trailer": "showTrailer"
+            "click #btn-trailer": "showTrailer",
+            'click #add-to-watchlist' : 'addToWatchlist'
         },
         initialize: function () {
-        },
-
-        events: {
-            'click #add-to-watchlist' : 'addToWatchlist'
         },
 
         render: function (options) {
