@@ -1,17 +1,21 @@
 <div class="row top-buffer">
     <div class="watchlist">
-        <h2>Watchlist</h2   >
+        <h2>Watchlist</h2>
         <div class="watchlist-user">
             <% _.each(results, function(data) {%>
             <hr />
-                <h4>Name : <%= data.name %></h4>
-                <% _.each(data.movies, function(movie) { %>
-                    <ul class="list-unstyled">
-                   <li><a href="#/movies/<%= movie.trackId %>"><%= movie.trackName %></a></li>
-                    </ul>
-                <% }) %>
+            <h4>Name : <%= data.name %> <span class="glyphicon glyphicon-trash" id="delete-watchlist" data-id="<%= data.id %>"></span></h4>
+            <ul class="list-inline">
+            <% _.each(data.movies, function(movie) { %>
+                <li>
+                    <a href="#/movies/<%= movie.trackId %>">
+                        <img src="<%= movie.artworkUrl100 %>" class="img-responsive">
+                        <%= movie.trackName %></a>
+                </li>
+            <% }) %>
+            </ul>
             <% }) %>
         </div>
-        <button type="button" class="btn btn-default">Create a watchlist</button>
+        <button type="button" class="btn btn-default btn-margin-bottom" id="new-watchlist">Create a new watchlist</button>
     </div>
 </div>

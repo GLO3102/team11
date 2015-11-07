@@ -60,6 +60,10 @@ footer {
     text-align: center;
 }
 
+.new-watchlist{
+    width: 400px;
+}
+
 #login-container{
     background: darkred;
     display:none;

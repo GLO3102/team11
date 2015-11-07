@@ -8,15 +8,17 @@ define([
     'bootstrap',
     'model/movie',
     'text!template/movie_template.html',
-    'utils/utils'
-], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils) {
+    'utils/utils',
+    'collection/watchlist'
+], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils, WatchListCollection) {
 
     var MovieView = Backbone.View.extend({
         template: _.template(MovieTemplate),
         el: '#main_container',
 
         events:{
-            "click #btn-trailer": "showTrailer"
+            "click #btn-trailer": "showTrailer",
+            'click #add-to-watchlist' : 'addToWatchlist'
         },
         initialize: function () {
         },
@@ -41,6 +43,10 @@ define([
             else {
                 $('#video-trailer').hide();
             }
+        },
+
+        addToWatchlist: function(){
+
         }
     });
 

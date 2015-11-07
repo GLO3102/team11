@@ -7,31 +7,28 @@ define([
     'underscore',
     'jquery',
     'bootstrap',
-    'collection/moviesCollection'
+    'collection/moviesCollection',
+
 ], function(Backbone,_,$,Bootstrap, MoviesCollection){
 
     var WatchListModel = Backbone.Model.extend({
-        defaults: function() {
-            return {
+        url: URL + '/watchlists',
+        defaults: {
                 name: '',
-                email: '',
-                user: '',
-                id: '',
-                movies: new MoviesCollection()
-            };
-        },
+                owner: ''
+        }
 
-        parse: function(response){
+        /*parse: function(response){
             console.log(response);
             this.id = response.id;
             return response;
-        },
+        },*/
 
-        validate: function(attrs){
+       /* validate: function(attrs){
             if(!attrs.name || !attrs.owner || attrs.name === '' || attrs.owner === ''){
                 return 'Please enter a valid name or/and a valid owner !';
             }
-        }
+        }*/
     });
 
     return WatchListModel;

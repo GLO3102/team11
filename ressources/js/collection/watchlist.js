@@ -1,5 +1,5 @@
 /**
- * Created by Timothï¿½e on 05/11/2015.
+ * Created by Timothée on 05/11/2015.
  */
 define([
     'backbone',
@@ -10,8 +10,6 @@ define([
 ], function(Backbone,_,$,Bootstrap, WatchListModel){
 
     var WatchListCollection = Backbone.Collection.extend({},{
-        url: URL + '/ewatchlists',
-
         model: WatchListModel
     });
     return WatchListCollection;
