@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78de502f-1f70-4320-b69d-0acd997bc30c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ressources/js/utils/auth.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ressources/js/utils/auth.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/main.js" afterPath="$PROJECT_DIR$/ressources/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/movie.js" afterPath="$PROJECT_DIR$/ressources/js/view/movie.js" />
     </list>
     <ignored path="team11.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,22 +25,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4193548">
+            <state vertical-scroll-proportion="0.053658538">
               <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ressources/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.103407755">
-              <caret line="4" column="91" selection-start-line="4" selection-start-column="91" selection-end-line="4" selection-end-column="91" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/utils/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+              <caret line="30" column="49" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -91,9 +102,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Html5" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -133,9 +144,9 @@
         <option value="$PROJECT_DIR$/ressources/js/utils/utils.js" />
         <option value="$PROJECT_DIR$/ressources/js/utils/google.html" />
         <option value="$PROJECT_DIR$/ressources/js/app.js" />
-        <option value="$PROJECT_DIR$/ressources/js/utils/auth.js" />
         <option value="$PROJECT_DIR$/ressources/js/view/movie.js" />
         <option value="$PROJECT_DIR$/ressources/js/main.js" />
+        <option value="$PROJECT_DIR$/ressources/js/utils/auth.js" />
       </list>
     </option>
   </component>
@@ -540,7 +551,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446841726128</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Trailer movie fait">
+      <created>1446867205802</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1446867205802</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -594,7 +611,8 @@
     <MESSAGE value="bouton itunes : bon lien movie et tvshows + génération ID API youtube" />
     <MESSAGE value="+ debut watchlist&#10;" />
     <MESSAGE value="+ watchlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ watchlist" />
+    <MESSAGE value="Trailer movie fait" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trailer movie fait" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -958,26 +976,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/utils/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4193548">
+        <state vertical-scroll-proportion="0.053658538">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.103407755">
-          <caret line="4" column="91" selection-start-line="4" selection-start-column="91" selection-end-line="4" selection-end-column="91" />
           <folding />
         </state>
       </provider>
