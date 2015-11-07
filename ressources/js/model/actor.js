@@ -6,7 +6,7 @@ define([
 ], function(Backbone,_,$,Bootstrap){
 
     var Actor = Backbone.Model.extend({
-        urlRoot: 'https://umovie.herokuapp.com/unsecure/actors',
+        urlRoot: URL + '/actors',
 
         parse: function(response) {
             return response.results[0];

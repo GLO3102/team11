@@ -74,6 +74,9 @@ define([
 		app_router.on('route:actor', function(id){
             var actorView = new ActorView();
             actorView.render({id: id});
+            var actorMoviesView = new ActorMoviesView();
+            actorMoviesView.render({id: id});
+
         });
         app_router.on('route:actorMovies', function(id){
             var actorMoviesView = new ActorMoviesView();

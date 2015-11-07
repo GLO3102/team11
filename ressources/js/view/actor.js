@@ -21,7 +21,6 @@ define([
             var actor = new Actor({id: options.id});
             actor.fetch({
                 success: function(printActor){
-                    console.log("succes");
                     that.$el.html(that.template({results:printActor.toJSON()}))
                 }
             })
