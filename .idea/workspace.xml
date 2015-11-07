@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78de502f-1f70-4320-b69d-0acd997bc30c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ressources/js/template/createWatchlist_template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/css/app.css" afterPath="$PROJECT_DIR$/ressources/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/router.js" afterPath="$PROJECT_DIR$/ressources/js/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/utils/utils.js" afterPath="$PROJECT_DIR$/ressources/js/utils/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/movie.js" afterPath="$PROJECT_DIR$/ressources/js/view/movie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/template/movie_template.html" afterPath="$PROJECT_DIR$/ressources/js/template/movie_template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/collection/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/collection/watchlist.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/model/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/model/watchlist.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/view/watchlist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/template/watchlist_template.html" afterPath="$PROJECT_DIR$/ressources/js/template/watchlist_template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="team11.iws" />
@@ -45,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/ressources/js/router.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="122" selection-start-line="13" selection-start-column="122" selection-end-line="13" selection-end-column="122" />
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -61,11 +58,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="watchlist.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="movie_template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ressources/js/template/movie_template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.633333">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="watchlist.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ressources/js/view/watchlist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3060538">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movie.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.25896862">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -75,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/ressources/js/collection/watchlist.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -85,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/ressources/js/model/watchlist.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -144,11 +161,9 @@
         <option value="$PROJECT_DIR$/ressources/js/app.js" />
         <option value="$PROJECT_DIR$/ressources/js/main.js" />
         <option value="$PROJECT_DIR$/ressources/js/template/tvshow_template.html" />
-        <option value="$PROJECT_DIR$/ressources/js/template/movie_template.html" />
         <option value="$PROJECT_DIR$/ressources/js/collection/SearchableCollection.js" />
         <option value="$PROJECT_DIR$/ressources/js/view/general_search.js" />
         <option value="$PROJECT_DIR$/ressources/js/collection/moviesCollection.js" />
-        <option value="$PROJECT_DIR$/ressources/js/view/movie.js" />
         <option value="$PROJECT_DIR$/ressources/js/auth.js" />
         <option value="$PROJECT_DIR$/ressources/js/model/movie.js" />
         <option value="$PROJECT_DIR$/ressources/js/model/menu.js" />
@@ -157,13 +172,15 @@
         <option value="$PROJECT_DIR$/ressources/css/app.css" />
         <option value="$PROJECT_DIR$/ressources/js/view/createWatchlistView.js" />
         <option value="$PROJECT_DIR$/ressources/js/utils/utils.js" />
-        <option value="$PROJECT_DIR$/ressources/js/model/watchlist.js" />
         <option value="$PROJECT_DIR$/ressources/js/template/createWatchlist_template.html" />
         <option value="$PROJECT_DIR$/ressources/js/view/createWatchlist.js" />
-        <option value="$PROJECT_DIR$/ressources/js/collection/watchlist.js" />
         <option value="$PROJECT_DIR$/ressources/js/template/watchlist_template.html" />
         <option value="$PROJECT_DIR$/ressources/js/router.js" />
         <option value="$PROJECT_DIR$/ressources/js/view/watchlist.js" />
+        <option value="$PROJECT_DIR$/ressources/js/collection/watchlist.js" />
+        <option value="$PROJECT_DIR$/ressources/js/model/watchlist.js" />
+        <option value="$PROJECT_DIR$/ressources/js/template/movie_template.html" />
+        <option value="$PROJECT_DIR$/ressources/js/view/movie.js" />
       </list>
     </option>
   </component>
@@ -429,16 +446,19 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/collection/SearchableCollection.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/collection/moviesCollection.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/collection/watchlist.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/css/actor.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/css/app.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/css/movie.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/css/tvshows.css</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/main.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/model/movie.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/model/tvshow.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/router.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/template/movie_template.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/template/tvshow_template.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/utils/utils.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/browse.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/movie.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/watchlist.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/tvshow.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -446,6 +466,14 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/collection/actorMoviesCollection.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/model/actor.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/model/actorMovies.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/template/actorMovies_Template.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/template/actor_Template.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/utils/auth.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/actor.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/actorMovies.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -453,6 +481,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/auth.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -705,7 +734,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446848122152</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="+ ajout suppression watchlist">
+      <created>1446930130044</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1446930130044</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -760,7 +795,8 @@
     <MESSAGE value="+ debut watchlist&#10;" />
     <MESSAGE value="+ watchlist" />
     <MESSAGE value="+ affichage  des films d'une  watchlist + lien vers le page du film" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ affichage  des films d'une  watchlist + lien vers le page du film" />
+    <MESSAGE value="+ ajout suppression watchlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ ajout suppression watchlist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -970,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/template/movie_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.9">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1026,24 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22309417">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/view/menu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1064,14 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8352018">
           <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/collection/moviesCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1116,14 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/template/createWatchlist_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.4">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/template/watchlist_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.7">
@@ -1132,10 +1126,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/template/createWatchlist_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.4">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/collection/moviesCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="122" selection-start-line="13" selection-start-column="122" selection-end-line="13" selection-end-column="122" />
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1143,7 +1153,7 @@
     <entry file="file://$PROJECT_DIR$/ressources/js/model/watchlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
@@ -1153,15 +1163,31 @@
     <entry file="file://$PROJECT_DIR$/ressources/js/collection/watchlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/template/movie_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.633333">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/view/watchlist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3060538">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25896862">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
       </provider>

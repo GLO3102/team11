@@ -7,7 +7,8 @@ define([
     'underscore',
     'jquery',
     'bootstrap',
-    'collection/moviesCollection'
+    'collection/moviesCollection',
+
 ], function(Backbone,_,$,Bootstrap, MoviesCollection){
 
     var WatchListModel = Backbone.Model.extend({

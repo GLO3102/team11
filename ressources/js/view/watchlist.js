@@ -62,10 +62,7 @@ define([
         newWatchlist: function(event){
             var name = $('#watchName').val();
             var owner = $('#email').val();
-            /*this.collection.create({
-                name: name,
-                owner: owner
-            });*/
+
             var watchlistModel = new WatchlistModel({name: name, owner: owner})
             var that = this;
             watchlistModel.save("","",   {
