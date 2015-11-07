@@ -39,24 +39,25 @@ define([
     'auth',
     'googleAPI'
 ], function($, _, Backbone,Auth, GoogleAPI){
-    searchTrailer = function(query){
+    searchTrailer = function(query, callback) {
+        gapi.client.setApiKey(API_Key);
+        gapi.client.load('youtube', 'v3').then(search);
 
-        var that = this;
+        search : function search() {
 
-        var request =  gapi.client.youtube.search.list({
-            q:query,
-            part:'snippet'
-        })
-        request.execute(function(response) {
-            var str = JSON.stringify(response.result);
-            console.log(that);
-            that.ret = str;
-            return that.ret;
-        });
+            var q =  query + " trailer";
+            var request = gapi.client.youtube.search.list({
+                q: q,
+                part: 'snippet'
+            });
 
+            request.execute(function (response) {
+                var src = 'https://www.youtube.com/v/' + response.items[0].id.videoId;
+                callback(src);
+            });
 
+        }
     }
-
     return {
         searchTrailer: searchTrailer
     };

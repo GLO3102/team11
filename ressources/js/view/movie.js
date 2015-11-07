@@ -28,34 +28,16 @@ define([
                 success: function(printMovie){
                     that.$el.html(that.template({results:printMovie.toJSON()}))
                     $('#video-trailer').hide();
-                    gapi.client.setApiKey(API_Key);
+
                 }
             })
         },
         showTrailer: function(){
             if($('#video-trailer').is( ":hidden" )){
-
-                gapi.client.load('youtube', 'v3').then(search);
-                var self = this;
-                search : function search() {
-
-                    var q = self.movie.name + " trailer";
-                    var request = gapi.client.youtube.search.list({
-                        q: q,
-                        part: 'snippet'
-                    });
-
-                    request.execute(function (response) {
-                        var src = 'https://www.youtube.com/v/' + response.items[0].id.videoId;
-                        $('#trailer').attr('src', src);
-                        $('#video-trailer').show();
-                    });
-
-                }
-
-
+                Utils.searchTrailer(this.movie.name,function(src){
+                    $('#trailer').attr('src', src)
+                    $('#video-trailer').show()});
             }
-
             else {
                 $('#video-trailer').hide();
             }
