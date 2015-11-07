@@ -40,14 +40,14 @@ define([
 
         showTrailer: function(){
             console.log("allo");
-            if($('#video-trailer-actor').is( ":hidden" )){
+            if($('#video-trailer').is( ":hidden" )){
 
                 Utils.searchTrailer(this.movie.name,function(src){
-                    $('#trailer-actor').attr('src', src)
-                    $('#video-trailer-actor').show()});
+                    $('#trailer').attr('src', src)
+                    $('#video-trailer').show()});
             }
             else {
-                $('#video-trailer-actor').hide();
+                $('#video-trailer').hide();
             }
         }
     });
