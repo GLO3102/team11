@@ -1,5 +1,5 @@
 /**
- * Created by Timoth�e on 02/11/2015.
+ * Created by Timoth?e on 02/11/2015.
  */
 formatdate = function(date){
     var monthNames = [
@@ -30,6 +30,8 @@ formatImageSize = function(str){
     return cpy;
 }
 
+
+
 define([
     'jquery',
     'underscore',
@@ -37,20 +39,26 @@ define([
     'auth',
     'googleAPI'
 ], function($, _, Backbone,Auth, GoogleAPI){
-    $.fn.serializeObject = function()
-    {
-        var o = {};
-        var a = this.serializeArray();
-        $.each(a, function() {
-            if (o[this.name] !== undefined) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
+    searchTrailer = function(query, callback) {
+        gapi.client.setApiKey(API_Key);
+        gapi.client.load('youtube', 'v3').then(search);
+
+        search : function search() {
+
+            var q =  query + " trailer";
+            var request = gapi.client.youtube.search.list({
+                q: q,
+                part: 'snippet'
+            });
+
+            request.execute(function (response) {
+                var src = 'https://www.youtube.com/v/' + response.items[0].id.videoId;
+                callback(src);
+            });
+
+        }
+    }
+    return {
+        searchTrailer: searchTrailer
     };
 });

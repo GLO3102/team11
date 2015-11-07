@@ -1,0 +1,21 @@
+<div class="row top-buffer row-bottom">
+    <div class="actor-content">
+        <div class="col-sm-4 cover-actor">
+            <!--<img src="ressources/img/actor/bryan-cranston-1.jpg" class="img-responsive img-actor">-->
+        </div>
+        <div class="col-sm-8 description-movie">
+            <h2 class="name-actor"><%= results.artistName %></h2>
+
+            <h3>Genre</h3>
+            <p class="description-actor"><%= results.primaryGenreName %> </p>
+
+            <div class="button-utils col-sm-8">
+                <a class="itunes-actor" href="<%= results.artistLinkUrl%>" style="display:inline-block;overflow:hidden;
+                    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
+                    no-repeat;width:165px;height:40px;" target="_blank"> </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -9,9 +9,10 @@ define([
     'view/movie',
     'view/menu',
     'view/watchlist',
-    'view/tvshow',
-
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, TvShowView) {
+	'view/actor',
+    'view/actorMovies',
+    'view/tvshow'
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -64,10 +65,9 @@ define([
 
         app_router.on('route:watchlist', function(){
             var watchListView = new WatchListView();
-            watchListView.render({});
+            watchListView.render();
 
         });
-
 
         // Unlike the above, we don't call render on this view as it will handle
         // the render call internally after it loads data. Further more we load it

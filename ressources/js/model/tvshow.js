@@ -10,8 +10,10 @@ define([
 
     var TvShow = Backbone.Model.extend({
         urlRoot: URL + '/tvshows/season/',
+        name : '',
 
         parse: function(response) {
+            this.name = response.results[0].collectionCensoredName;
             return response.results[0];
         }
     });

@@ -1,5 +1,5 @@
 /**
- * Created by Timoth�e on 29/10/2015.
+ * Created by Timoth?e on 29/10/2015.
  */
 define([
     'backbone',
@@ -13,8 +13,8 @@ define([
 
     var MovieView = Backbone.View.extend({
         template: _.template(MovieTemplate),
-        model: Movie,
         el: '#main_container',
+
         events:{
             "click #btn-trailer": "showTrailer"
         },
@@ -23,25 +23,21 @@ define([
 
         render: function (options) {
             var that = this;
-            var movie = new Movie({id: options.id});
-            movie.fetch({
+            this.movie = new Movie({id: options.id});
+            this.movie.fetch({
                 success: function(printMovie){
                     that.$el.html(that.template({results:printMovie.toJSON()}))
                     $('#video-trailer').hide();
+
                 }
             })
         },
         showTrailer: function(){
             if($('#video-trailer').is( ":hidden" )){
-                $('#video-trailer').show();
-                $('html, body').animate({
-                    scrollTop: $("#video-trailer").offset().top
-                }, 1000);
-
-                //var src = Utils.searchTrailer('Birdman');
-                //$('#trailer').src = src;
+                Utils.searchTrailer(this.movie.name,function(src){
+                    $('#trailer').attr('src', src)
+                    $('#video-trailer').show()});
             }
-
             else {
                 $('#video-trailer').hide();
             }

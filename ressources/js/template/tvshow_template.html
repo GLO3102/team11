@@ -4,15 +4,12 @@
             <img src=<%= formatImageSize(results.artworkUrl100) %> class="img-responsive">
         </div>
         <div class="col-sm-8 description-movie">
-            <h2 class="title-movie"><%= results.trackName %></h2>
+            <h2 class="title-movie"><%= results.collectionCensoredName %></h2>
             <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
             <span class="date-movie"><%= formatdate(results.releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span>
+            <span class="time-movie"><%= results.trackCount%> episodes</span><br><br>
             <p class="description-movie"><%= results.longDescription %></p>
-            <p class="director-movie">
-                <strong>Director:</strong> <%= results.artistName %>
-            </p>
             <div class="button-utils col-sm-8">
                 <a class="itunes-movie" href="https://geo.itunes.apple.com/us/tv-season/<%= results.trackName %>/id<%= results.collectionId %>?mt=6" style="display:inline-block;overflow:hidden;
                     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
@@ -29,3 +26,13 @@
         </div>
     </div>
 </div>
+
+<div class="row" id="video-trailer">
+    <div class="col-sm-12">
+        <h3 class="title-movie">Trailer</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" id="trailer" src=""></iframe>
+        </div>
+    </div>
+</div>
+<br><br><br>
