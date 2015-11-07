@@ -25,8 +25,8 @@ formattime = function(time){
     return hours + ' ' + 'hours' + ' ' + minutes + ' ' + 'minutes' + ' ' + seconds + ' ' + 'seconds';
 }
 
-formatImageSize = function(str){
-    var cpy = str.replace("100x100", "400x400");
+formatImageSize = function(str, taille){
+    var cpy = str.replace("100x100", "400x"+taille);
     return cpy;
 }
 
