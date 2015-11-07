@@ -1,20 +1,20 @@
 <div class="row top-buffer row-bottom">
     <div class="movie-content">
         <div class="col-sm-4 cover-movie">
-            <img src=<%= formatImageSize(results.artworkUrl100, 400) %> class="img-responsive">
+            <img src=<%= formatImageSize(results[1].movie.attributes.artworkUrl100) %> class="img-responsive">
         </div>
         <div class="col-sm-8 description-movie">
-            <h2 class="title-movie"><%= results.trackName %></h2>
-            <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
-            <span class="date-movie"><%= formatdate(results.releaseDate) %></span>
+            <h2 class="title-movie"><%= results[1].movie.attributes.trackName %></h2>
+            <p class="genre-movie"><strong>Genres:</strong> <%= results[1].movie.attributes.primaryGenreName %> </p>
+            <span class="date-movie"><%= formatdate(results[1].movie.attributes.releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span><br><br>
-            <p class="description-movie"><%= results.longDescription %></p>
+            <span class="time-movie"><%= formattime(results[1].movie.attributes.trackTimeMillis)%></span><br><br>
+            <p class="description-movie"><%= results[1].movie.attributes.longDescription %></p>
             <p class="director-movie">
-                <strong>Director:</strong> <%= results.artistName %>
+                <strong>Director:</strong> <%= results[1].movie.attributes.artistName %>
             </p>
             <div class="button-utils col-sm-8">
-                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/<%= results.trackName %>/id<%= results.trackId %>?mt=6" style="display:inline-block;overflow:hidden;
+                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/<%= results[1].movie.attributes.trackName %>/id<%= results[1].movie.attributes.trackId %>?mt=6" style="display:inline-block;overflow:hidden;
                     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
                     no-repeat;width:165px;height:40px;" target="_blank"> </a>
                 <button type="button" class="btn btn-default btn-margin-bottom" id="add-to-watchlist">

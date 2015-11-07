@@ -12,7 +12,7 @@ define([
     var BrowseView = Backbone.View.extend({
         template: _.template(BrowseTemplate),
         el: "#main_container",
-
+        collection:BrowseCollection,
         initialize:function(){
             _.bindAll(this,'render');
         },
@@ -20,8 +20,41 @@ define([
             var self = this;
             var gSearch = BrowseCollection.extend({url: URL});
 
-            gSearch.search('all&limit=20').done(function(results){
-                self.$el.append(self.template({resultsCol:results.toJSON()}));
+            gSearch.search('all&limit=100').done(function(results){
+                var resultJSON = results.toJSON();
+                var displayCol = [];
+                var title = '';
+                var by = '';
+                var shortDesc = '';
+                var url = '';
+                var artworkUrl100;
+                 for (var i = 0;i < 100;i++)
+                 {
+                     if (resultJSON[0].results[i].wrapperType == "track")
+                     {
+                        title = resultJSON[0].results[i].trackName
+                        by = resultJSON[0].results[i].artistName
+                        shortDesc = resultJSON[0].results[i].shortDescription
+                        url = '#/movies/' + resultJSON[0].results[i].trackId
+                     }
+                     else
+                     {
+                         title = resultJSON[0].results[i].artistName
+                         by = resultJSON[0].results[i].collectionName
+                         shortDesc = ''
+                         url = '#/tvshows/seasons/' + resultJSON[0].results[i].collectionId
+                     }
+                     artworkUrl100 = resultJSON[0].results[i].artworkUrl100;
+                     displayCol.push({
+                        title:title,
+                         by:by,
+                         shortDesc :shortDesc,
+                         url:url,
+                         artworkUrl100:artworkUrl100
+                     });
+                }
+                self.$el.append(self.template({resultsCol:displayCol}));
+
 
                 var moviesGenreCol = new CollectionGenre();
                 moviesGenreCol.url = URL + '/genres/movies';
