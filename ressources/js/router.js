@@ -3,19 +3,23 @@ define([
     'underscore',
     'backbone',
     'view/home',
+    'view/footer',
+    'collection/SearchableCollection',
+    'view/general_search',
     'view/movie',
-    'view/actor',
-    'view/actorMovies',
-    'view/footer'
-], function($, _, Backbone,HomeView,MovieView, ActorView,ActorMoviesView,  FooterView) {
+    'view/menu',
+    'view/watchlist',
+    'view/tvshow'
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, TvShowView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
             'movies/:id': 'movie',
-            'actors/:id': 'actor',
-            'actors/:id/movies': 'actorMovies',
+            'tvshows/seasons/:id' : 'tvshow',
             'search/query:q':'search',
+            'search/query:q/genre:g':'search',
+            'watchlist' : 'watchlist',
             // Default
             '*actions': 'defaultAction'
         }
@@ -37,21 +41,37 @@ define([
             var movieView = new MovieView();
             movieView.render({id: id});
         });
+
+        app_router.on('route:tvshow', function(id){
+            var tvshowView = new TvShowView();
+            tvshowView.render({id: id});
+        });
         app_router.on('route:search', function(q){
-                console.log('search : ' + q);
+            var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
+            gSearch.search(q).done(function(results){
+                new GSView({collection:results}).render();
+            });
+            app_router.navigate('search');
         });
-        app_router.on('route:actor', function(id){
-            var actorView = new ActorView();
-            actorView.render({id: id});
+        app_router.on('route:search', function(q){
+            var gSearch = SearchableCollection.extend({url: 'http://localhost:3000/unsecure/'});
+            gSearch.search(q).done(function(results){
+               new GSView({collection:results}).render();
+            });
+            app_router.navigate('search');
         });
-        app_router.on('route:actorMovies', function(id){
-            var actorMoviesView = new ActorMoviesView();
-            actorMoviesView.render({id: id});
+
+        app_router.on('route:watchlist', function(){
+            var watchListView = new WatchListView();
+            watchListView.render();
+
         });
+
         // Unlike the above, we don't call render on this view as it will handle
         // the render call internally after it loads data. Further more we load it
         // outside of an on-route function to have it loaded no matter which page is
         // loaded initially.
+        var menuView = new MenuView();
         var footerView = new FooterView();
 
         Backbone.history.start();

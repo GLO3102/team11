@@ -1,210 +1,69 @@
-<div class="container middlePage">
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <li class="dropdown">
-                Browse
-                <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Adventure</a></li>
-            <li><a href="#">Comedies</a></li>
-            <li><a href="#">Dramas</a></li>
-            <li><a href="#">Suspense</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="#">Children and Family</a></li>
-            <li><a href="#">Horror</a></li>
-            <li><a href="#">Sci-Fi</a></li>
-            <li><a href="#">Thrillers</a></li>
-            <li><a href="#">Romance</a></li>
-            <li><a href="#">Sports Movies</a></li>
-        </ul>
-        </li>
-    </div>
+<div class="container middlePage" id="browse">
+<div id="middlePage" class="container middlePage">
+    <ul class="nav nav-tabs">
+        <li role="presentation" id="tabMovies" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Movies <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" id="listMovies">
 
-    <h2>Recently added</h2>
+            </ul>
+        </li>
+        <li role="presentation" id="tabTVshows" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                TV Shows <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" id="listTVshows">
+
+            </ul>
+        </li>
+    </ul>
+
+
+    <h2>Browse</h2>
 </div >
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-3 mainzone mix category-1">
-            <div class="picturezone">
-                <img src="ressources/img/movie/birdman.jpg" class="img-responsive center-block video_link" onclick="changePage('movie.html')" alt="Responsive image">
+        <% var index = 0;
+           var title = '';
+           var by = '';
+           var shortDesc = '';
+           var url = '';
+        %>
+        <% _.each(resultsCol[0].results,function(data){ %>
+            <% if (index < 4){ %>
+            <% index++ %>
+            <% if (data.wrapperType == "track"){ %>
+                <% title = data.trackName %>
+                <%  by = data.artistName %>
+                <%  shortDesc = data.shortDescription %>
+                <%  url = '#/movies/' + data.trackId %>
+            <% } else { %>
+                <% title = data.artistName %>
+                <%  by = data.collectionName %>
+                <%  shortDesc = '' %>
+                <%  url = '#/tvshows/seasons/' + data.collectionId %>
+            <% } %>
+
+            <div class="col-sm-6 col-md-4 datazone datazone">
+                <div class="thumbnail">
+                    <img src="<%= formatImageSize(data.artworkUrl100) %>" class="picturezone" alt="">
+                    <div class="caption">
+                        <h3> <a href="<%=  url  %>" class=""> <%= title %></a></h3>
+                        <p>By: <%= by %></p>
+                        <p><%= shortDesc %>
+                    </div>
+                </div>
             </div>
-            <div class="datazone">
-                <a href="movie.html">Birdman</a><br>
-                <p>By Alejandro González Iñárritu<br>
-                    With Michael Keaton, Emma Stone, Edward Norton<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone mix category-1">
-            <div class="picturezone">
-                <img src="ressources/img/movie/AntMan_2015.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Antman</a><br>
-                <p>By Peyton Reed<br>
-                    With Paul Rudd, Michael Doulas, Corey Stoll<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone mix category-2">
-            <div class="picturezone">
-                <img src="ressources/img/movie/American_Ultra2015.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">American ULTRA</a><br>
-                <p>By Nima Nourizadeh<br>
-                    With Topher Grace, Kristen Stewart, Jesse Eisenberg<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone mix category-3">
-            <div class="picturezone">
-                <img src="ressources/img/movie/Black_Mass.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Black Mass</a><br>
-                <p>By Scott Cooper<br>
-                    With Johnny Depp, Joel Edgerton<br></p>
-            </div>
-        </div>
+        <% } else { %>
+        <% index = 0 %>
     </div>
-
-
-
-
     <div class="row">
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/tvshows/Breaking_Bad/Breaking_Bad.jpg" class="img-responsive center-block video_link"  onclick="changePage('tvshows.html')" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="tvshows.html">Breaking Bad</a><br>
-                <p>By Vince Gilligan<br>
-                    With Brian Cranston, Aeron Paul, Anna Gunn<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/movie/CodeNameUncle2015.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Code name U.N.C.L.E</a><br>
-                <p>By Guy Ritchie<br>
-                    With Henry Cavil, Armie Hammer, Hugh Grant<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/movie/Vacation_2015.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Vacation</a><br>
-                <p>By  John Francis Daley<br>
-                    With Ed Helms, Chris Hemsworth, Leslie Mann<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/tvshows/TWD/Walking_Dead.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">The Walking Dead</a><br>
-                <p>By Frank Darabont<br>
-                    With Andrew Lincoln, Norman Reedus, Steven Yeun<br></p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="row">
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/movie/Everest.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Everest</a><br>
-                <p>By Baltasar Kormákur<br>
-                    With Jake Gyllenhaal, Josh Brolin, Keira Kneigley<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/tvshows/FWD/Fear_of_the_walking_dead.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Fear of the Walking Dead</a><br>
-                <p>By Robert Kirkman<br>
-                    With Kim Dickens, Cliff Curtis, Frank Fillane<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/tvshows/Homeland/Homeland.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Homeland</a><br>
-                <p>By Alex Gansa<br>
-                    With Claire Danes, Damian Lewis, Mandy Patinkin<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/movie/Mission_Impossible_Rogue_Nation.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Mission Impossible</a><br>
-                <p>By Christopher McQuarrie<br>
-                    With Tom Cruise, Rebecca Ferguson, Jeremy Renner<br></p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="row">
-
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/tvshows/Suits/Suits.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Suits</a><br>
-                <p>By Aaron Korsh<br>
-                    With Gabriel Macht, Patrick J. Adams, Rick Hoffman<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/movie/The_Avenger_Age_of_Ultron.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">The Avengers</a><br>
-                <p>By Joss Whedon<br>
-                    With Scarlett Johansson, Robert Downey Jr., Chris Evans<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/movie/Star_Wars_7.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Star wars 7</a><br>
-                <p>By J. J. Abrams<br>
-                    With Harrison Ford, Mark Hamill<br></p>
-            </div>
-        </div>
-        <div class="col-sm-3 mainzone">
-            <div class="picturezone">
-                <img src="ressources/img/tvshows/Narcos/Narcos.jpg" class="img-responsive center-block" alt="Responsive image">
-            </div>
-            <div class="datazone">
-                <a href="#">Narcos</a><br>
-                <p>By José Padilha<br>
-                    With Pedro Pascal, Wagner Moura, Johanna Christie<br></p>
-            </div>
-        </div>
+        <% } }) %>
     </div>
 </div>
+
 <div class="container">
     <nav>
         <ul class="pager">
@@ -212,4 +71,5 @@
             <li><a href="#">Next</a></li>
         </ul>
     </nav>
+</div>
 </div>

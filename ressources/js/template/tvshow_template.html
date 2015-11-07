@@ -8,19 +8,15 @@
             <p class="genre-movie"><strong>Genres:</strong> <%= results.primaryGenreName %> </p>
             <span class="date-movie"><%= formatdate(results.releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%= formattime(results.trackTimeMillis)%></span><br><br>
+            <span class="time-movie"><%= results.trackCount%> episodes</span><br><br>
             <p class="description-movie"><%= results.longDescription %></p>
             <p class="director-movie">
                 <strong>Director:</strong> <%= results.artistName %>
             </p>
             <div class="button-utils col-sm-8">
-                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/<%= results.trackName %>/id<%= results.trackId %>?mt=6" style="display:inline-block;overflow:hidden;
+                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/tv-season/<%= results.trackName %>/id<%= results.collectionId %>?mt=6" style="display:inline-block;overflow:hidden;
                     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
                     no-repeat;width:165px;height:40px;" target="_blank"> </a>
-                <button type="button" class="btn btn-default btn-margin-bottom">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    Add to Watchlist
-                </button>
                 <button id="btn-trailer" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                     Show trailer
@@ -29,18 +25,3 @@
         </div>
     </div>
 </div>
-<div id="login-container" class="pre-auth">
-    This application requires access to your YouTube account.
-    Please <a href="#" id="login-link">authorize</a> to continue.
-</div>
-
-<div class="row" id="video-trailer">
-    <div class="col-sm-12">
-        <h3 class="title-movie">Trailer</h3>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" id="trailer" src=""></iframe>
-
-        </div>
-    </div>
-</div>
-<br><br><br>

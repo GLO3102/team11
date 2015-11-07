@@ -1,7 +1,7 @@
 /**
- * Created by Timothée on 02/11/2015.
+ * Created by Timoth?e on 02/11/2015.
  */
-_.template.formatdate = function(date){
+formatdate = function(date){
     var monthNames = [
         "January", "February", "March",
         "April", "May", "June", "July",
@@ -15,7 +15,7 @@ _.template.formatdate = function(date){
     return day + ' ' + monthNames[month] + ' ' + year;
 };
 
-_.template.formattime = function(time){
+formattime = function(time){
     var x = Math.floor(time / 1000);
     var seconds = x % 60;
     x = Math.floor(x / 60);
@@ -24,3 +24,40 @@ _.template.formattime = function(time){
     var hours = x %24;
     return hours + ' ' + 'hours' + ' ' + minutes + ' ' + 'minutes' + ' ' + seconds + ' ' + 'seconds';
 }
+
+formatImageSize = function(str){
+    var cpy = str.replace("100x100", "400x400");
+    return cpy;
+}
+
+
+
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'auth',
+    'googleAPI'
+], function($, _, Backbone,Auth, GoogleAPI){
+    searchTrailer = function(query){
+
+        var that = this;
+
+        var request =  gapi.client.youtube.search.list({
+            q:query,
+            part:'snippet'
+        })
+        request.execute(function(response) {
+            var str = JSON.stringify(response.result);
+            console.log(that);
+            that.ret = str;
+            return that.ret;
+        });
+
+
+    }
+
+    return {
+        searchTrailer: searchTrailer
+    };
+});

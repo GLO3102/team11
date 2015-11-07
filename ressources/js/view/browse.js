@@ -3,16 +3,38 @@ define([
     'underscore',
     'jquery',
     'bootstrap',
-    'text!template/browse_template.html'
-], function(Backbone,_,$,Bootstrap,BrowseTemplate){
+    'text!template/browse_template.html',
+    'view/genres',
+    'collection/genres',
+    'collection/SearchableCollection'
+], function(Backbone,_,$,Bootstrap,BrowseTemplate,GenreView,CollectionGenre,BrowseCollection){
 
     var BrowseView = Backbone.View.extend({
-        el: $("#browse"),
-        initialize:function(){
+        template: _.template(BrowseTemplate),
+        el: "#main_container",
 
+        initialize:function(){
+            _.bindAll(this,'render');
         },
         render: function(){
-            this.$el.html(BrowseTemplate);
+            var self = this;
+            var gSearch = BrowseCollection.extend({url: URL});
+
+            gSearch.search('all&limit=20').done(function(results){
+                self.$el.append(self.template({resultsCol:results.toJSON()}));
+
+                var moviesGenreCol = new CollectionGenre();
+                moviesGenreCol.url = URL + '/genres/movies';
+                var genremovie = new GenreView({el:'#listMovies',collection:moviesGenreCol});
+                moviesGenreCol.fetch();
+
+
+                var tvshowsGenreCol = new CollectionGenre();
+                tvshowsGenreCol.url = URL + '/genres/tvshows';
+                var genretvshows = new GenreView({el:'#listTVshows',collection:tvshowsGenreCol});
+                tvshowsGenreCol.fetch();
+            });
+
         }
 
     });

@@ -41,14 +41,14 @@
 }
 
 .mainzone img{
-    height: 100px;
+    height: 255px;
 }
 
 .datazone{
     word-wrap:break-word;
     margin-right: auto;
     margin-left: auto;
-    max-width: 180px;
+    max-width: 275px;
 }
 
 .poster{

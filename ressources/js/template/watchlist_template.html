@@ -1,0 +1,17 @@
+<div class="row top-buffer">
+    <div class="watchlist">
+        <h2>Watchlist</h2   >
+        <div class="watchlist-user">
+            <% _.each(results, function(data) {%>
+            <hr />
+                <h4>Name : <%= data.name %></h4>
+                <% _.each(data.movies, function(movie) { %>
+                    <ul class="list-unstyled">
+                   <li><a href="#/movies/<%= movie.trackId %>"><%= movie.trackName %></a></li>
+                    </ul>
+                <% }) %>
+            <% }) %>
+        </div>
+        <button type="button" class="btn btn-default">Create a watchlist</button>
+    </div>
+</div>

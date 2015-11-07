@@ -1,5 +1,5 @@
 /**
- * Created by Timoth?e on 02/11/2015.
+ * Created by Manuel on 04/11/2015.
  */
 define([
     'backbone',
@@ -8,16 +8,14 @@ define([
     'bootstrap'
 ], function(Backbone,_,$,Bootstrap){
 
-    var Movie = Backbone.Model.extend({
-        urlRoot: URL + '/movies',
-        name : '',
+    var TvShow = Backbone.Model.extend({
+        urlRoot: URL + '/tvshows/season/',
 
         parse: function(response) {
-            this.name = response.results[0].trackName;
             return response.results[0];
         }
     });
 
-    return Movie;
+    return TvShow;
 
 });
