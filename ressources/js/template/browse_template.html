@@ -23,33 +23,59 @@
     <h2>Browse</h2>
 </div >
 
-    <div class="container"  >
-        <div class="row">
-            <% var index = 0;
-            var title = '';
-            var by = '';
-            var shortDesc = '';
-            var url = '';
-            %>
-            <% _.each(resultsCol,function(data){ %>
+<div class="container">
+    <div class="row">
+        <% var index = 0;
+           var title = '';
+           var by = '';
+           var shortDesc = '';
+           var url = '';
+        %>
+        <% _.each(resultsCol[0].results,function(data){ %>
             <% if (index < 4){ %>
             <% index++ %>
+            <% if (data.wrapperType == "track"){ %>
+                <% title = data.trackName %>
+                <%  by = data.artistName %>
+                    <% shortDesc =data.longDescription%>
+                    <%  if(data.longDescription!=undefined && data.longDescription.length > 80) {%>
+                        <% shortDesc = data.longDescription.substring(0, 80);%>
+                    <%}%>
+                <%  url = '#/movies/' + data.trackId %>
+            <% } else { %>
+                <% title = data.artistName %>
+                <%  by = data.collectionName ;%>
+                <% shortDesc =data.longDescription%>
+                <%  if(data.longDescription!=undefined && data.longDescription.length > 80) {%>
+                <% shortDesc = data.longDescription.substring(0, 80);%>
+                <%}%>
+                <%  url = '#/tvshows/seasons/' + data.collectionId %>
+            <% } %>
 
-            <div class="col-sm-6 col-md-4 datazone" >
+            <div class="col-sm-6 col-md-4 datazone datazone">
                 <div class="thumbnail">
-                    <img src="<%= formatImageSize(data.artworkUrl100) %>" class="picturezone" alt="">
+                    <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
                     <div class="caption">
-                        <h3> <a href="<%=  data.url  %>" class=""> <%= data.title %></a></h3>
-                        <p>By: <%= data.by %></p>
-                        <p><%= data.shortDesc %>
+                        <h3 class="title-limit"> <a href="<%=  url  %>" class="title-limit"> <%= title %></a></h3>
+                        <p>By: <%= by %></p>
+                        <p><%= shortDesc %>
                     </div>
                 </div>
             </div>
-            <% } else { %>
-            <% index = 0 %>
-        </div>
-        <div class="row">
-            <% } }) %>
-        </div>
+        <% } else { %>
+        <% index = 0 %>
     </div>
+    <div class="row">
+        <% } }) %>
+    </div>
+</div>
+
+<div class="container">
+    <nav>
+        <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
+    </nav>
+</div>
 </div>

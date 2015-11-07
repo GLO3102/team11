@@ -17,25 +17,35 @@ define([
         el: '#main_container',
 
         events:{
-            "click #btn-trailer": "showTrailer"
+            "click #btn-trailer": "showTrailer",
+            'click #add-to-watchlist' : 'addToWatchlist'
         },
         initialize: function () {
         },
 
-        events: {
-            'click #add-to-watchlist' : 'addToWatchlist'
-        },
-
         render: function (options) {
+            var table = new Array();
             var that = this;
             this.movie = new Movie({id: options.id});
-            this.movie.fetch({
-                success: function(printMovie){
-                    that.$el.html(that.template({results:printMovie.toJSON()}))
-                    $('#video-trailer').hide();
+            var watchlistCollection = new WatchListCollection();
+            watchlistCollection.url = URL + '/watchlists';
+            watchlistCollection.fetch({
+                success: function(watchlists){
+                    table.push({watchlist : watchlists});
 
                 }
-            })
+
+            });
+            this.movie.fetch({
+                success: function(printMovie){
+                    table.push({movie: printMovie});
+                    console.log(table);
+                    that.$el.html(that.template({results:table}));
+                    //$('#video-trailer').hide();
+
+                }
+            });
+
         },
         showTrailer: function(){
             if($('#video-trailer').is( ":hidden" )){
@@ -49,7 +59,7 @@ define([
         },
 
         addToWatchlist: function(){
-
+            
         }
     });
 
