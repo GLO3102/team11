@@ -37,20 +37,26 @@
             <% if (data.wrapperType == "track"){ %>
                 <% title = data.trackName %>
                 <%  by = data.artistName %>
-                <%  shortDesc = data.shortDescription %>
+                    <% shortDesc =data.longDescription%>
+                    <%  if(data.longDescription!=undefined && data.longDescription.length > 80) {%>
+                        <% shortDesc = data.longDescription.substring(0, 80);%>
+                    <%}%>
                 <%  url = '#/movies/' + data.trackId %>
             <% } else { %>
                 <% title = data.artistName %>
-                <%  by = data.collectionName %>
-                <%  shortDesc = '' %>
+                <%  by = data.collectionName ;%>
+                <% shortDesc =data.longDescription%>
+                <%  if(data.longDescription!=undefined && data.longDescription.length > 80) {%>
+                <% shortDesc = data.longDescription.substring(0, 80);%>
+                <%}%>
                 <%  url = '#/tvshows/seasons/' + data.collectionId %>
             <% } %>
 
             <div class="col-sm-6 col-md-4 datazone datazone">
                 <div class="thumbnail">
-                    <img src="<%= formatImageSize(data.artworkUrl100) %>" class="picturezone" alt="">
+                    <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
                     <div class="caption">
-                        <h3> <a href="<%=  url  %>" class=""> <%= title %></a></h3>
+                        <h3 class="title-limit"> <a href="<%=  url  %>" class="title-limit"> <%= title %></a></h3>
                         <p>By: <%= by %></p>
                         <p><%= shortDesc %>
                     </div>
