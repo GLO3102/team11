@@ -38,16 +38,16 @@
                 <% title = data.trackName %>
                 <%  by = data.artistName %>
                     <% shortDesc =data.longDescription%>
-                    <%  if(data.longDescription!=undefined && data.longDescription.length > 90) {%>
-                        <% shortDesc = data.longDescription.substring(0, 90);%>
+                    <%  if(data.longDescription!=undefined && data.longDescription.length > 80) {%>
+                        <% shortDesc = data.longDescription.substring(0, 80);%>
                     <%}%>
                 <%  url = '#/movies/' + data.trackId %>
             <% } else { %>
                 <% title = data.artistName %>
                 <%  by = data.collectionName ;%>
                 <% shortDesc =data.longDescription%>
-                <%  if(data.longDescription!=undefined && data.longDescription.length > 90) {%>
-                <% shortDesc = data.longDescription.substring(0, 90);%>
+                <%  if(data.longDescription!=undefined && data.longDescription.length > 80) {%>
+                <% shortDesc = data.longDescription.substring(0, 80);%>
                 <%}%>
                 <%  url = '#/tvshows/seasons/' + data.collectionId %>
             <% } %>
