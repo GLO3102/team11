@@ -10,8 +10,6 @@ define([
 ], function(Backbone,_,$,Bootstrap, WatchListModel){
 
     var WatchListCollection = Backbone.Collection.extend({},{
-        url: URL + '/ewatchlists',
-
         model: WatchListModel
     });
     return WatchListCollection;

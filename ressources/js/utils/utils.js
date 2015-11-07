@@ -30,8 +30,6 @@ formatImageSize = function(str){
     return cpy;
 }
 
-
-
 define([
     'jquery',
     'underscore',
@@ -39,18 +37,20 @@ define([
     'auth',
     'googleAPI'
 ], function($, _, Backbone,Auth, GoogleAPI){
-    var searchTrailer = function(query){
-        var request =  gapi.client.youtube.search.list({
-            q:query,
-           part:'snippet'
-        })
-        request.execute(function(response) {
-           var str = JSON.stringify(response.result);
-            return str;
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
         });
-    }
-
-    return {
-        searchTrailer: searchTrailer
+        return o;
     };
 });

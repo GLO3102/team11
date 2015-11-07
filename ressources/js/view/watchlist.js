@@ -7,16 +7,26 @@ define([
     'jquery',
     'bootstrap',
     'text!template/watchlist_template.html',
-    'collection/watchlist'
+    'text!template/createWatchlist_template.html',
+    'collection/watchlist',
+    'model/watchlist'
 
-], function(Backbone,_,$,Bootstrap,WatchListTemplate, WatchListCollection) {
+], function(Backbone,_,$,Bootstrap,WatchListTemplate,WatchListCreateTemplate, WatchListCollection, WatchlistModel ) {
 
     var WatchListView = Backbone.View.extend({
-        template: _.template(WatchListTemplate),
+        template1: _.template(WatchListTemplate),
+
+        template2: _.template(WatchListCreateTemplate),
 
         collection: WatchListCollection,
 
         el: '#main_container',
+
+        events: {
+            'click #new-watchlist' : 'createWatchlist',
+            'click #create-watchlist' : 'newWatchlist',
+            'click #delete-watchlist' : 'deleteWatchlist'
+        },
 
         initialize: function () {
 
@@ -24,9 +34,11 @@ define([
 
             var self = this;
 
-            this.collection.bind('sync', function () {
+            this.collection.bind('sync add remove', function () {
                 self.render();
+
             });
+
         },
 
         render: function () {
@@ -34,14 +46,47 @@ define([
             var watchListCollection = new WatchListCollection({});
             watchListCollection.url = URL + '/watchlists';
 
-
-            //this.$el.html(this.template());
             watchListCollection.fetch({
                 success: function(data){
-                    that.$el.html(that.template({results: data.toJSON()}))
+                    that.$el.html(that.template1({results: data.toJSON()}))
 
                 }
-            })
+            });
+            this.collection = watchListCollection;
+        },
+
+        createWatchlist: function(){
+            this.$el.html(this.template2({}));
+        },
+
+        newWatchlist: function(event){
+            var name = $('#watchName').val();
+            var owner = $('#email').val();
+            /*this.collection.create({
+                name: name,
+                owner: owner
+            });*/
+            var watchlistModel = new WatchlistModel({name: name, owner: owner})
+            var that = this;
+            watchlistModel.save("","",   {
+                success: function() {
+                    that.collection.add(watchlistModel);
+                    that.render();
+                }
+            });
+         },
+
+        deleteWatchlist : function(event){
+            var that = this;
+            var watchlistId = $(event.target).data('id');
+            var model = this.collection.get(watchlistId);
+            model.destroy({
+                success: function(){
+                    that.collection.remove(watchlistId);
+                    that.render();
+                }
+            });
+
         }
     });
 
