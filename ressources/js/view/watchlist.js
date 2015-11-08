@@ -26,7 +26,7 @@ define([
             'click .delete-watchlist' : 'deleteWatchlist',
             'click .delete-movie' : 'deleteMovie',
             'click .edit-watchlist' : 'editWatchlist',
-            'click #change-name' : 'changeName'
+            'click .change-name' : 'changeName'
         },
 
         initialize: function () {
@@ -66,7 +66,6 @@ define([
                     email: email
                 }
             }, {
-                validate: true,
                 wait: true
             });
          },
@@ -98,19 +97,21 @@ define([
             model.save();
 
         },
-        editWatchlist: function(){
-            if($('#edit-name').is( ":hidden" )){
-                $('#edit-name').show();
+        editWatchlist: function(event){
+            var id = $(event.target).data('id');
+            if($('.edit-name'+id).is( ":hidden" )){
+                $('.edit-name'+id).show();
             }
             else {
-                $('#edit-name').hide();
+                $('.edit-name'+id).hide();
             }
-
         },
-        changeName: function(){
-            var id = $('#inputName').data('id');
+        changeName: function(event){
+            var idd = event.target.id;
+
+            var id = $('#input-'+idd).data('id');
             var model = this.collection.get(id);
-            var name = $('#inputName').val();
+            var name = $('#input-'+idd).val();
             model.save({name : name});
         }
     });
