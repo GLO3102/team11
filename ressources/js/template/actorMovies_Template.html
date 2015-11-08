@@ -10,9 +10,9 @@
             %>
                 <div class="col-sm-6 col-md-4 datazone datazone">
                     <div class="thumbnail">
-                        <img src="<%= formatImageSize(movie.artworkUrl100) %>" class="picturezone" alt="">
-                        <div class="caption">
-                            <a class="title-limit" href="<%= url  %>" class=""> <%= movie.trackName %></a>
+                        <img src="<%= formatImageSize(movie.artworkUrl100, 250) %>" class="picturezone" alt="">
+                        <div class="caption title-limit">
+                            <a href="<%= url  %>" class=""> <%= movie.trackName %></a>
                             <p><%= release[0] %></p>
                         </div>
                     </div>
