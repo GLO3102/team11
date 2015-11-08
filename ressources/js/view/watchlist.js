@@ -25,7 +25,8 @@ define([
         events: {
             'click #new-watchlist' : 'createWatchlist',
             'click #create-watchlist' : 'newWatchlist',
-            'click #delete-watchlist' : 'deleteWatchlist'
+            'click .delete-watchlist' : 'deleteWatchlist',
+            'click .delete-movie' : 'deleteMovie'
         },
 
         initialize: function () {
@@ -84,6 +85,16 @@ define([
                 }
             });
 
+        },
+
+        deleteMovie : function(event) {
+            var that = this;
+            var movieId = $(event.target).data('id');
+            var watchlistId = $(event.target).data('watchlist');
+            console.log(movieId);
+            //var model = this.collection.get(movieId);
+            console.log(this.collection.toJSON());
+           // console.log(model.toJSON());
         }
     });
 
