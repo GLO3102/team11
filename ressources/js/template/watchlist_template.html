@@ -4,29 +4,29 @@
         <div class="watchlist-user">
             <% var index = 0 %>
             <% _.each(results, function(data) {%>
-            <%  if (data.owner.id == '562145aa9cfbe00300efe70e') {%>
-            <hr />
-            <h4>Name : <%= data.name %>  <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span>
-                <span class="glyphicon glyphicon-pencil edit-watchlist" data-id="<%= data.id %>" ></span></h4>
-            <div class="edit-name<%= data.id %>" style="display: none">
-                <input  type="text" class="form-control custom-control size-input inputName" id="input-<%= index %>" data-id="<%= data.id %>"/>
-                <button type="button" class="btn btn-info change-name" id="<%= index %>">Change name</button>
-            </div>
-            <ul class="list-inline">
-            <% _.each(data.movies, function(movie) { %>
-                <% if(movie.trackId != undefined){%>
-                    <li>
-                        <a href="#/movies/<%= movie.trackId %>">
-                            <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
-                            <span><%= movie.trackName %></span></a>
-                            <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
-                    </li>
-                <%}%>
-            <% }) %>
-            </ul>
-            <% } %>
-            <% index++ %>
-            <% } %>
+                    <%  if (data.owner.id == '562145aa9cfbe00300efe70e') {%>
+                    <hr />
+                    <h4>Name : <%= data.name %>  <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span>
+                        <span class="glyphicon glyphicon-pencil edit-watchlist" data-id="<%= data.id %>" ></span></h4>
+                    <div class="edit-name<%= data.id %>" style="display: none">
+                        <input  type="text" class="form-control custom-control size-input inputName" id="input-<%= index %>" data-id="<%= data.id %>"/>
+                        <button type="button" class="btn btn-info change-name" id="<%= index %>">Change name</button>
+                    </div>
+                    <ul class="list-inline">
+                    <% _.each(data.movies, function(movie) { %>
+                        <% if(movie.trackId != undefined){%>
+                            <li>
+                                <a href="#/movies/<%= movie.trackId %>">
+                                    <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
+                                    <span><%= movie.trackName %></span></a>
+                                    <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
+                            </li>
+                        <%}%>
+                    <% }) %>
+                    </ul>
+                    <% } %>
+                    <% index++ %>
+
             <% }) %>
         </div>
         <button type="button" class="btn btn-default btn-margin-bottom" id="new-watchlist">Create a new watchlist</button>
