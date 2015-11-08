@@ -23,7 +23,7 @@ define([
         general_search : function() {
             if ($('#search_text').val() != '') {
                 var text_to_search = $('#search_text').val();
-                location.href='#/search/query' + text_to_search;
+                location.href='#/search/' + text_to_search;
         }
             $('#search_text').val('');
             return false;
