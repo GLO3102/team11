@@ -33,7 +33,6 @@ define([
             watchlistCollection.fetch({
                 success: function(watchlists){
                     table.push({watchlist : watchlists.toJSON()});
-
                 }
             });
             this.movie.fetch({
@@ -41,8 +40,8 @@ define([
                     table.push({movie: printMovie.toJSON()});
                     console.log(table);
                     that.$el.html(that.template({results:table}));
-
-
+                    $('#video-trailer').hide();
+                    $('#watchlist-name').hide();
                 }
             });
 
