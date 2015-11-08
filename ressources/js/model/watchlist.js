@@ -12,18 +12,11 @@ define([
 ], function(Backbone,_,$,Bootstrap, MoviesCollection){
 
     var WatchListModel = Backbone.Model.extend({
-        url: URL + '/watchlists',
         defaults: {
                 name: '',
                 owner: '',
-                movies: new MoviesCollection()
+                movies: []
         },
-
-        /*parse: function(response){
-            console.log(response);
-            this.id = response.id;
-            return response;
-        },*/
 
         validate: function(attrs){
             if(!attrs.name || !attrs.owner || attrs.name === '' || attrs.owner === ''){

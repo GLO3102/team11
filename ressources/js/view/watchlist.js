@@ -24,7 +24,9 @@ define([
             'click #new-watchlist' : 'createWatchlist',
             'click #create-watchlist' : 'newWatchlist',
             'click .delete-watchlist' : 'deleteWatchlist',
-            'click .delete-movie' : 'deleteMovie'
+            'click .delete-movie' : 'deleteMovie',
+            'click .edit-watchlist' : 'editWatchlist',
+            'click #change-name' : 'changeName'
         },
 
         initialize: function () {
@@ -52,11 +54,18 @@ define([
 
         newWatchlist: function(event){
             var name = $('#watchName').val();
-            var owner = $('#email').val();
+            var email = $('#email').val();
+            var userName = $('#userName').val();
+            var id = '562145aa9cfbe00300efe70e';
 
             this.collection.create({
                 name: name,
-                owner: owner }, {
+                owner: {
+                    id: id,
+                    name: userName,
+                    email: email
+                }
+            }, {
                 validate: true,
                 wait: true
             });
@@ -72,10 +81,39 @@ define([
         deleteMovie : function(event) {
             var movieId = $(event.target).data('id');
             var watchlistId = $(event.target).data('watchlist');
-            //console.log(movieId);
-            var model = this.collection.get(movieId);
-            console.log(this.collection.toJSON());
-           // console.log(model.toJSON());
+
+            var model = this.collection.get(watchlistId);
+            var table = model.get('movies');
+            console.log(table);
+
+            console.log(movieId);
+            var index = -1;
+            for(var i = 0, len = table.length; i < len; i++) {
+                if (table[i].trackId === movieId) {
+                    index = i;
+                    break;
+                }
+            }
+
+            model.attributes.movies =   model.attributes.movies.splice(0,index);
+
+            model.save();
+
+        },
+        editWatchlist: function(){
+            if($('#edit-name').is( ":hidden" )){
+                $('#edit-name').show();
+            }
+            else {
+                $('#edit-name').hide();
+            }
+
+        },
+        changeName: function(){
+            var id = $('#inputName').data('id');
+            var model = this.collection.get(id);
+            var name = $('#inputName').val();
+            model.save({name : name});
         }
     });
 

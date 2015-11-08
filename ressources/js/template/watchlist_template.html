@@ -4,7 +4,12 @@
         <div class="watchlist-user">
             <% _.each(results, function(data) {%>
             <hr />
-            <h4>Name : <%= data.name %> <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span></h4>
+            <h4>Name : <%= data.name %>  <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span>
+                <span class="glyphicon glyphicon-pencil edit-watchlist" ></span></h4>
+            <div id="edit-name" style="display: none">
+                <input id="inputName" type="text" class="form-control custom-control size-input" data-id="<%= data.id %>"/>
+                <button type="button" class="btn btn-default" id="change-name">Change name</button>
+            </div>
             <ul class="list-inline">
             <% _.each(data.movies, function(movie) { %>
                 <li>

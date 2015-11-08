@@ -9,7 +9,7 @@ define([
     'model/watchlist'
 ], function(Backbone,_,$,Bootstrap, WatchListModel){
 
-    var WatchListCollection = Backbone.Collection.extend({},{
+    var WatchListCollection = Backbone.Collection.extend({
         model: WatchListModel
     });
     return WatchListCollection;
