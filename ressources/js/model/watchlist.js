@@ -17,7 +17,7 @@ define([
         },
 
         validate: function(attrs){
-            if(!attrs.name || !attrs.owner || attrs.name === '' || attrs.owner === ''){
+            if(!attrs.name ||  attrs.name === '' ){
                 return 'Please enter a valid name or/and a valid owner !';
             }
         }
