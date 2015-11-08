@@ -15,8 +15,6 @@
                 <% if(movie.trackId != undefined){%>
                     <li>
                         <a href="#/movies/<%= movie.trackId %>">
-                            <%console.log(movie);%>
-                            <%console.log(movie.artworkUrl100);%>
                             <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
                             <span><%= movie.trackName %></span></a>
                             <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
