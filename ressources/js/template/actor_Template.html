@@ -1,15 +1,39 @@
 <div class="row top-buffer row-bottom">
     <div class="actor-content">
         <div class="col-sm-4 cover-actor">
-            <!--<img src="ressources/img/actor/bryan-cranston-1.jpg" class="img-responsive img-actor">-->
-            <% console.log(results.artistName) %>
+            <%
+                var image = "";
+                function successCB(data){
+                    jsonData = JSON.parse(data);
+                    theMovieDb.people.getImages({"id":jsonData.results[0].id}, successImageCB, errorImageCB);
+                    function successImageCB(dataImage){
+                        jsonDataImage = JSON.parse(dataImage);
+                        image = jsonDataImage.profiles[0].file_path;
+                        $("#image").attr("src", "http://image.tmdb.org/t/p/w500"+image);
+                    }
+
+                    function errorImageCB(dataImage){
+                        console.log(dataImage);
+                    }
+                }
+
+                function errorCB(data){
+                    console.log(data);
+                }
+
+
+                theMovieDb.search.getPerson({"query":encodeURIComponent(results.artistName)}, successCB, errorCB);
+
+
+            %>
+            <img src="" id="image" class="img-responsive img-actor">
         </div>
         <div class="col-sm-8 description-movie">
             <h2 class="name-actor"><%= results.artistName %></h2>
-
-            <h3>Genre</h3>
+            <br>
+            <h4>Genre:</h4>
             <p class="description-actor"><%= results.primaryGenreName %> </p>
-
+            <br>
             <div class="button-utils col-sm-8">
                 <a class="itunes-actor" href="<%= results.artistLinkUrl%>" style="display:inline-block;overflow:hidden;
                     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)

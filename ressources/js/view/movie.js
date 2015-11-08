@@ -9,8 +9,9 @@ define([
     'model/movie',
     'text!template/movie_template.html',
     'utils/utils',
-    'collection/watchlist'
-], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils, WatchListCollection) {
+    'collection/watchlist',
+    'model/watchlist'
+], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils, WatchListCollection, WatchlistModel) {
 
     var MovieView = Backbone.View.extend({
         template: _.template(MovieTemplate),
@@ -38,7 +39,6 @@ define([
             this.movie.fetch({
                 success: function(printMovie){
                     table.push({movie: printMovie.toJSON()});
-                    console.log(table);
                     that.$el.html(that.template({results:table}));
                     $('#video-trailer').hide();
                     $('#watchlist-name').hide();
@@ -69,16 +69,15 @@ define([
         addWatchlist: function(){
             var that = this;
             var id = $('.radio-watch:checked').val();
-            var watchlistCollection = new WatchListCollection();
-            watchlistCollection.url = URL + '/watchlists/' + id;
-            watchlistCollection.fetch({
+            var watchlistModel = new WatchlistModel();
+            watchlistModel.url = URL + '/watchlists/' + id;
+            watchlistModel.fetch({
                 success: function(data){
-                    data.models[0].url = URL + '/watchlists/' + id + '/movies';
-                    data.models[0].save(that.movie.toJSON(), {
-                        type: 'post'
-                    })
+                    data.attributes.movies.push(that.movie.toJSON());
+                    data.save();
                 }
-            })
+            });
+
         }
     });
     return MovieView;

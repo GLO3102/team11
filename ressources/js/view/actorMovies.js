@@ -14,6 +14,9 @@ define([
         model: ActorMovies,
         collection: ActorMoviesCollection,
         el: '#main_container',
+        events:{
+            "click #btn-trailer": "showTrailer",
+        },
 
         initialize: function () {
 
@@ -38,16 +41,16 @@ define([
             })
         },
 
-        showTrailer: function(){
-            console.log("allo");
-            if($('#video-trailer').is( ":hidden" )){
+        showTrailer: function(event){
 
-                Utils.searchTrailer(this.movie.name,function(src){
-                    $('#trailer').attr('src', src)
-                    $('#video-trailer').show()});
+            var index = event.target.name;
+            if($('#video-trailer-'+index).is( ":hidden" )){
+                Utils.searchTrailer($('#video-trailer-'+index).attr('name'),function(src){
+                    $('#trailer-'+index).attr('src', src)
+                    $('#video-trailer-'+index).show()});
             }
             else {
-                $('#video-trailer').hide();
+                $('#video-trailer-'+index).hide();
             }
         }
     });
