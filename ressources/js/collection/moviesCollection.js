@@ -10,7 +10,6 @@ define([
 ], function(Backbone,_,$,Bootstrap,Movie){
 
     var MoviesCollection = Backbone.Collection.extend({
-        url: URL + '/watchlists',
         model: Movie,
 
         parse: function(response){

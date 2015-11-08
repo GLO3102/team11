@@ -18,7 +18,8 @@ define([
 
         events:{
             "click #btn-trailer": "showTrailer",
-            'click #add-to-watchlist' : 'addToWatchlist'
+            'click #add-to-watchlist' : 'addToWatchlist',
+            'click #addWatchlist' : 'addWatchlist'
         },
         initialize: function () {
         },
@@ -34,14 +35,12 @@ define([
                     table.push({watchlist : watchlists});
 
                 }
-
             });
             this.movie.fetch({
                 success: function(printMovie){
                     table.push({movie: printMovie});
                     console.log(table);
                     that.$el.html(that.template({results:table}));
-                    //$('#video-trailer').hide();
 
                 }
             });
@@ -59,7 +58,26 @@ define([
         },
 
         addToWatchlist: function(){
-            
+            if($('#watchlist-name').is( ":hidden" )){
+                Utils.searchTrailer(this.movie.name,function(src){
+                    $('#watchlist-name').attr('src', src)
+                    $('#watchlist-name').show()});
+            }
+            else {
+                $('#watchlist-name').hide();
+            }
+        },
+
+        addWatchlist: function(){
+            var that = this;
+            var id = $('.radio-watch:checked').val();
+            var watchlistCollection = new WatchListCollection();
+            watchlistCollection.url = URL + '/watchlists/' + id;
+            watchlistCollection.fetch({
+                success: function(data){
+
+                }
+            })
         }
     });
 

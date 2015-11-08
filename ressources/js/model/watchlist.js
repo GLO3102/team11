@@ -7,7 +7,7 @@ define([
     'underscore',
     'jquery',
     'bootstrap',
-    'collection/moviesCollection',
+    'collection/moviesCollection'
 
 ], function(Backbone,_,$,Bootstrap, MoviesCollection){
 
@@ -15,7 +15,8 @@ define([
         url: URL + '/watchlists',
         defaults: {
                 name: '',
-                owner: ''
+                owner: '',
+                movies: new MoviesCollection()
         }
 
         /*parse: function(response){
