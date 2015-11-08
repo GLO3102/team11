@@ -32,18 +32,19 @@ define([
             var watchlistCollection = new WatchListCollection();
             watchlistCollection.url = URL + '/watchlists';
             watchlistCollection.fetch({
-                success: function(watchlists){
-                    table.push({watchlist : watchlists.toJSON()});
+                success:function(watchlists){
+                    table.push(watchlists.toJSON());
                 }
-            });
+        });
             this.movie.fetch({
-                success: function(printMovie){
-                    table.push({movie: printMovie.toJSON()});
-                    that.$el.html(that.template({results:table}));
-                    $('#video-trailer').hide();
-                    $('#watchlist-name').hide();
-                }
-            });
+               success: function(printMovie)
+            {
+                table.push(printMovie.toJSON());
+                that.$el.html(that.template({results: table}));
+                $('#video-trailer').hide();
+                $('#watchlist-name').hide();
+            }
+        });
 
         },
         showTrailer: function(){

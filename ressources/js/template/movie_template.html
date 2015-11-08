@@ -1,20 +1,20 @@
 <div class="row top-buffer row-bottom">
     <div class="movie-content">
         <div class="col-sm-4 cover-movie">
-            <img src=<%= formatImageSize(results[1].movie.artworkUrl100,400) %> class="img-responsive">
+            <img src=<%= formatImageSize(results[1].artworkUrl100,400) %> class="img-responsive">
         </div>
         <div class="col-sm-8 description-movie">
-            <h2 class="title-movie"><%= results[1].movie.trackName %></h2>
-            <p class="genre-movie"><strong>Genres:</strong> <%= results[1].movie.primaryGenreName %> </p>
-            <span class="date-movie"><%= formatdate(results[1].movie.releaseDate) %></span>
+            <h2 class="title-movie"><%= results[1].trackName %></h2>
+            <p class="genre-movie"><strong>Genres:</strong> <%= results[1].primaryGenreName %> </p>
+            <span class="date-movie"><%= formatdate(results[1].releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%= formattime(results[1].movie.trackTimeMillis)%></span><br><br>
-            <p class="description-movie"><%= results[1].movie.longDescription %></p>
+            <span class="time-movie"><%= formattime(results[1].trackTimeMillis)%></span><br><br>
+            <p class="description-movie"><%= results[1].longDescription %></p>
             <p class="director-movie">
-                <strong>Director:</strong> <%= results[1].movie.artistName %>
+                <strong>Director:</strong> <%= results[1].artistName %>
             </p>
             <div class="button-utils col-sm-8">
-                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/<%= results[1].movie.trackName %>/id<%= results[1].movie.trackId %>?mt=6" style="display:inline-block;overflow:hidden;
+                <a class="itunes-movie" href="https://geo.itunes.apple.com/us/movie/<%= results[1].trackName %>/id<%= results[1].trackId %>?mt=6" style="display:inline-block;overflow:hidden;
                     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
                     no-repeat;width:165px;height:40px;" target="_blank"> </a>
                 <button type="button" class="btn btn-default btn-margin-bottom" id="add-to-watchlist">
@@ -28,11 +28,12 @@
                 <div id="watchlist-name">
                     <h4>Select a watchlist</h4>
                     <ul class="list-inline">
-                    <% _.each(results[0].watchlist, function(data) { %>
-
+                    <% _.each(results[0], function(data) { %>
+                        <%  if (data.owner.id == '562145aa9cfbe00300efe70e') {%>
                         <li>
                             <input type="radio" name="watchlistName" value="<%= data.id %>" class="radio-watch"/> <%= data.name %>
                         </li>
+                        <% } %>
                         <% }) %>
                     </ul>
                     <button type="button" class="btn btn-default" id="addWatchlist">Add</button>
