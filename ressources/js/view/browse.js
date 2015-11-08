@@ -30,21 +30,26 @@ define([
                 var artworkUrl100;
                  for (var i = 0;i < 75;i++)
                  {
-                     if (resultJSON[0].results[i].wrapperType == "track")
+                     var data = resultJSON[0].results[i];
+                     if (data.wrapperType == "track")
                      {
-                        title = resultJSON[0].results[i].trackName
-                        by = resultJSON[0].results[i].artistName
-                        shortDesc = resultJSON[0].results[i].shortDescription
-                        url = '#/movies/' + resultJSON[0].results[i].trackId
+                        title = data.trackName
+                        by = data.artistName
+                        shortDesc = data.longDescription;
+                         if(data.longDescription!=undefined && data.longDescription.length > 80)
+                             shortDesc = data.longDescription.substring(0, 80);
+                        url = '#/movies/' + data.trackId;
                      }
                      else
                      {
-                         title = resultJSON[0].results[i].artistName
-                         by = resultJSON[0].results[i].collectionName
-                         shortDesc = ''
-                         url = '#/tvshows/seasons/' + resultJSON[0].results[i].collectionId
+                         title = data.artistName
+                         by =data.collectionName
+                         shortDesc = data.longDescription;
+                         if(data.longDescription!=undefined && data.longDescription.length > 80)
+                            shortDesc = data.longDescription.substring(0, 80);
+                         url = '#/tvshows/seasons/' + data.collectionId
                      }
-                     artworkUrl100 = resultJSON[0].results[i].artworkUrl100;
+                     artworkUrl100 = data.artworkUrl100;
                      displayCol.push({
                         title:title,
                          by:by,
