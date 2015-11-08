@@ -7,15 +7,13 @@
             <h3>Filmography : </h3>
             <% _.each(data.results, function(movie) {
                 url = '#/movies/' + movie.trackId;
-                str = movie.releaseDate;
-                release = str.split("T");
             %>
                 <div class="col-sm-6 col-md-4 datazone datazone">
                     <div class="thumbnail">
                         <img src="<%= formatImageSize(movie.artworkUrl100, 230) %>" class="picturezone" alt="">
                         <div class="caption title-limit">
                             <a href="<%= url  %>" class=""> <%= movie.trackName %></a>
-                            <p><%= release[0] %></p>
+                            <p><%= formatdate(movie.releaseDate)  %></p>
                         </div>
                     </div>
                     <button id="btn-trailer" name="<%=index%>" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
@@ -23,7 +21,7 @@
                         Show trailer
                     </button>
                     <div class="row video-trailer" id="video-trailer-<%=index%>" name="<%=movie.trackName%>">
-                        trrailer
+                        trailer
                         <div class="col-sm-12">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" id="trailer-<%=index%>" src=""></iframe>
