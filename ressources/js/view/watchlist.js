@@ -84,9 +84,7 @@ define([
 
             var model = this.collection.get(watchlistId);
             var table = model.get('movies');
-            console.log(table);
 
-            console.log(movieId);
             var index = -1;
             for(var i = 0, len = table.length; i < len; i++) {
                 if (table[i].trackId === movieId) {
