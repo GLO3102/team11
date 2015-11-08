@@ -11,6 +11,7 @@ var API_Key = 'AIzaSyDjcljWOb8-dXwz6A2Sp6QqAWPrOcAb-38';
 // Upon loading, the Google APIs JS client automatically invokes this callback.
 googleApiClientReady = function() {
     gapi.auth.init(function() {
+        gapi.client.setApiKey(API_Key);
         window.setTimeout(checkAuth, 1);
     });
 }

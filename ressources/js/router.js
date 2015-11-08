@@ -20,8 +20,9 @@ define([
             'home':'home',
             'movies/:id': 'movie',
             'tvshows/seasons/:id' : 'tvshow',
-            'search/query:q':'search',
-            'search/query:q/genre:g':'search',
+            'search/:q':'search',
+            'actors/:id': 'actor',
+            'actors/:id/movies': 'actorMovies',
             'watchlist' : 'watchlist',
             // Default
             '*actions': 'defaultAction'
@@ -54,15 +55,8 @@ define([
             gSearch.search(q).done(function(results){
                 new GSView({collection:results}).render();
             });
-            app_router.navigate('search');
         });
-        app_router.on('route:search', function(q){
-            var gSearch = SearchableCollection.extend({url: URL});
-            gSearch.search(q).done(function(results){
-               new GSView({collection:results}).render();
-            });
-            app_router.navigate('search');
-        });
+
 
         app_router.on('route:watchlist', function(){
             var watchlistCollection = new WatchlistCollection();
@@ -74,8 +68,18 @@ define([
             watchlistCollection.fetch().complete(function () {
                 watchListView.render();
             });
+        });
 
+        app_router.on('route:actor', function(id){
+            var actorView = new ActorView();
+            actorView.render({id: id});
+            var actorMoviesView = new ActorMoviesView();
+            actorMoviesView.render({id: id});
 
+        });
+        app_router.on('route:actorMovies', function(id){
+            var actorMoviesView = new ActorMoviesView();
+            actorMoviesView.render({id: id});
         });
 
         // Unlike the above, we don't call render on this view as it will handle
