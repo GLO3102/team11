@@ -11,8 +11,9 @@ define([
     'view/watchlist',
 	'view/actor',
     'view/actorMovies',
-    'view/tvshow'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView) {
+    'view/tvshow',
+    'collection/watchlist'
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView, WatchlistCollection) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -64,8 +65,16 @@ define([
         });
 
         app_router.on('route:watchlist', function(){
-            var watchListView = new WatchListView();
-            watchListView.render();
+            var watchlistCollection = new WatchlistCollection();
+            watchlistCollection.url = URL + '/watchlists';
+
+            var watchListView = new WatchListView({
+                collection: watchlistCollection
+            });
+            watchlistCollection.fetch().complete(function () {
+                watchListView.render();
+            });
+
 
         });
 

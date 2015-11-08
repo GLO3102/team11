@@ -7,7 +7,7 @@ define([
     'underscore',
     'jquery',
     'bootstrap',
-    'collection/moviesCollection',
+    'collection/moviesCollection'
 
 ], function(Backbone,_,$,Bootstrap, MoviesCollection){
 
@@ -15,8 +15,9 @@ define([
         url: URL + '/watchlists',
         defaults: {
                 name: '',
-                owner: ''
-        }
+                owner: '',
+                movies: new MoviesCollection()
+        },
 
         /*parse: function(response){
             console.log(response);
@@ -24,11 +25,11 @@ define([
             return response;
         },*/
 
-       /* validate: function(attrs){
+        validate: function(attrs){
             if(!attrs.name || !attrs.owner || attrs.name === '' || attrs.owner === ''){
                 return 'Please enter a valid name or/and a valid owner !';
             }
-        }*/
+        }
     });
 
     return WatchListModel;

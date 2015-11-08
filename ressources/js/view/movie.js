@@ -18,7 +18,8 @@ define([
 
         events:{
             "click #btn-trailer": "showTrailer",
-            'click #add-to-watchlist' : 'addToWatchlist'
+            'click #add-to-watchlist' : 'addToWatchlist',
+            'click #addWatchlist' : 'addWatchlist'
         },
         initialize: function () {
         },
@@ -31,18 +32,16 @@ define([
             watchlistCollection.url = URL + '/watchlists';
             watchlistCollection.fetch({
                 success: function(watchlists){
-                    table.push({watchlist : watchlists});
-
+                    table.push({watchlist : watchlists.toJSON()});
                 }
-
             });
             this.movie.fetch({
                 success: function(printMovie){
-                    table.push({movie: printMovie});
+                    table.push({movie: printMovie.toJSON()});
                     console.log(table);
                     that.$el.html(that.template({results:table}));
-                    //$('#video-trailer').hide();
-
+                    $('#video-trailer').hide();
+                    $('#watchlist-name').hide();
                 }
             });
 
@@ -59,9 +58,28 @@ define([
         },
 
         addToWatchlist: function(){
-            
+            if($('#watchlist-name').is( ":hidden" )){
+                    $('#watchlist-name').show();
+            }
+            else {
+                $('#watchlist-name').hide();
+            }
+        },
+
+        addWatchlist: function(){
+            var that = this;
+            var id = $('.radio-watch:checked').val();
+            var watchlistCollection = new WatchListCollection();
+            watchlistCollection.url = URL + '/watchlists/' + id;
+            watchlistCollection.fetch({
+                success: function(data){
+                    data.models[0].url = URL + '/watchlists/' + id + '/movies';
+                    data.models[0].save(that.movie.toJSON(), {
+                        type: 'post'
+                    })
+                }
+            })
         }
     });
-
     return MovieView;
 });

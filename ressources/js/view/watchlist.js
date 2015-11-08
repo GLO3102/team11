@@ -18,14 +18,13 @@ define([
 
         template2: _.template(WatchListCreateTemplate),
 
-        collection: WatchListCollection,
-
         el: '#main_container',
 
         events: {
             'click #new-watchlist' : 'createWatchlist',
             'click #create-watchlist' : 'newWatchlist',
-            'click #delete-watchlist' : 'deleteWatchlist'
+            'click .delete-watchlist' : 'deleteWatchlist',
+            'click .delete-movie' : 'deleteMovie'
         },
 
         initialize: function () {
@@ -42,17 +41,9 @@ define([
         },
 
         render: function () {
-            var that = this;
-            var watchListCollection = new WatchListCollection({});
-            watchListCollection.url = URL + '/watchlists';
-
-            watchListCollection.fetch({
-                success: function(data){
-                    that.$el.html(that.template1({results: data.toJSON()}))
-
-                }
-            });
-            this.collection = watchListCollection;
+            this.$el.html(this.template1({
+                results: this.collection.toJSON()
+            }));
         },
 
         createWatchlist: function(){
@@ -63,27 +54,28 @@ define([
             var name = $('#watchName').val();
             var owner = $('#email').val();
 
-            var watchlistModel = new WatchlistModel({name: name, owner: owner})
-            var that = this;
-            watchlistModel.save("","",   {
-                success: function() {
-                    that.collection.add(watchlistModel);
-                    that.render();
-                }
+            this.collection.create({
+                name: name,
+                owner: owner }, {
+                validate: true,
+                wait: true
             });
          },
 
         deleteWatchlist : function(event){
-            var that = this;
             var watchlistId = $(event.target).data('id');
             var model = this.collection.get(watchlistId);
-            model.destroy({
-                success: function(){
-                    that.collection.remove(watchlistId);
-                    that.render();
-                }
-            });
+            model.destroy();
+            this.collection.remove(watchlistId);
+        },
 
+        deleteMovie : function(event) {
+            var movieId = $(event.target).data('id');
+            var watchlistId = $(event.target).data('watchlist');
+            //console.log(movieId);
+            var model = this.collection.get(movieId);
+            console.log(this.collection.toJSON());
+           // console.log(model.toJSON());
         }
     });
 

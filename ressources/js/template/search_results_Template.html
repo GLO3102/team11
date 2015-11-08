@@ -1,28 +1,24 @@
-<div class="row">
-<% _.each(results[0],function(result){ %>
-<% var index = 0 %>
-<% _.each(result,function(data){ %>
+<div class="container">
+    <div class="row">
+        <% var index = 0;  %>
+        <% _.each(results,function(data){ %>
         <% if (index < 4){ %>
-            <% index++ %>
-            <div class="col-sm-3 mainzone mix category-1">
-                <div class="picturezone">
-                    <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="img-responsive center-block video_link">
-                </div>
-                <div class="datazone">
-                    <% if(data.wrapperType == "track"){ %>
-                        <a href="#/movies/<%= data.trackId%>"><%= data.trackName %></a><br>
-                    <% } else {%>
-                        <a href="#/tvshows/season/<%= data.collectionId%>"><%= data.collectionName %></a><br>
-                    <%}%>
-                    <p><%= data.artistName %><br>
-                        <%= data.shortDescription %><br></p>
-                </div>
-            </div>
-       <% } else { %>
-        <% index = 0 %>
-            </div>
-            <div class="row">
-    <% } }) %>
+        <% index++ %>
 
-<% }) %>
+        <div class="col-sm-6 col-md-4 datazone datazone">
+            <div class="thumbnail">
+                <img src="<%= formatImageSize(data.artworkUrl100, 250) %>" class="picturezone" alt="">
+                <div class="caption">
+                    <h3 class="title-limit"> <a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
+                    <p>By: <%= data.by %></p>
+                    <p><%= data.shortDesc %>
+                </div>
+            </div>
+        </div>
+        <% } else { %>
+        <% index = 0 %>
+    </div>
+    <div class="row">
+        <% } }) %>
+    </div>
 </div>

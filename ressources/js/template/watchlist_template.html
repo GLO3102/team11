@@ -4,13 +4,14 @@
         <div class="watchlist-user">
             <% _.each(results, function(data) {%>
             <hr />
-            <h4>Name : <%= data.name %> <span class="glyphicon glyphicon-trash" id="delete-watchlist" data-id="<%= data.id %>"></span></h4>
+            <h4>Name : <%= data.name %> <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span></h4>
             <ul class="list-inline">
             <% _.each(data.movies, function(movie) { %>
                 <li>
                     <a href="#/movies/<%= movie.trackId %>">
                         <img src="<%= movie.artworkUrl100 %>" class="img-responsive">
-                        <%= movie.trackName %></a>
+                        <span><%= movie.trackName %></span></a>
+                        <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
                 </li>
             <% }) %>
             </ul>
