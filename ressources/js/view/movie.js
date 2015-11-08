@@ -39,7 +39,6 @@ define([
             this.movie.fetch({
                 success: function(printMovie){
                     table.push({movie: printMovie});
-                    console.log(table);
                     that.$el.html(that.template({results:table}));
 
                 }
@@ -75,7 +74,10 @@ define([
             watchlistCollection.url = URL + '/watchlists/' + id;
             watchlistCollection.fetch({
                 success: function(data){
-
+                    data.models[0].url = URL + '/watchlists/' + id + '/movies'
+                    data.models[0].save(that.movie.attributes, {
+                        type: 'post'
+                    })
                 }
             })
         }

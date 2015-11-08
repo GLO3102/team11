@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="78de502f-1f70-4320-b69d-0acd997bc30c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/view/movie.js" afterPath="$PROJECT_DIR$/ressources/js/view/movie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/template/movie_template.html" afterPath="$PROJECT_DIR$/ressources/js/template/movie_template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/collection/moviesCollection.js" afterPath="$PROJECT_DIR$/ressources/js/collection/moviesCollection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/js/model/watchlist.js" afterPath="$PROJECT_DIR$/ressources/js/model/watchlist.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="team11.iws" />
@@ -52,8 +49,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+            <state vertical-scroll-proportion="-2.1">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -63,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/ressources/js/model/watchlist.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -84,8 +81,8 @@
       <file leaf-file-name="movie.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6704036">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6939462">
+              <caret line="77" column="61" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -433,6 +430,164 @@
       <recent name="C:\Users\Timothée\WebstormProjects\team11\ressources\img\logo" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/main.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/router.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/template/browse_template.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/view/browse.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/actor.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/movie.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/argo.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/breakingbad.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/bryan-cranston-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/bryan-cranston-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/bryan-cranston-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/bryan-cranston-4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/bryan-cranston-5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/contagion.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/drive.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/godzilla.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/godzilla2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/actor/malcolm.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/American_Ultra2015.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/AntMan_2015.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/Black_Mass.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/CodeNameUncle2015.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/Everest.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/Mission_Impossible_Rogue_Nation.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/Star_Wars_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/The_Avenger_Age_of_Ultron.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/Vacation_2015.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/movie/birdman.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/Breaking_Bad.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/breaking_bad_season1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/breaking_bad_season2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/breaking_bad_season3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/breaking_bad_season4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/breaking_bad_season5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/episode1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/episode2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/episode3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Breaking_Bad/img-tvshow.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/FWD/Fear_of_the_walking_dead.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Homeland/Homeland.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Narcos/Narcos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Suits/Suits.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/TWD/Walking_Dead.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/img/tvshows/Thumbs.db</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/actor.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/movie.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ressources/js/tvshows.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tvshows.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
@@ -628,31 +783,37 @@
       <option name="project" value="LOCAL" />
       <updated>1446935590345</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="try to post a movie in a watchlist">
+      <created>1446944523447</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1446944523447</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29081082" sideWeight="0.50208336" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2900433" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28972974" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -686,7 +847,8 @@
     <MESSAGE value="+ ajout suppression watchlist" />
     <MESSAGE value="watchlist" />
     <MESSAGE value="watchlist list in movie" />
-    <option name="LAST_COMMIT_MESSAGE" value="watchlist list in movie" />
+    <MESSAGE value="try to post a movie in a watchlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="try to post a movie in a watchlist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -727,20 +889,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/tvshows.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/actor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/css/movie.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -755,24 +903,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/actor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/css/tvshows.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tvshows.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="485" column="104" selection-start-line="485" selection-start-column="104" selection-end-line="485" selection-end-column="104" />
         </state>
       </provider>
     </entry>
@@ -801,20 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/movie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.933333">
-          <caret line="109" column="18" selection-start-line="106" selection-start-column="12" selection-end-line="109" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1006,14 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/collection/moviesCollection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1026,6 +1138,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ressources/js/model/watchlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1046,20 +1176,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ressources/js/model/watchlist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ressources/js/view/movie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6704036">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6939462">
+          <caret line="77" column="61" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
           <folding />
         </state>
       </provider>
