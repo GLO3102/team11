@@ -74,8 +74,9 @@ define([
             watchlistCollection.url = URL + '/watchlists/' + id;
             watchlistCollection.fetch({
                 success: function(data){
-                    data.models[0].url = URL + '/watchlists/' + id + '/movies'
-                    data.models[0].save(that.movie.attributes, {
+                    console.log(that.movie.toJSON());
+                    data.models[0].url = URL + '/watchlists/' + id + '/movies';
+                    data.models[0].save(that.movie.toJSON(), {
                         type: 'post'
                     })
                 }
