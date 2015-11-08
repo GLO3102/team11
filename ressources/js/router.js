@@ -20,8 +20,7 @@ define([
             'home':'home',
             'movies/:id': 'movie',
             'tvshows/seasons/:id' : 'tvshow',
-            'search/query:q':'search',
-            'search/query:q/genre:g':'search',
+            'search/:q':'search',
             'watchlist' : 'watchlist',
             // Default
             '*actions': 'defaultAction'
@@ -54,15 +53,8 @@ define([
             gSearch.search(q).done(function(results){
                 new GSView({collection:results}).render();
             });
-            app_router.navigate('search');
         });
-        app_router.on('route:search', function(q){
-            var gSearch = SearchableCollection.extend({url: URL});
-            gSearch.search(q).done(function(results){
-               new GSView({collection:results}).render();
-            });
-            app_router.navigate('search');
-        });
+
 
         app_router.on('route:watchlist', function(){
             var watchlistCollection = new WatchlistCollection();
