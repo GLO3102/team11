@@ -49,11 +49,11 @@
 
 /* COVER MOVIE */
 .cover-actor img {
-    width: 360px;
-    height: 560px;
+    width: 65%;
 }
 
 /* VIDEO MOVIE */
-#video-trailer {
+.video-trailer {
+    display:none;
     margin-bottom: 20px;
 }

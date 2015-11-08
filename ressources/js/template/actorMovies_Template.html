@@ -1,6 +1,8 @@
 <div class="row top-buffer row-bottom">
     <div class="watchlist-user">
+        <% var index=0;%>
         <% _.each(results, function(data) {%>
+
             <hr />
             <h3>Filmography : </h3>
             <% _.each(data.results, function(movie) {
@@ -16,19 +18,21 @@
                             <p><%= release[0] %></p>
                         </div>
                     </div>
-                    <button id="btn-trailer" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
+                    <button id="btn-trailer" name="<%=index%>" type="button" class="btn btn-default btn-margin-bottom btn-trailer">
                         <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                         Show trailer
                     </button>
-                    <div class="row" id="video-trailer">
+                    <div class="row video-trailer" id="video-trailer-<%=index%>" name="<%=movie.trackName%>">
+                        trrailer
                         <div class="col-sm-12">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" id="trailer" src=""></iframe>
+                                <iframe class="embed-responsive-item" id="trailer-<%=index%>" src=""></iframe>
 
                             </div>
                         </div>
                     </div>
                 </div>
+            <% index++;%>
             <% }) %>
         <% }) %>
     </div>
