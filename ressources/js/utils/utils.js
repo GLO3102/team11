@@ -26,7 +26,7 @@ formattime = function(time){
 }
 
 formatImageSize = function(str, taille){
-    var cpy = str.replace("100x100", "400x"+taille);
+    var cpy = str.replace(new RegExp('...x...'), "400x"+taille);
     return cpy;
 }
 

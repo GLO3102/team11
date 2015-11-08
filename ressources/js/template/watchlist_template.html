@@ -14,12 +14,14 @@
             </div>
             <ul class="list-inline">
             <% _.each(data.movies, function(movie) { %>
-                <li>
-                    <a href="#/movies/<%= movie.trackId %>">
-                        <img src="<%= movie.artworkUrl100 %>" class="img-responsive">
-                        <span><%= movie.trackName %></span></a>
-                        <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
-                </li>
+                <% if(movie.trackId != undefined){%>
+                    <li>
+                        <a href="#/movies/<%= movie.trackId %>">
+                            <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
+                            <span><%= movie.trackName %></span></a>
+                            <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
+                    </li>
+                <%}%>
             <% }) %>
             </ul>
             <% index++ %>
