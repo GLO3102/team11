@@ -2,13 +2,15 @@
     <div class="watchlist">
         <h2>Watchlist</h2>
         <div class="watchlist-user">
+            <% var index = 0 %>
             <% _.each(results, function(data) {%>
+            <% if(data.owner.id == '562145aa9cfbe00300efe70e') {%>
             <hr />
             <h4>Name : <%= data.name %>  <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span>
-                <span class="glyphicon glyphicon-pencil edit-watchlist" ></span></h4>
-            <div id="edit-name" style="display: none">
-                <input id="inputName" type="text" class="form-control custom-control size-input" data-id="<%= data.id %>"/>
-                <button type="button" class="btn btn-default" id="change-name">Change name</button>
+                <span class="glyphicon glyphicon-pencil edit-watchlist" data-id="<%= data.id %>" ></span></h4>
+            <div class="edit-name<%= data.id %>" style="display: none">
+                <input  type="text" class="form-control custom-control size-input inputName" id="input-<%= index %>" data-id="<%= data.id %>"/>
+                <button type="button" class="btn btn-info change-name" id="<%= index %>">Change name</button>
             </div>
             <ul class="list-inline">
             <% _.each(data.movies, function(movie) { %>
@@ -20,6 +22,8 @@
                 </li>
             <% }) %>
             </ul>
+            <% index++ %>
+            <% } %>
             <% }) %>
         </div>
         <button type="button" class="btn btn-default btn-margin-bottom" id="new-watchlist">Create a new watchlist</button>
