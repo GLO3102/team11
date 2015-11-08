@@ -20,19 +20,20 @@
                 function errorCB(data){
                     console.log(data);
                 }
+
+
                 theMovieDb.search.getPerson({"query":encodeURIComponent(results.artistName)}, successCB, errorCB);
 
 
             %>
             <img src="" id="image" class="img-responsive img-actor">
-            <% //console.log(image) %>
         </div>
         <div class="col-sm-8 description-movie">
             <h2 class="name-actor"><%= results.artistName %></h2>
-
-            <h3>Genre</h3>
+            <br>
+            <h4>Genre:</h4>
             <p class="description-actor"><%= results.primaryGenreName %> </p>
-
+            <br>
             <div class="button-utils col-sm-8">
                 <a class="itunes-actor" href="<%= results.artistLinkUrl%>" style="display:inline-block;overflow:hidden;
                     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg)
