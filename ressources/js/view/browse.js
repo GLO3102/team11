@@ -20,7 +20,7 @@ define([
             var self = this;
             var gSearch = BrowseCollection.extend({url: URL});
 
-            gSearch.search('all&limit=100').done(function(results){
+            gSearch.search('all&limit=75').done(function(results){
                 var resultJSON = results.toJSON();
                 var displayCol = [];
                 var title = '';
@@ -28,7 +28,7 @@ define([
                 var shortDesc = '';
                 var url = '';
                 var artworkUrl100;
-                 for (var i = 0;i < 100;i++)
+                 for (var i = 0;i < 75;i++)
                  {
                      if (resultJSON[0].results[i].wrapperType == "track")
                      {
