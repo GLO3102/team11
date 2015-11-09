@@ -85,14 +85,14 @@ define([
             var table = model.get('movies');
 
             var index = -1;
-            for(var i = 0, len = table.length; i < len; i++) {
+            for(var i = 0; i < table.length; i++) {
                 if (table[i].trackId === movieId) {
                     index = i;
                     break;
                 }
             }
+            var removed = model.attributes.movies.splice(index,1);
 
-            model.attributes.movies =   model.attributes.movies.splice(0,index);
             model.save();
 
         },
