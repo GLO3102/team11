@@ -42,7 +42,9 @@ define([
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
+            stopZombies(this.lastMovie);
             var movieView = new MovieView();
+            this.lastMovie = movieView;
             movieView.render({id: id});
         });
 
@@ -89,8 +91,18 @@ define([
         var menuView = new MenuView();
         var footerView = new FooterView();
 
+        // http://stackoverflow.com/questions/7883947/event-triggered-multiple-times-after-using-back-button-in-backbone-js
+        var stopZombies= function(objView){
+            if(typeof objView === "object"){
+                objView.undelegateEvents();
+                $(objView.el).empty();
+            }
+        };
+
         Backbone.history.start();
     };
+
+
     return {
         initialize: initialize
     };
