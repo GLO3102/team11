@@ -79,18 +79,12 @@ define([
                             return ;
                         }
                     }
-                    //console.log(data.attributes.movies.indexOf(that.movie.toJSON()));
-                    //console.log($.inArray(that.movie.toJSON()), data.attributes.movies);
-                    //console.log(data.attributes.movies.length);
-
                     data.attributes.movies.push(that.movie.toJSON());
                     data.save();
-
                 }
             });
 
-
-        },
+        }
     });
     return MovieView;
 });
