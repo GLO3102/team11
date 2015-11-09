@@ -33,18 +33,17 @@ define([
             watchlistCollection.url = URL + '/watchlists';
             watchlistCollection.fetch({
                 success:function(watchlists){
-                    table.push(watchlists.toJSON());
+                    that.movie.fetch({
+                        success: function(printMovie){
+                            table.push(watchlists.toJSON());
+                            table.push(printMovie.toJSON());
+                            that.$el.html(that.template({results: table}));
+
+                        }
+                    });
                 }
         });
-            this.movie.fetch({
-               success: function(printMovie)
-            {
-                table.push(printMovie.toJSON());
-                that.$el.html(that.template({results: table}));
-                $('#video-trailer').hide();
-                $('#watchlist-name').hide();
-            }
-        });
+
 
         },
         showTrailer: function(){
@@ -58,7 +57,7 @@ define([
             }
         },
 
-        addToWatchlist: function(){
+        addToWatchlist: function(event){
             if($('#watchlist-name').is( ":hidden" )){
                     $('#watchlist-name').show();
             }
@@ -91,7 +90,7 @@ define([
             });
 
 
-        }
+        },
     });
     return MovieView;
 });
