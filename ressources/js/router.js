@@ -49,7 +49,9 @@ define([
         });
 
         app_router.on('route:tvshow', function(id){
+            stopZombies(this.lastTv);
             var tvshowView = new TvShowView();
+            this.lastTv = tvshowView;
             tvshowView.render({id: id});
         });
         app_router.on('route:search', function(q){
@@ -61,27 +63,32 @@ define([
 
 
         app_router.on('route:watchlist', function(){
+            stopZombies(this.lastWatchlist);
             var watchlistCollection = new WatchlistCollection();
             watchlistCollection.url = URL + '/watchlists';
 
             var watchListView = new WatchListView({
                 collection: watchlistCollection
             });
+            this.lastWatchlist = watchListView;
             watchlistCollection.fetch().complete(function () {
                 watchListView.render();
             });
         });
 
         app_router.on('route:actor', function(id){
+            stopZombies(this.lastActorView);
             var actorView = new ActorView();
             actorView.render({id: id});
             var actorMoviesView = new ActorMoviesView();
             actorMoviesView.render({id: id});
-
+            this.lastActorView = actorMoviesView;
         });
         app_router.on('route:actorMovies', function(id){
+            stopZombies(this.lastMovieView);
             var actorMoviesView = new ActorMoviesView();
             actorMoviesView.render({id: id});
+            this.lastMovieView = actorMoviesView;
         });
 
         // Unlike the above, we don't call render on this view as it will handle
