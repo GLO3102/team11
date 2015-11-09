@@ -18,8 +18,6 @@ define([
         el: '#main_container',
 
         events:{
-            "click #btn-trailer": "showTrailer",
-            'click #add-to-watchlist' : 'addToWatchlist',
             'click #addWatchlist' : 'addWatchlist'
         },
         initialize: function () {
@@ -40,8 +38,9 @@ define([
                         table.push(watchlists.toJSON());
                         table.push(printMovie.toJSON());
                         that.$el.html(that.template({results: table}));
-                        $('#video-trailer').hide();
-                        $('#watchlist-name').hide();
+                        Utils.searchTrailer(that.movie.name, function (src) {
+                            $('#trailer').attr('src', src)
+                        });
                     }
                 });
 
@@ -49,26 +48,6 @@ define([
         });
 
         },
-        showTrailer: function(){
-            if($('#video-trailer').is( ":hidden" )){
-                Utils.searchTrailer(this.movie.name,function(src){
-                    $('#trailer').attr('src', src)
-                    $('#video-trailer').show()});
-            }
-            else {
-                $('#video-trailer').hide();
-            }
-        },
-
-        addToWatchlist: function(){
-            if($('#watchlist-name').is( ":hidden" )){
-                    $('#watchlist-name').show();
-            }
-            else {
-                $('#watchlist-name').hide();
-            }
-        },
-
         addWatchlist: function(){
             var that = this;
             var id = $('.radio-watch:checked').val();

@@ -15,10 +15,6 @@ define([
         template: _.template(TvShowTemplate),
         model: TvShow,
         el: '#main_container',
-
-        events:{
-            "click #btn-trailer": "showTrailer"
-        },
         initialize: function () {
         },
 
@@ -28,20 +24,11 @@ define([
             this.tvshow.fetch({
                 success: function(printTvShow){
                     that.$el.html(that.template({results:printTvShow.toJSON()}))
-                    $('#video-trailer').hide();
+                    Utils.searchTrailer(that.tvshow.name, function (src) {
+                        $('#trailer').attr('src', src)
+                    });
                 }
             })
-        },
-
-        showTrailer: function(){
-            if($('#video-trailer').is( ":hidden" )){
-                Utils.searchTrailer(this.tvshow.name,function(src){
-                    $('#trailer').attr('src', src)
-                    $('#video-trailer').show()});
-            }
-            else {
-                $('#video-trailer').hide();
-            }
         }
     });
 
