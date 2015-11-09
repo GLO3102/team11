@@ -93,7 +93,6 @@ define([
             }
 
             model.attributes.movies =   model.attributes.movies.splice(0,index);
-
             model.save();
 
         },
