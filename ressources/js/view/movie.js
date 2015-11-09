@@ -76,11 +76,14 @@ define([
                     var json = that.movie.toJSON();
                     for(var i = 0; i < data.attributes.movies.length; i++){
                           if(data.attributes.movies[i].trackId === json.trackId){
-                            return ;
-                        }
+                              $('#alert-success').hide();
+                              $('#alert-danger').fadeIn();
+                              return
+                          }
                     }
                     data.attributes.movies.push(that.movie.toJSON());
                     data.save();
+                    $('#alert-success').fadeIn();
                 }
             });
 

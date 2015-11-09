@@ -18,6 +18,7 @@ define([
 
         validate: function(attrs){
             if(!attrs.name ||  attrs.name === '' ){
+                $('#alert').fadeIn();
                 return 'Please enter a valid name !';
             }
         }
