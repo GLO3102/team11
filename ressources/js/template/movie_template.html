@@ -8,7 +8,9 @@
             <p class="genre-movie"><strong>Genres:</strong> <%= results[1].primaryGenreName %> </p>
             <span class="date-movie"><%= formatdate(results[1].releaseDate) %></span>
             <span class="separator-movie">|</span>
-            <span class="time-movie"><%= formattime(results[1].trackTimeMillis)%></span><br><br>
+            <span class="time-movie"><%= formattime(results[1].trackTimeMillis)%></span>
+            <span class="separator-movie">|</span>
+            <span class="time-movie">Advisory rating <%= results[1].contentAdvisoryRating%></span><br><br>
             <p class="description-movie"><%= results[1].longDescription %></p>
             <p class="director-movie">
                 <strong>Director:</strong> <%= results[1].artistName %>
@@ -36,7 +38,14 @@
                             <% } %>
                         <% }) %>
                     </ul>
-                    <button type="button" class="btn btn-default" id="addWatchlist">Add</button>
+                    <br>
+                    <button type="button" class="btn btn-default" id="addWatchlist">Add</button><br><br>
+                    <div class="alert alert-danger" id="alert-danger" hidden>
+                        You can add the same movie twice
+                    </div>
+                    <div class="alert alert-success" id="alert-success" hidden>
+                        <b>Success ! </b>Your movie have beed added to your watchlist
+                    </div>
                 </div>
 
             </div>
