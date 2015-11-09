@@ -108,7 +108,6 @@ define([
         },
         changeName: function(event){
             var idd = event.target.id;
-
             var id = $('#input-'+idd).data('id');
             var model = this.collection.get(id);
             var name = $('#input-'+idd).val();

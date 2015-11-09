@@ -74,10 +74,22 @@ define([
             watchlistModel.url = URL + '/watchlists/' + id;
             watchlistModel.fetch({
                 success: function(data){
+                    var json = that.movie.toJSON();
+                    for(var i = 0; i < data.attributes.movies.length; i++){
+                          if(data.attributes.movies[i].trackId === json.trackId){
+                            return ;
+                        }
+                    }
+                    //console.log(data.attributes.movies.indexOf(that.movie.toJSON()));
+                    //console.log($.inArray(that.movie.toJSON()), data.attributes.movies);
+                    //console.log(data.attributes.movies.length);
+
                     data.attributes.movies.push(that.movie.toJSON());
                     data.save();
+
                 }
             });
+
 
         }
     });
