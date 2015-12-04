@@ -8,7 +8,7 @@ define([
 
 var General_SearchView = Backbone.View.extend({
     template: _.template(GSTemplate),
-    el: "#browse",
+    el: "#browseContainer",
     render: function(){
             var resultJSON = this.collection.toJSON();
             var displayCol = [];

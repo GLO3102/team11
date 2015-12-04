@@ -1,5 +1,22 @@
-<% _.each(genres,function(genre){ %>
-    <li><a href="#/search/genres/&id<%= genre.id %>" id="<%= genre.id %>"><%= genre.name  %></a></li>
-<% }) %>
+<div id="middlePage" class="container middlePage">
+    <ul class="nav nav-tabs">
+        <li role="presentation" id="tabMovies" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                Movies <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" id="listMovies">
 
+            </ul>
+        </li>
+        <li role="presentation" id="tabTVshows" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                TV Shows <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" id="listTVshows">
 
+            </ul>
+        </li>
+    </ul>
+</div>

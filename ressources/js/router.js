@@ -21,6 +21,8 @@ define([
             'movies/:id': 'movie',
             'tvshows/seasons/:id' : 'tvshow',
             'search/:q':'search',
+            'search/:movies/:q': 'search/movies',
+            'search/:tvshows/:season/:q': 'search/tvshows/seasons',
             'actors/:id': 'actor',
             'actors/:id/movies': 'actorMovies',
             'watchlist' : 'watchlist',
@@ -56,12 +58,22 @@ define([
         });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: URL});
-            gSearch.search(q).done(function(results){
+            gSearch.search('?' + q).done(function (results) {
                 new GSView({collection:results}).render();
             });
         });
-
-
+        app_router.on('route:search/movies', function (movies, q) {
+            var gSearch = SearchableCollection.extend({url: URL});
+            gSearch.search('/' + movies + '?' + q).done(function (results) {
+                new GSView({collection: results}).render();
+            });
+        });
+        app_router.on('route:search/tvshows/seasons', function (tvshows, season, q) {
+            var gSearch = SearchableCollection.extend({url: URL});
+            gSearch.search('/' + tvshows + '/' + season + '?' + q).done(function (results) {
+                new GSView({collection: results}).render();
+            });
+        });
         app_router.on('route:watchlist', function(){
             stopZombies(this.lastWatchlist);
             var watchlistCollection = new WatchlistCollection();
