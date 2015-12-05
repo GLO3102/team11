@@ -28,9 +28,11 @@ define([
                 var shortDesc = '';
                 var url = '';
                 var artworkUrl100;
+                var type ='';
                  for (var i = 0;i < 75;i++)
                  {
                      var data = resultJSON[0].results[i];
+                     type = data.wrapperType;
                      if (data.wrapperType == "track")
                      {
                         title = data.trackName
@@ -55,6 +57,7 @@ define([
                          by:by,
                          shortDesc :shortDesc,
                          url:url,
+                         type:type,
                          artworkUrl100:artworkUrl100
                      });
                 }

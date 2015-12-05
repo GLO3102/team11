@@ -17,9 +17,11 @@ var General_SearchView = Backbone.View.extend({
             var shortDesc = '';
             var url = '';
             var artworkUrl100;
+            var type ='';
             for (var i = 0;i < resultJSON[0].results.length;i++)
             {
                 var data = resultJSON[0].results[i];
+                type = data.wrapperType;
                 if (data.wrapperType == "track")
                 {
                     title = data.trackName
@@ -44,7 +46,8 @@ var General_SearchView = Backbone.View.extend({
                     by:by,
                     shortDesc :shortDesc,
                     url:url,
-                    artworkUrl100:artworkUrl100
+                    artworkUrl100:artworkUrl100,
+                    type:type,
                 });
             }
         this.$el.html(this.template({results:displayCol}));

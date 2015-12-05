@@ -7,6 +7,12 @@
 
         <div class="col-sm-6 col-md-4 datazone datazone">
             <div class="thumbnail">
+                <% if(data.type == "track"){ %>
+                <p class="track-type">MOVIE</p>
+                <% }else{
+                console.log(data);%>
+                <p class="track-type tvshow">TV SHOW</p>
+                <% } %>
                 <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
                 <div class="caption">
                     <h3 class="title-limit"> <a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
