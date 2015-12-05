@@ -42,8 +42,14 @@ define([
                     window.location.replace('#home');
                 },
                 error:function (data){
-                    window.location.replace('#home');
-                    $('.alert-error').text("login incorrect").show();
+                    console.log(data);
+                    if(data.status == 401){
+                        $('.alert-error').text("email/password incorrect").show();
+                    }else{
+                        $('.alert-error').text("unexpected error").show();
+                    }
+                    //window.location.replace('#home');
+
                 }
             });
         }

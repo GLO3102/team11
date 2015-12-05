@@ -35,6 +35,27 @@ define([
 
     var initialize = function(){
 
+        $.ajaxSetup({
+            statusCode: {
+                401: function(){
+                    window.location.replace('#login');
+
+                },
+                403: function() {
+                    window.location.replace('#signup');
+                }
+            }
+        });
+
+        var customHeader = function(){
+            console.log("customHeader");
+            $.ajaxSetup({
+                headers: {
+                    Authorization: $.cookie('auth_token')
+                }
+            });
+        };
+
         var app_router = new AppRouter;
 
         app_router.on('route:signup', function(){
@@ -46,14 +67,15 @@ define([
         });
 
         app_router.on('route:home', function(){
+            customHeader();
             new HomeView().render();
         });
 
         app_router.on('route:defaultAction', function(){
-            // Ici on va mettre la page de login
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
+            customHeader();
             stopZombies(this.lastMovie);
             var movieView = new MovieView();
             this.lastMovie = movieView;
@@ -61,6 +83,7 @@ define([
         });
 
         app_router.on('route:tvshow', function(id){
+            customHeader();
             stopZombies(this.lastTv);
             var tvshowView = new TvShowView();
             this.lastTv = tvshowView;
@@ -75,6 +98,7 @@ define([
 
 
         app_router.on('route:watchlist', function(){
+            customHeader();
             stopZombies(this.lastWatchlist);
             var watchlistCollection = new WatchlistCollection();
             watchlistCollection.url = URL + '/watchlists';
@@ -89,7 +113,9 @@ define([
         });
 
         app_router.on('route:actor', function(id){
+            customHeader();
             stopZombies(this.lastActorView);
+
             var actorView = new ActorView();
             actorView.render({id: id});
             var actorMoviesView = new ActorMoviesView();
@@ -97,6 +123,7 @@ define([
             this.lastActorView = actorMoviesView;
         });
         app_router.on('route:actorMovies', function(id){
+            customHeader();
             stopZombies(this.lastMovieView);
             var actorMoviesView = new ActorMoviesView();
             actorMoviesView.render({id: id});

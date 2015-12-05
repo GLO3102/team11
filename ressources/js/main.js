@@ -1,4 +1,4 @@
-var URL ='https://umovie.herokuapp.com/unsecure';
+var URL ='https://umovie.herokuapp.com';
 require.config({
     paths: {
         jquery:'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery',
@@ -20,4 +20,5 @@ require.config({
 require(['app'],function(App){
    App.initialize();
 });
+
 
