@@ -21,6 +21,7 @@ var General_SearchView = Backbone.View.extend({
             for (var i = 0;i < resultJSON[0].results.length;i++)
             {
                 var data = resultJSON[0].results[i];
+                console.log(data);
                 type = data.wrapperType;
                 if (data.wrapperType == "track")
                 {
