@@ -13,8 +13,10 @@ define([
     'view/actorMovies',
     'view/tvshow',
     'view/episode',
+    'view/login',
+    'view/signUp',
     'collection/watchlist'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView,EpisodeView, WatchlistCollection) {
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView,EpisodeView,LoginView, SignUpView, WatchlistCollection) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -28,6 +30,8 @@ define([
             'actors/:id': 'actor',
             'actors/:id/movies': 'actorMovies',
             'watchlist' : 'watchlist',
+            'login':'login',
+            'signup':'signup',
             // Default
             '*actions': 'defaultAction'
         }
@@ -35,9 +39,39 @@ define([
 
     var initialize = function(){
 
+        $.ajaxSetup({
+            statusCode: {
+                401: function(){
+                    window.location.replace('#login');
+
+                },
+                403: function() {
+                    window.location.replace('#signup');
+                }
+            }
+        });
+
+        var customHeader = function(){
+            console.log("customHeader");
+            $.ajaxSetup({
+                headers: {
+                    Authorization: $.cookie('auth_token')
+                }
+            });
+        };
+
         var app_router = new AppRouter;
 
+        app_router.on('route:signup', function(){
+            new SignUpView().render();
+        });
+
+        app_router.on('route:login', function(){
+            new LoginView().render();
+        });
+
         app_router.on('route:home', function(){
+            customHeader();
             new HomeView().render();
         });
 
@@ -46,6 +80,7 @@ define([
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){
+            customHeader();
             stopZombies(this.lastMovie);
             var movieView = new MovieView();
             this.lastMovie = movieView;
@@ -53,6 +88,7 @@ define([
         });
 
         app_router.on('route:tvshow', function(id){
+            customHeader();
             stopZombies(this.lastTv);
             var tvshowView = new TvShowView();
             this.lastTv = tvshowView;
@@ -64,24 +100,28 @@ define([
             this.lastEpisodes = episodeView;
         });
         app_router.on('route:search', function(q){
+            customHeader();
             var gSearch = SearchableCollection.extend({url: URL});
             gSearch.search('?' + q).done(function (results) {
                 new GSView({collection:results}).render();
             });
         });
         app_router.on('route:search/movies', function (movies, q) {
+            customHeader();
             var gSearch = SearchableCollection.extend({url: URL});
             gSearch.search('/' + movies + '?' + q).done(function (results) {
                 new GSView({collection: results}).render();
             });
         });
         app_router.on('route:search/tvshows/seasons', function (tvshows, season, q) {
+            customHeader();
             var gSearch = SearchableCollection.extend({url: URL});
             gSearch.search('/' + tvshows + '/' + season + '?' + q).done(function (results) {
                 new GSView({collection: results}).render();
             });
         });
         app_router.on('route:watchlist', function(){
+            customHeader();
             stopZombies(this.lastWatchlist);
             var watchlistCollection = new WatchlistCollection();
             watchlistCollection.url = URL + '/watchlists';
@@ -96,6 +136,7 @@ define([
         });
 
         app_router.on('route:actor', function(id){
+            customHeader();
             stopZombies(this.lastActorView);
             var actorView = new ActorView();
             actorView.render({id: id});
@@ -104,6 +145,7 @@ define([
             this.lastActorView = actorMoviesView;
         });
         app_router.on('route:actorMovies', function(id){
+            customHeader();
             stopZombies(this.lastMovieView);
             var actorMoviesView = new ActorMoviesView();
             actorMoviesView.render({id: id});
@@ -111,6 +153,7 @@ define([
         });
 
         app_router.on('route:episodes', function(id){
+            customHeader();
             stopZombies(this.lastEpisodes);
             var episodeView = new EpisodeView();
             episodeView.render({id: id});
