@@ -4,23 +4,28 @@ define([
     'jquery',
     'bootstrap',
     'text!template/browse_template.html',
-    'view/genres',
-    'collection/genres',
-    'collection/SearchableCollection'
-], function(Backbone,_,$,Bootstrap,BrowseTemplate,GenreView,CollectionGenre,BrowseCollection){
+    'collection/SearchableCollection',
+    'view/genres'
+], function (Backbone, _, $, Bootstrap, BrowseTemplate, BrowseCollection, GenresView) {
 
     var BrowseView = Backbone.View.extend({
         template: _.template(BrowseTemplate),
         el: "#main_container",
         collection:BrowseCollection,
+        events: {
+            "click #previousPage": "previousPage_toDisplay",
+            "click #nextPage": "nextPage_toDisplay"
+        },
         initialize:function(){
             _.bindAll(this,'render');
         },
         render: function(){
             var self = this;
+
             var gSearch = BrowseCollection.extend({url: URL});
 
-            gSearch.search('all&limit=75').done(function(results){
+            gSearch.search('?q=all&limit=100').done(function (results) {
+                valueDiplay = results.toJSON();
                 var resultJSON = results.toJSON();
                 var displayCol = [];
                 var title = '';
@@ -28,9 +33,11 @@ define([
                 var shortDesc = '';
                 var url = '';
                 var artworkUrl100;
+                var type ='';
                  for (var i = 0;i < 75;i++)
                  {
                      var data = resultJSON[0].results[i];
+                     type = data.wrapperType;
                      if (data.wrapperType == "track")
                      {
                         title = data.trackName
@@ -55,25 +62,108 @@ define([
                          by:by,
                          shortDesc :shortDesc,
                          url:url,
+                         type:type,
                          artworkUrl100:artworkUrl100
                      });
                 }
                 self.$el.append(self.template({resultsCol:displayCol}));
+                new GenresView().render();
 
 
-                var moviesGenreCol = new CollectionGenre();
-                moviesGenreCol.url = URL + '/genres/movies';
-                var genremovie = new GenreView({el:'#listMovies',collection:moviesGenreCol});
-                moviesGenreCol.fetch();
-
-
-                var tvshowsGenreCol = new CollectionGenre();
-                tvshowsGenreCol.url = URL + '/genres/tvshows';
-                var genretvshows = new GenreView({el:'#listTVshows',collection:tvshowsGenreCol});
-                tvshowsGenreCol.fetch();
             });
 
-        }
+        },
+        previousPage_toDisplay: function () {
+            if (this.pageNumber == 0) {
+                this.pageNumber = 3;
+            }
+            $('#browseContainer').empty();
+            this.pageNumber--;
+            var displayCol = [];
+            var title = '';
+            var by = '';
+            var shortDesc = '';
+            var url = '';
+            var artworkUrl100;
+            var startValue = this.pageNumber * 20;
+            for (var i = startValue; i < (20 * (this.pageNumber + 1)); i++) {
+                var data = valueDiplay[0].results[i];
+                if (data.wrapperType == "track") {
+                    title = data.trackName
+                    by = data.artistName
+                    shortDesc = data.longDescription;
+                    if (data.longDescription != undefined && data.longDescription.length > 80)
+                        shortDesc = data.longDescription.substring(0, 80);
+                    url = '#/movies/' + data.trackId;
+                }
+                else {
+                    title = data.artistName
+                    by = data.collectionName
+                    shortDesc = data.longDescription;
+                    if (data.longDescription != undefined && data.longDescription.length > 80)
+                        shortDesc = data.longDescription.substring(0, 80);
+                    url = '#/tvshows/seasons/' + data.collectionId
+                }
+                artworkUrl100 = data.artworkUrl100;
+                displayCol.push({
+                    title: title,
+                    by: by,
+                    shortDesc: shortDesc,
+                    url: url,
+                    artworkUrl100: artworkUrl100
+                });
+            }
+            $('#browseContainer').append(this.template({resultsCol: displayCol}));
+            return false;
+
+        },
+        nextPage_toDisplay: function () {
+            if (this.pageNumber == 4) {
+                this.pageNumber = 0;
+            }
+            $('#browseContainer').empty();
+            this.pageNumber++;
+            var displayCol = [];
+            var title = '';
+            var by = '';
+            var shortDesc = '';
+            var url = '';
+            var artworkUrl100;
+            var startValue = this.pageNumber * 20;
+            for (var i = startValue; i < (20 * (this.pageNumber + 1)); i++) {
+                var data = valueDiplay[0].results[i];
+                if (data.wrapperType == "track") {
+                    title = data.trackName
+                    by = data.artistName
+                    shortDesc = data.longDescription;
+                    if (data.longDescription != undefined && data.longDescription.length > 80)
+                        shortDesc = data.longDescription.substring(0, 80);
+                    url = '#/movies/' + data.trackId;
+                }
+                else {
+                    title = data.artistName
+                    by = data.collectionName
+                    shortDesc = data.longDescription;
+                    if (data.longDescription != undefined && data.longDescription.length > 80)
+                        shortDesc = data.longDescription.substring(0, 80);
+                    url = '#/tvshows/seasons/' + data.collectionId
+                }
+                artworkUrl100 = data.artworkUrl100;
+                displayCol.push({
+                    title: title,
+                    by: by,
+                    shortDesc: shortDesc,
+                    url: url,
+                    artworkUrl100: artworkUrl100
+                });
+            }
+            $('#browseContainer').append(this.template({resultsCol: displayCol}));
+            return false;
+
+        },
+        pageNumber: 0,
+        valueDiplay: {}
+
 
     });
 

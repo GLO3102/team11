@@ -22,13 +22,28 @@ formattime = function(time){
     var minutes = x % 60;
     x = Math.floor(x / 60);
     var hours = x %24;
-    return hours + ' ' + 'hours' + ' ' + minutes + ' ' + 'minutes' + ' ' + seconds + ' ' + 'seconds';
-}
+    if(hours == 0)
+        return minutes + ' ' + 'minutes' + ' ' + seconds + ' ' + 'seconds';
+    else
+        return hours + ' ' + 'hours' + ' ' + minutes + ' ' + 'minutes' + ' ' + seconds + ' ' + 'seconds';
+};
 
 formatImageSize = function(str, taille){
     var cpy = str.replace(new RegExp('...x...'), "400x"+taille);
     return cpy;
-}
+};
+
+changeModal= function(sName, epName, description, cover, time){
+    $("#myModalLabel").text(sName);
+    $("#trackName").empty();
+    $("#trackName").append("<b>"+epName+"</b><br>"+time);
+    $("#myModalDescription").text(description);
+    $("#modalImg").attr('src', cover);
+    searchTrailer(epName,function(src){
+        $("#modalTrailer").attr('src', src)
+    });
+
+};
 
 
 

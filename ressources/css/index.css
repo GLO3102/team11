@@ -64,3 +64,60 @@
 {
     margin-top: 20px;
 }
+
+a:hover{
+    cursor : pointer;
+}
+
+.first-column {
+    width: 40%;
+    float: left;
+}
+
+.second-column {
+    width: 60%;
+    float: right;
+}
+
+/*
+    GENERATEUR DE RIBBON CSS3
+*/
+
+.track-type {
+    text-align: center;
+    position: relative;
+    color: #fff;
+    margin: 0 -14px 10px -14px;
+    padding: 3px 0;
+    text-shadow: 0 1px rgba(0,0,0,.8);
+    background-color: #313131;
+    background-image:  linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+    -moz-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+}
+
+.track-type:before,
+.track-type:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: transparent;
+    bottom: -10px;
+}
+
+.track-type:before {
+    border-width: 0 10px 10px 0;
+    border-right-color: #222;
+    left: 0;
+}
+
+.track-type:after {
+    border-width: 0 0 10px 10px;
+    border-left-color: #222;
+    right: 0;
+}
+
+.tvshow{
+    background-color: #E50914;
+}

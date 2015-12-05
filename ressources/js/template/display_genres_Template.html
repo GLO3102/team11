@@ -1,0 +1,4 @@
+<% _.each(genres,function(genre){ %>
+<li><a href="#/search/<%= type %>/q=all&genre=<%= genre.id %>" class="genre" id="<%= genre.id %>"><%= genre.genre_name
+    %></a></li>
+<% }); %>

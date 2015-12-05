@@ -4,13 +4,15 @@ define([
     'jquery',
     'bootstrap',
     'view/carousel',
-    'view/browse'
-], function(Backbone,_,$,Bootstrap, CarouselView, BrowseView){
+    'view/browse',
+    'view/genres'
+], function (Backbone, _, $, Bootstrap, CarouselView, BrowseView, GenresView) {
 
     var HomeView = Backbone.View.extend({
         render: function(){
             new CarouselView().render();
             new BrowseView().render();
+
         }
 
     });
