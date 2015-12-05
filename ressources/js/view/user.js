@@ -49,11 +49,12 @@ define([
         },
 
         followUser: function(){
-            var id = $(event.target).data('id');
+            var idData = JSON.stringify({id: $(event.target).data('id')});
             $.ajax({
                 url: URL + '/follow',
                 type: 'POST',
-                data: {"id" : id},
+                data: idData,
+                dataType: "json",
                 contentType: 'application/json'
             })
                 .done(function(){
