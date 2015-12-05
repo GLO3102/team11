@@ -54,7 +54,6 @@ define([
         });
 
         var customHeader = function(){
-            console.log("customHeader");
             $.ajaxSetup({
                 headers: {
                     Authorization: $.cookie('auth_token')
@@ -163,6 +162,7 @@ define([
         });
 
         app_router.on('route:user', function(id){
+            customHeader();
             var userView = new UserView();
             userView.render({id: id});
         });

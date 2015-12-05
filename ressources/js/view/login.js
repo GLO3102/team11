@@ -25,14 +25,12 @@ define([
 
         login:function (event) {
             event.preventDefault();
-            var url = 'https://umovie.herokuapp.com/login';
             var formValues = {
                 email: $('#inputEmail').val(),
                 password: $('#inputPassword').val()
             };
-
             $.ajax({
-                url:url,
+                url:URL + '/login',
                 type:'POST',
                 dataType:"json",
                 data: formValues,
