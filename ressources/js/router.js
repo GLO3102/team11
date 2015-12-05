@@ -15,8 +15,9 @@ define([
     'view/episode',
     'view/login',
     'view/signUp',
-    'collection/watchlist'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView,EpisodeView,LoginView, SignUpView, WatchlistCollection) {
+    'collection/watchlist',
+    'view/user'
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView,EpisodeView,LoginView, SignUpView, WatchlistCollection, UserView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -30,6 +31,7 @@ define([
             'actors/:id': 'actor',
             'actors/:id/movies': 'actorMovies',
             'watchlist' : 'watchlist',
+            'users/:id' : 'user',
             'login':'login',
             'signup':'signup',
             // Default
@@ -159,6 +161,13 @@ define([
             episodeView.render({id: id});
             this.lastEpisodes = episodeView;
         });
+
+        app_router.on('route:user', function(id){
+            var userView = new UserView();
+            userView.render({id: id});
+        });
+
+
 
         // Unlike the above, we don't call render on this view as it will handle
         // the render call internally after it loads data. Further more we load it
