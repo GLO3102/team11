@@ -11,25 +11,73 @@ define([
     'bootstrap',
     'model/user',
     'text!template/user_template.html',
-    'model/user'
-], function(Backbone,_,$,Bootstrap, User, UserTemplate,User) {
+    'collection/watchlist',
+    'utils/utils'
+], function(Backbone,_,$,Bootstrap, User, UserTemplate, WatchListCollection, Utils) {
 
     var UserView = Backbone.View.extend({
         template: _.template(UserTemplate),
+
         el: '#main_container',
 
-        render: function(options){
+        events:{
+            'click #followUser' : 'followUser',
+            'click #unfollowUser' : 'unfollowUser'
+        },
+
+        render: function (options) {
+
+            var table = new Array();
             var that = this;
             this.user = new User({id: options.id});
-            this.user.fetch({
-                success: function(printUser){
-                    that.$el.html(that.template({user: printUser.toJSON()}));
-                    console.log(printUser.toJSON());
+
+            var watchlistCollection = new WatchListCollection();
+            watchlistCollection.url = URL + '/watchlists';
+            watchlistCollection.fetch({
+                success: function (watchlists) {
+                    that.user.fetch({
+                        success: function (userToPrint) {
+                            table.push(watchlists.toJSON());
+                            table.push(userToPrint.toJSON());
+                            that.$el.html(that.template({results: table}));
+
+                        }
+                    });
+
                 }
+            });
+        },
+
+        followUser: function(){
+            var id = $(event.target).data('id');
+            $.ajax({
+                url: URL + '/follow',
+                type: 'POST',
+                data: {"id" : id},
+                contentType: 'application/json'
             })
+                .done(function(){
+                    $('#followSuccess').fadeIn().delay(5000).fadeOut();
+                })
+                .fail(function(){
+                    $('#followSuccess').fadeIn().delay(5000).fadeOut();
+                })
+        },
 
+        unfollowUser: function(){
+            var id = $(event.target).data('id');
+            $.ajax({
+                url: URL + '/follow/' + id,
+                type: 'DELETE'
+            })
+                .done(function(){
+                    $('#unfollowSuccess').fadeIn().delay(5000).fadeOut();
+                })
+                .fail(function(){
+                    $('#unfollowError').fadeIn().delay(5000).fadeOut();
+                })
         }
-    });
 
+    });
     return UserView;
 });

@@ -26,7 +26,7 @@ define([
             'actors/:id': 'actor',
             'actors/:id/movies': 'actorMovies',
             'watchlist' : 'watchlist',
-            'user/:id' : 'user',
+            'users/:id' : 'user',
             // Default
             '*actions': 'defaultAction'
         }
