@@ -36,7 +36,6 @@ define([
                     nextThat = that;
                     $('#main-container').ready(function(){
                         document.getElementById(nextThat.el).innerHTML = that.template({results: data.toJSON()});
-                        console.log(data.toJSON());
                         data.toJSON()[0]["results"].forEach(function(episode){
                             $("#"+episode.trackId+"-ep").click(function(e){
                                 changeModal(episode.artistName, episode.trackName, episode.longDescription,formatImageSize(episode.artworkUrl100, 100),formattime(episode.trackTimeMillis));
