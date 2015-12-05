@@ -45,6 +45,31 @@ changeModal= function(sName, epName, description, cover, time){
 
 };
 
+var user;
+
+getCurrentUser = function(){
+    return user;
+};
+
+function mycallback(result){
+    user = result;
+}
+
+function getToken(callback){
+    var token = $.cookie('auth_token');
+    $.ajax({
+        url : URL + '/tokenInfo',
+        type: 'GET',
+        beforeSend: function(xhr){
+            xhr.setRequestHeader('Authorization',token);
+        },
+        success: function(data){
+            callback(data);
+        }
+    })
+
+}
+
 
 
 define([

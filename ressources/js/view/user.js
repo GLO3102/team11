@@ -12,8 +12,9 @@ define([
     'model/user',
     'text!template/user_template.html',
     'collection/watchlist',
-    'utils/utils'
-], function(Backbone,_,$,Bootstrap, User, UserTemplate, WatchListCollection, Utils) {
+    'utils/utils',
+    'jqueryCookie'
+], function(Backbone,_,$,Bootstrap, User, UserTemplate, WatchListCollection, Utils, Cookie) {
 
     var UserView = Backbone.View.extend({
         template: _.template(UserTemplate),
@@ -26,10 +27,16 @@ define([
         },
 
         render: function (options) {
+            getToken(mycallback);
+            //console.log(result);
+
+
 
             var table = new Array();
             var that = this;
             this.user = new User({id: options.id});
+
+
 
             var watchlistCollection = new WatchListCollection();
             watchlistCollection.url = URL + '/watchlists';
@@ -39,8 +46,9 @@ define([
                         success: function (userToPrint) {
                             table.push(watchlists.toJSON());
                             table.push(userToPrint.toJSON());
+                            table.push(getCurrentUser());
                             that.$el.html(that.template({results: table}));
-
+                            console.log(table);
                         }
                     });
 
@@ -49,6 +57,7 @@ define([
         },
 
         followUser: function(){
+            var that = this;
             var idData = JSON.stringify({id: $(event.target).data('id')});
             $.ajax({
                 url: URL + '/follow',
@@ -59,6 +68,7 @@ define([
             })
                 .done(function(){
                     $('#followSuccess').fadeIn().delay(5000).fadeOut();
+                    //that.render();
                 })
                 .fail(function(){
                     $('#followSuccess').fadeIn().delay(5000).fadeOut();

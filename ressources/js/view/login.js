@@ -35,7 +35,6 @@ define([
                 dataType:"json",
                 data: formValues,
                 success:function (data) {
-                    console.log(data);
                     $.cookie('auth_token', data.token);
                     window.location.replace('#home');
                 },
