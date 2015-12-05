@@ -39,7 +39,7 @@ changeModal= function(sName, epName, description, cover, time){
     $("#trackName").append("<b>"+epName+"</b><br>"+time);
     $("#myModalDescription").text(description);
     $("#modalImg").attr('src', cover);
-    searchTrailer(epName,function(src){
+    searchTrailer(sName + " "+epName,function(src){
         $("#modalTrailer").attr('src', src)
     });
 
