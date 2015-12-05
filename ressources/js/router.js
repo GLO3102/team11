@@ -12,14 +12,16 @@ define([
 	'view/actor',
     'view/actorMovies',
     'view/tvshow',
+    'view/episode',
     'collection/watchlist'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView, WatchlistCollection) {
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView,EpisodeView, WatchlistCollection) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home':'home',
             'movies/:id': 'movie',
             'tvshows/seasons/:id' : 'tvshow',
+            'tvshows/seasons/:id/episodes' : 'episodes',
             'search/:q':'search',
             'actors/:id': 'actor',
             'actors/:id/movies': 'actorMovies',
@@ -53,6 +55,11 @@ define([
             var tvshowView = new TvShowView();
             this.lastTv = tvshowView;
             tvshowView.render({id: id});
+
+            stopZombies(this.lastEpisodes);
+            var episodeView = new EpisodeView();
+            episodeView.render({id: id});
+            this.lastEpisodes = episodeView;
         });
         app_router.on('route:search', function(q){
             var gSearch = SearchableCollection.extend({url: URL});
@@ -89,6 +96,13 @@ define([
             var actorMoviesView = new ActorMoviesView();
             actorMoviesView.render({id: id});
             this.lastMovieView = actorMoviesView;
+        });
+
+        app_router.on('route:episodes', function(id){
+            stopZombies(this.lastEpisodes);
+            var episodeView = new EpisodeView();
+            episodeView.render({id: id});
+            this.lastEpisodes = episodeView;
         });
 
         // Unlike the above, we don't call render on this view as it will handle

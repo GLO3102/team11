@@ -15,7 +15,6 @@ define([
 
         parse: function(response){
             this.id = response.id;
-            console.log(response);
             return response;
         },
 
