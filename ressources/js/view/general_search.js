@@ -31,6 +31,11 @@ var General_SearchView = Backbone.View.extend({
                         shortDesc = data.longDescription.substring(0, 80);
                     url = '#/movies/' + data.trackId;
                 }
+                else if (data.wrapperType == "artist") {
+                    title = data.artistName
+                    by = data.primaryGenreName
+                    url = '#/actors/' + data.artistId;
+                }
                 else
                 {
                     title = data.artistName
