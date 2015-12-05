@@ -12,8 +12,10 @@ define([
 	'view/actor',
     'view/actorMovies',
     'view/tvshow',
+    'view/login',
+    'view/signUp',
     'collection/watchlist'
-], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView, WatchlistCollection) {
+], function($, _, Backbone,HomeView, FooterView,SearchableCollection,GSView,MovieView, MenuView, WatchListView, ActorView,ActorMoviesView,TvShowView, LoginView, SignUpView, WatchlistCollection) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -24,6 +26,8 @@ define([
             'actors/:id': 'actor',
             'actors/:id/movies': 'actorMovies',
             'watchlist' : 'watchlist',
+            'login':'login',
+            'signup':'signup',
             // Default
             '*actions': 'defaultAction'
         }
@@ -32,6 +36,14 @@ define([
     var initialize = function(){
 
         var app_router = new AppRouter;
+
+        app_router.on('route:signup', function(){
+            new SignUpView().render();
+        });
+
+        app_router.on('route:login', function(){
+            new LoginView().render();
+        });
 
         app_router.on('route:home', function(){
             new HomeView().render();

@@ -2,6 +2,7 @@ var URL ='https://umovie.herokuapp.com/unsecure';
 require.config({
     paths: {
         jquery:'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery',
+        jqueryCookie:'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min',
         underscore: 'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore',
         auth:'utils/auth',
         backbone: 'http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone',
