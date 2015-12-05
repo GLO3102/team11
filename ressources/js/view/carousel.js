@@ -12,7 +12,10 @@ define([
         },
         render: function(){
             this.$el.html(CarouselTemplate);
-            $('.carousel').carousel();
+            $('.carousel').carousel({
+                interval: false,
+            });
+
         }
 
     });
