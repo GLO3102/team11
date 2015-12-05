@@ -1,0 +1,52 @@
+<div class="row top-buffer row-bottom">
+    <div class="col-sm-4">
+        <h1 class="border size">User information</h1>
+        <h3>Name: <%= results[1].name %></h3>
+        <h3>Email: <%= results[1].email %></h3>
+        <div class="row">
+            <button id="followUser" type="button" class="btn btn-success margin" data-id="<%= results[1].id %>">Follow</button>
+            <button id="unfollowUser" type="button" class="btn btn-danger margin" data-id="<%= results[1].id %>">Unfollow</button>
+
+            <div id="followSuccess" class="alert alert-success" role="alert" hidden>You follow <%= results[1].name %> ! </div>
+            <div id="followError" class="alert alert-danger" role="alert" hidden>Error happened ! Please verify </div>
+
+            <div id="unfollowSuccess" class="alert alert-success" role="alert" hidden>You unfollow <%= results[1].name %> ! </div>
+            <div id="unfollowError" class="alert alert-danger" role="alert" hidden>Error happened ! Please verify </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <h1 class="border size">Watchlists</h1>
+            <% _.each(results[0], function(data) { %>
+                <%  if (data.owner.id == results[1].id) {%>
+                    <h4>Name: <%= data.name %></h4>
+                    <ul class="list-inline">
+                        <% _.each(data.movies, function(movie) { %>
+                        <li>
+                            <a href="#/movies/<%= movie.trackId %>">
+                                <div class="thumbnail thb-size">
+                                    <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
+                                    <p class="title-limit"><%=movie.trackName%></p>
+                                </div>
+                            </a>
+                        </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            <% }) %>
+    </div>
+
+    <div class="col-sm-4">
+        <h1 class="border size">Friends</h1>
+        <ul class="list-inline">
+            <% _.each(results[1].following, function(follower) { %>
+            <li>
+                <div class="thumbnail thb-friends">
+                    <h4 class="friend-name"><%= follower.name%></h4>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+
+</div>
