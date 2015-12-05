@@ -8,16 +8,20 @@
         <div class="col-sm-6 col-md-4 datazone datazone">
             <div class="thumbnail">
                 <% if(data.type == "track"){ %>
-                <p class="track-type">MOVIE</p>
-                <% }else{
-                console.log(data);%>
-                <p class="track-type tvshow">TV SHOW</p>
+                    <p class="track-type">MOVIE</p>
+                <% }else{%>
+                    <p class="track-type tvshow">TV SHOW</p>
                 <% } %>
                 <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
                 <div class="caption">
                     <h3 class="title-limit"> <a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
                     <p class="title-limit"><%= data.by %></p>
-                    <p><%= data.shortDesc %>
+                    <p><%= data.shortDesc %></p></br>
+                    <% if(data.type == "track"){ %>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Add to watchlist</button>
+                    <% }else if(data.type == "user"){%>
+                        <button class="btn btn-warning">Follow</button>
+                    <%}%>
                 </div>
             </div>
         </div>
@@ -26,5 +30,33 @@
     </div>
     <div class="row">
         <% } }) %>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add to watchlist</h4>
+            </div>
+            <div class="modal-body">
+                <div id="watchlist-name">
+                    <h4>Select a watchlist</h4>
+                    <ul class="list-inline">
+                        <!-- ICI LES WATCHELIST-->
+                    </ul>
+                    <br>
+                    <button type="button" class="btn btn-default" id="addWatchlist">Add</button><br><br>
+                    <div class="alert alert-danger" id="alert-danger" hidden>
+                        You can add the same movie twice
+                    </div>
+                    <div class="alert alert-success" id="alert-success" hidden>
+                        <b>Success ! </b>Your movie have beed added to your watchlist
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

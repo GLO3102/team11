@@ -34,19 +34,14 @@ define([
                 type:'POST',
                 dataType:"json",
                 data: formValues,
-                success:function (data) {
-                    $.cookie('auth_token', data.token);
-                    window.location.replace('#home');
-                },
-                error:function (data){
-                    console.log(data);
-                    if(data.status == 401){
-                        $('.alert-error').text("email/password incorrect").show();
-                    }else{
-                        $('.alert-error').text("unexpected error").show();
-                    }
-                    //window.location.replace('#home');
-
+            }).success(function (data) {
+                $.cookie('auth_token', data.token);
+                window.location.replace('#home');
+            }).error( function (data){
+                if(data.status == 401){
+                    $('.alert-error').text("email/password incorrect").show();
+                }else{
+                    $('.alert-error').text("unexpected error").show();
                 }
             });
         }
