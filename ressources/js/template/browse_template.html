@@ -1,31 +1,10 @@
-<div class="container middlePage" id="browse">
-<div id="middlePage" class="container middlePage">
-    <ul class="nav nav-tabs">
-        <li role="presentation" id="tabMovies" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Movies <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" id="listMovies">
-
-            </ul>
-        </li>
-        <li role="presentation" id="tabTVshows" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                TV Shows <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" id="listTVshows">
-
-            </ul>
-        </li>
-    </ul>
-
-
+<div class="container middlePage" id="browse_genre">
+</div>
+<div class="container" id="browseContainer">
     <h2>Browse</h2>
-</div >
 
-<div class="container">
     <div class="row">
-        <% var index = 0;  %>
+        <% var index = 0; %>
         <% _.each(resultsCol,function(data){ %>
         <% if (index < 4){ %>
                 <% index++ %>
@@ -53,5 +32,10 @@
     <div class="row">
         <% } }) %>
     </div>
+    <ul class="pager">
+        <li><a id="previousPage" role="button" href="#">Previous</a></li>
+        <li><a id="nextPage" role="button" href="#">Next</a></li>
+    </ul>
+
 </div>
-</div>
+
