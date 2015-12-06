@@ -5,26 +5,40 @@
         <% if (index < 4){ %>
         <% index++ %>
 
-        <div class="col-sm-6 col-md-4 datazone datazone">
+        <div class="col-sm-6 col-md-4 datazone ">
             <div class="thumbnail">
-                <% if(data.type == "track"){ %>
-                    <p class="track-type">MOVIE</p>
+                    <% if(data.type == "track"){ %>
+                <p class="track-type">MOVIE</p>
+                <% }else if(data.type == "artist"){%>
+                <p class="track-type actor_ribbon">ACTOR</p>
+                    <% }else if(data.type == "user"){%>
+                <p class="track-type actor_ribbon">USER</p>
                 <% }else{%>
-                    <p class="track-type tvshow">TV SHOW</p>
+                <p class="track-type tvshow">TV SHOW</p>
                 <% } %>
-                <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
+                <% if (data.type == "artist"){
+                getImageActor(data.title, function(src_url){
+                $('.picturezone').attr('src',src_url);
+                });
+                }
+                %>
+                <img src="<% if(data.type != 'artist'){ print(formatImageSize(data.artworkUrl100, 230))} %>"
+                     class="picturezone" alt="">
+
                 <div class="caption">
-                    <h3 class="title-limit"> <a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
+                    <h3 class="title-limit"><a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
+
                     <p class="title-limit"><%= data.by %></p>
+
                     <p><%= data.shortDesc %></p></br>
                     <% if(data.type == "track"){ %>
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Add to watchlist</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Add to watchlist</button>
                     <% }else if(data.type == "user"){%>
-                        <button class="btn btn-warning">Follow</button>
+                    <button class="btn btn-warning">Follow</button>
                     <%}%>
                 </div>
+                </div>
             </div>
-        </div>
         <% } else { %>
         <% index = 0 %>
     </div>

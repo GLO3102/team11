@@ -18,16 +18,16 @@ var General_SearchView = Backbone.View.extend({
             var url = '';
             var artworkUrl100;
             var type ='';
-            for (var i = 0;i < resultJSON[0].results.length;i++)
-            {
+        if (typeof (resultJSON[0].results) != "undefined") {
+            for (var i = 0; i < resultJSON[0].results.length; i++) {
                 var data = resultJSON[0].results[i];
                 type = data.wrapperType;
-                if (data.wrapperType == "track")
-                {
+
+                if (data.wrapperType == "track") {
                     title = data.trackName
                     by = data.artistName
                     shortDesc = data.longDescription;
-                    if(data.longDescription!=undefined && data.longDescription.length > 80)
+                    if (data.longDescription != undefined && data.longDescription.length > 80)
                         shortDesc = data.longDescription.substring(0, 80);
                     url = '#/movies/' + data.trackId;
                 }
@@ -36,27 +36,48 @@ var General_SearchView = Backbone.View.extend({
                     by = data.primaryGenreName
                     url = '#/actors/' + data.artistId;
                 }
-                else
-                {
+                else {
                     title = data.artistName
-                    by =data.collectionName
+                    by = data.collectionName
                     shortDesc = data.longDescription;
-                    if(data.longDescription!=undefined && data.longDescription.length > 80)
+                    if (data.longDescription != undefined && data.longDescription.length > 80)
                         shortDesc = data.longDescription.substring(0, 80);
                     url = '#/tvshows/seasons/' + data.collectionId
                 }
                 artworkUrl100 = resultJSON[0].results[i].artworkUrl100;
                 displayCol.push({
-                    title:title,
-                    by:by,
-                    shortDesc :shortDesc,
-                    url:url,
-                    artworkUrl100:artworkUrl100,
-                    type:type,
+                    title: title,
+                    by: by,
+                    shortDesc: shortDesc,
+                    url: url,
+                    artworkUrl100: artworkUrl100,
+                    type: type,
                 });
             }
-        this.$el.html(this.template({results:displayCol}));
-    }
+
+        }
+        else {
+            for (var i = 0; i < resultJSON.length; i++) {
+                var data = resultJSON[i];
+                type = 'user';
+                title = data.name
+                by = data.email
+                url = '#/users/' + data.id;
+                artworkUrl100 = 'http://www.omprakashsharma.com/images/Default.gif';//resultJSON[i].artworkUrl100;
+                displayCol.push({
+                    title: title,
+                    by: by,
+                    shortDesc: shortDesc,
+                    url: url,
+                    artworkUrl100: artworkUrl100,
+                    type: type,
+                });
+            }
+        }
+        this.$el.html(this.template({results: displayCol}));
+
+    },
+
 
 });
 

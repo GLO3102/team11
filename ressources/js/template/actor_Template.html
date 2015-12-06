@@ -2,29 +2,9 @@
     <div class="actor-content">
         <div class="col-sm-4 cover-actor">
             <%
-                var image = "";
-                function successCB(data){
-                    jsonData = JSON.parse(data);
-                    theMovieDb.people.getImages({"id":jsonData.results[0].id}, successImageCB, errorImageCB);
-                    function successImageCB(dataImage){
-                        jsonDataImage = JSON.parse(dataImage);
-                        image = jsonDataImage.profiles[0].file_path;
-                        $("#image").attr("src", "http://image.tmdb.org/t/p/w500"+image);
-                    }
-
-                    function errorImageCB(dataImage){
-                        console.log(dataImage);
-                    }
-                }
-
-                function errorCB(data){
-                    console.log(data);
-                }
-
-
-                theMovieDb.search.getPerson({"query":encodeURIComponent(results.artistName)}, successCB, errorCB);
-
-
+            getImageActor(results.artistName, function(src_url){
+            $('.img-actor').attr('src',src_url);
+            })
             %>
             <img src="" id="image" class="img-responsive img-actor">
         </div>

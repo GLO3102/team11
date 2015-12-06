@@ -33,6 +33,7 @@ formatImageSize = function(str, taille){
     return cpy;
 };
 
+
 changeModal= function(sName, epName, description, cover, time){
     $("#myModalLabel").text(sName);
     $("#trackName").empty();
@@ -45,7 +46,34 @@ changeModal= function(sName, epName, description, cover, time){
 
 };
 
+function getImageActor(actorName, callback) {
+    var image = "";
 
+    function successCB(data) {
+        jsonData = JSON.parse(data);
+        theMovieDb.people.getImages({"id": jsonData.results[0].id}, successImageCB, errorImageCB);
+        function successImageCB(dataImage) {
+            jsonDataImage = JSON.parse(dataImage);
+            image = jsonDataImage.profiles[0].file_path;
+            callback("http://image.tmdb.org/t/p/w500" + image);
+        }
+
+        function errorImageCB(dataImage) {
+            console.log(dataImage);
+        }
+
+        callback('http://www.omprakashsharma.com/images/Default.gif');//Image par défaut. On l'a prit sur internet.
+    }
+
+    function errorCB(data) {
+        console.log(data);
+    }
+
+
+    theMovieDb.search.getPerson({"query": encodeURIComponent(actorName)}, successCB, errorCB);
+
+
+}
 
 define([
     'jquery',
