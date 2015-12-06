@@ -65,10 +65,11 @@ var General_SearchView = Backbone.View.extend({
         else {
             for (var i = 0; i < resultJSON.length; i++) {
                 var data = resultJSON[i];
+                id = data.id;
                 type = 'user';
                 title = data.name
                 by = data.email
-                url = '#/users/' + data.id;
+                url = '#/users/' + id;
                 artworkUrl100 = 'http://www.omprakashsharma.com/images/Default.gif';//resultJSON[i].artworkUrl100;
                 displayCol.push({
                     title: title,
