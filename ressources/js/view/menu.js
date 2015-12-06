@@ -16,7 +16,7 @@ define([
         },
         events: {
             "click #search_button": "general_search",
-            "click .search_type": "search_type"
+            "click .search_type": "search_type",
         },
         render: function(){
             this.$el.html(MenuBarTemplate);
@@ -26,9 +26,9 @@ define([
                 var text_to_search = $('#search_text').val();
                 var url = '';
                 var option = '';
-                if ($('#type').text() != 'All') {
-                    option = $('#type').text().toString().toLowerCase();
-                    if ($('#type').data('data-target') != '') {
+                if ($('#type').text() != 'All ') {
+                    option = $('#type').text().toString().toLowerCase().replace(" ", "");
+                    if (option == 'tvshows') {
                         option = option + '/' + $('#type').data('data-target');
                     }
                     url = '#/search/' + option + '/';
@@ -43,9 +43,9 @@ define([
             return false;
         },
          search_type: function () {
+
              $('#type').data('data-target', event.target.dataset.target);
-             $('#type').text(event.target.innerText);
-             return false;
+             $('#type').html(event.target.innerText + " <span class='caret'></span>");
         }
     });
 

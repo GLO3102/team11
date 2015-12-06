@@ -75,8 +75,6 @@ function getImageActor(actorName, callback) {
 
 
     theMovieDb.search.getPerson({"query": encodeURIComponent(actorName)}, successCB, errorCB);
-
-
 }
 
 define([
