@@ -71,18 +71,18 @@ var General_SearchView = Backbone.View.extend({
                 url = '#/users/' + data.id;
                 artworkUrl100 = 'http://www.omprakashsharma.com/images/Default.gif';//resultJSON[i].artworkUrl100;
                 displayCol.push({
-                    title:title,
-                    by:by,
-                    shortDesc :shortDesc,
-                    url:url,
-                    artworkUrl100:artworkUrl100,
-                    type:type,
-                    trackId:id,
+                    title: title,
+                    by: by,
+                    shortDesc: shortDesc,
+                    url: url,
+                    artworkUrl100: artworkUrl100,
+                    type: type,
+                    trackId: id,
                 });
             }
+        }
         this.$el.html(this.template({results:displayCol}));
     },
-
     addWatchlist: function(){
         var that = this;
         var id=$('#idOfMovie').html();

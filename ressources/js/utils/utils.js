@@ -44,41 +44,40 @@ changeModal= function(sName, epName, description, cover, time){
     });
 
 };
-
-function getImageActor(actorName, callback) {
-    var image = "";
-addToWatchlist = function(id){
+addToWatchlist = function (id) {
     $("#idOfMovie").empty();
     $("#idOfMovie").html(id);
     $("#modalWatchlist").modal('show');
 };
 
-var user;
+function getImageActor(actorName, callback) {
+    var image = "";
 
-getCurrentUser = function(){
-    return user;
-};
-
-function mycallback(result){
-    user = result;
-}
-
-function getToken(callback){
-    var token = $.cookie('auth_token');
-    $.ajax({
-        url : URL + '/tokenInfo',
-        type: 'GET',
-        beforeSend: function(xhr){
-            xhr.setRequestHeader('Authorization',token);
-        },
-        success: function(data){
-            callback(data);
+    function successCB(data) {
+        jsonData = JSON.parse(data);
+        theMovieDb.people.getImages({"id": jsonData.results[0].id}, successImageCB, errorImageCB);
+        function successImageCB(dataImage) {
+            jsonDataImage = JSON.parse(dataImage);
+            image = jsonDataImage.profiles[0].file_path;
+            callback("http://image.tmdb.org/t/p/w500" + image);
         }
-    })
+
+        function errorImageCB(dataImage) {
+            console.log(dataImage);
+        }
+
+        callback('http://www.omprakashsharma.com/images/Default.gif');//Image par défaut. On l'a prit sur internet.
+    }
+
+    function errorCB(data) {
+        console.log(data);
+    }
+
+
+    theMovieDb.search.getPerson({"query": encodeURIComponent(actorName)}, successCB, errorCB);
+
 
 }
-
-
 
 define([
     'jquery',
