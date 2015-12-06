@@ -122,33 +122,17 @@ a:hover{
     background-color: #E50914;
 }
 
-/* Template for checkbox http://www.csscheckbox.com/checkbox/171/star-rating-checkbox/ */
-input[type=checkbox].css-checkbox {
-    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+.addTo{
+    display: inline-block;
+    float: left;
+    left: 20px;
+    top:2px;
 }
 
-input[type=checkbox].css-checkbox + label.css-label {
-    padding-left:45px;
-    height:40px;
-    display:inline-block;
-    line-height:40px;
-    background-repeat:no-repeat;
-    background-position: 0 0;
-    font-size:40px;
-    vertical-align:middle;
-    cursor:pointer;
-
+.track-type span{
+    margin-left:-10px;
 }
 
-input[type=checkbox].css-checkbox:checked + label.css-label {
-    background-position: 0 -40px;
-}
-label.css-label {
-    background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_019807af606f0dea9eb28a8d35a7afc6.png);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.glyphicon-star{
+    color:yellow;
 }

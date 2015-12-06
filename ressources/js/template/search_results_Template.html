@@ -8,7 +8,8 @@
         <div class="col-sm-6 col-md-4 datazone datazone">
             <div class="thumbnail">
                 <% if(data.type == "track"){ %>
-                    <p class="track-type">MOVIE</p>
+                <% console.log(data); %>
+                    <p class="track-type"><label id="<%= data.trackId %>" onclick="addToWatchlist(<%=data.trackId%>)" class="glyphicon glyphicon-star-empty addTo"></label><span>MOVIE</span></p>
                 <% }else{%>
                     <p class="track-type tvshow">TV SHOW</p>
                 <% } %>
@@ -33,7 +34,7 @@
     </div>
 </div>
 
-<div id="myModal" class="modal fade" role="dialog">
+<div id="modalWatchlist" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -41,12 +42,13 @@
                 <h4 class="modal-title">Add to watchlist</h4>
             </div>
             <div class="modal-body">
-                <div id="watchlist-name">
-                    <h4>Select a watchlist</h4>
+                <div id="watchlist-named">
+                    <b>Select a watchlist</b>
                     <ul class="list-inline">
                         <!-- ICI LES WATCHELIST-->
                     </ul>
                     <br>
+                    <span id="idOfMovie" hidden></span>
                     <button type="button" class="btn btn-default" id="addWatchlist">Add</button><br><br>
                     <div class="alert alert-danger" id="alert-danger" hidden>
                         You can add the same movie twice

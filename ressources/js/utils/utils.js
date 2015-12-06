@@ -45,6 +45,12 @@ changeModal= function(sName, epName, description, cover, time){
 
 };
 
+addToWatchlist = function(id){
+    $("#idOfMovie").empty();
+    $("#idOfMovie").html(id);
+    $("#modalWatchlist").modal('show');
+};
+
 
 
 define([
