@@ -15,6 +15,20 @@ formatdate = function(date){
     return day + ' ' + monthNames[month] + ' ' + year;
 };
 
+function getToken(callback) {
+    var token = $.cookie('auth_token');
+    $.ajax({
+        url: URL + '/tokenInfo',
+        type: 'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', token);
+        },
+        success: function (data) {
+            callback(data);
+        }
+    })
+
+}
 formattime = function(time){
     var x = Math.floor(time / 1000);
     var seconds = x % 60;
@@ -32,6 +46,17 @@ formatImageSize = function(str, taille){
     var cpy = str.replace(new RegExp('...x...'), "400x"+taille);
     return cpy;
 };
+
+var user;
+
+getCurrentUser = function () {
+    return user;
+};
+
+function mycallback(result) {
+    user = result;
+}
+
 
 changeModal= function(sName, epName, description, cover, time){
     $("#myModalLabel").text(sName);
