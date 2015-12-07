@@ -70,7 +70,13 @@ var General_SearchView = Backbone.View.extend({
                 title = data.name
                 by = data.email
                 url = '#/users/' + id;
-                artworkUrl100 = 'http://www.omprakashsharma.com/images/Default.gif';//resultJSON[i].artworkUrl100;
+                if (typeof data.avatar === 'undefined') {
+                    artworkUrl100 = 'http://www.omprakashsharma.com/images/Default.gif';//resultJSON[i].artworkUrl100;
+                }
+                else {
+                    artworkUrl100 = data.avatar;
+                }
+
                 displayCol.push({
                     title: title,
                     by: by,
