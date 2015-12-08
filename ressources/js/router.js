@@ -80,7 +80,6 @@ define([
         });
 
         app_router.on('route:defaultAction', function(){
-            // Ici on va mettre la page de login
             app_router.navigate('home',{trigger:true});
         });
         app_router.on('route:movie', function(id){

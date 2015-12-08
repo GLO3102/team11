@@ -23,6 +23,7 @@ define([
         events: {
             "click #search_button": "general_search",
             'click #logout' : 'logout'
+            "click .search_type": "search_type",
         },
         render: function(){
             var that = this;
@@ -39,7 +40,20 @@ define([
         general_search : function() {
             if ($('#search_text').val() != '') {
                 var text_to_search = $('#search_text').val();
-                location.href = '#/search/q=' + text_to_search;
+                var url = '';
+                var option = '';
+                if ($('#type').text() != 'All ') {
+                    option = $('#type').text().toString().toLowerCase().replace(" ", "");
+                    if (option == 'tvshows') {
+                        option = option + '/' + $('#type').data('data-target');
+                    }
+                    url = '#/search/' + option + '/';
+                }
+                else {
+                    url = '#/search/';
+                }
+
+                location.href = url + 'q=' + text_to_search;
         }
             $('#search_text').val('');
             return false;
@@ -53,8 +67,13 @@ define([
              });
              $.removeCookie('auth_token');
              $.removeCookie('user_id');
-         }
+         
+        },
+         search_type: function () {
 
+             $('#type').data('data-target', event.target.dataset.target);
+             $('#type').html(event.target.innerText + " <span class='caret'></span>");
+        }
     });
 
     return MenuView;
