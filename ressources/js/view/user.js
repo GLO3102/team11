@@ -27,16 +27,12 @@ define([
         },
 
         render: function (options) {
-            getToken(mycallback);
-            //console.log(result);
-
-
+            var idUserCurrent = $.cookie('user_id');
+            var userCurrent = new User({id : idUserCurrent});
 
             var table = new Array();
             var that = this;
             this.user = new User({id: options.id});
-
-
 
             var watchlistCollection = new WatchListCollection();
             watchlistCollection.url = URL + '/watchlists';
@@ -44,10 +40,15 @@ define([
                 success: function (watchlists) {
                     that.user.fetch({
                         success: function (userToPrint) {
-                            table.push(watchlists.toJSON());
-                            table.push(userToPrint.toJSON());
-                            table.push(getCurrentUser());
-                            that.$el.html(that.template({results: table}));
+                            userCurrent.fetch({
+                                success: function(userCurr){
+                                    table.push(watchlists.toJSON());
+                                    table.push(userToPrint.toJSON());
+                                    table.push(userCurr.toJSON());
+                                    that.$el.html(that.template({results: table}));
+                                }
+                            })
+
                         }
                     });
 
@@ -56,7 +57,6 @@ define([
         },
 
         followUser: function(){
-            var that = this;
             var id = $(event.target).data('id');
             if(id != -1) {
                 var idData = JSON.stringify({id: id});
@@ -69,7 +69,7 @@ define([
                 })
                     .done(function () {
                         $('#followSuccess').fadeIn().delay(5000).fadeOut();
-                        //that.render();
+
                     })
                     .fail(function () {
                         $('#followError').fadeIn().delay(5000).fadeOut();

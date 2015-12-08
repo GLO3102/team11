@@ -10,8 +10,11 @@ define([
 
     var User = Backbone.Model.extend({
         urlRoot: URL + '/users',
-        name : ''
-
+        defaults: {
+            name:'User',
+            email: 'user@umovie.com',
+            id:''
+        }
     });
 
     return User;

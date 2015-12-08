@@ -4,7 +4,8 @@
         <div class="watchlist-user">
             <% var index = 0 %>
             <% _.each(results, function(data) {%>
-                    <%  if (data.owner.id == '562145aa9cfbe00300efe70e') {%>
+            <%// console.log(userId); %>
+                    <%  if (data.owner.id === userId ) {%>
                     <hr />
                     <h4>Name : <%= data.name %>  <span class="glyphicon glyphicon-trash delete-watchlist"  data-id="<%= data.id %>"></span>
                         <span class="glyphicon glyphicon-pencil edit-watchlist" data-id="<%= data.id %>" ></span></h4>

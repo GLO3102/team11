@@ -33,8 +33,9 @@ define([
                 url:URL + '/login',
                 type:'POST',
                 dataType:"json",
-                data: formValues,
+                data: formValues
             }).success(function (data) {
+                $.cookie('user_id', data.id);
                 $.cookie('auth_token', data.token);
                 window.location.replace('#home');
             }).error( function (data){

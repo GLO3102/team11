@@ -31,7 +31,7 @@
                     <h4>Select a watchlist</h4>
                     <ul class="list-inline">
                     <% _.each(results[0], function(data) { %>
-                            <%  if (data.owner.id == '562145aa9cfbe00300efe70e') {%>
+                            <%  if (data.owner.id === results[2]) {%>
                             <li>
                                 <input type="radio" name="watchlistName" value="<%= data.id %>" class="radio-watch"/> <%= data.name %>
                             </li>

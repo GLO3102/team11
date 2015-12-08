@@ -10,12 +10,15 @@ define([
     'text!template/movie_template.html',
     'utils/utils',
     'collection/watchlist',
-    'model/watchlist'
-], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils, WatchListCollection, WatchlistModel) {
+    'model/watchlist',
+    'jqueryCookie'
+], function(Backbone,_,$,Bootstrap,Movie, MovieTemplate, Utils, WatchListCollection, WatchlistModel, Cookie) {
 
     var MovieView = Backbone.View.extend({
         template: _.template(MovieTemplate),
         el: '#main_container',
+
+        idUserCurrent: $.cookie('user_id'),
 
         events:{
             "click #btn-trailer": "showTrailer",
@@ -37,6 +40,8 @@ define([
                         success: function(printMovie){
                             table.push(watchlists.toJSON());
                             table.push(printMovie.toJSON());
+                            table.push(that.idUserCurrent);
+                            console.log(table);
                             that.$el.html(that.template({results: table}));
 
                         }

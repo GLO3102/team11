@@ -9,9 +9,11 @@ define([
     'text!template/watchlist_template.html',
     'text!template/createWatchlist_template.html',
     'collection/watchlist',
-    'model/watchlist'
+    'model/watchlist',
+    'jqueryCookie',
+    'model/User'
 
-], function(Backbone,_,$,Bootstrap,WatchListTemplate,WatchListCreateTemplate, WatchListCollection, WatchlistModel ) {
+], function(Backbone,_,$,Bootstrap,WatchListTemplate,WatchListCreateTemplate, WatchListCollection, WatchlistModel, Cookie, User ) {
 
     var WatchListView = Backbone.View.extend({
         template1: _.template(WatchListTemplate),
@@ -19,6 +21,8 @@ define([
         template2: _.template(WatchListCreateTemplate),
 
         el: '#main_container',
+
+        currentUser: new User({id: this.id}),
 
         events: {
             'click #new-watchlist' : 'createWatchlist',
@@ -30,7 +34,6 @@ define([
         },
 
         initialize: function () {
-
             _.bindAll(this, 'render');
 
             var self = this;
@@ -40,12 +43,16 @@ define([
 
             });
 
+            //console.log('ICI : ' + this.id);
+
         },
 
         render: function () {
             this.$el.html(this.template1({
-                results: this.collection.toJSON()
+                results: this.collection.toJSON(),
+                userId: this.id
             }));
+            //console.log('id : '+this.idCurrentUser);
         },
 
         createWatchlist: function(){
@@ -53,17 +60,21 @@ define([
         },
 
         newWatchlist: function(event){
+            var userCurrent = this.currentUser.fetch({
+                success: function(user){
+                    this.currentUser = user.toJSON();
+                }
+            });
+
             var name = $('#watchName').val();
-            var email = $('#email').val();
-            var userName = $('#userName').val();
-            var id = '562145aa9cfbe00300efe70e';
+            var id = this.currentUser.id;
 
             this.collection.create({
                 name: name,
                 owner: {
                     id: id,
-                    name: userName,
-                    email: email
+                    name: this.currentUser.name,
+                    email: this.currentUser.email
                 }
             }, {
                 wait: true

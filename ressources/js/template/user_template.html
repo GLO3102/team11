@@ -9,7 +9,6 @@
             <% idFollow = -1; }%>
     <% }) %>
 
-
 <div class="row top-buffer row-bottom">
     <div class="col-sm-4">
         <h1 class="border size">User information</h1>
@@ -30,7 +29,8 @@
     <div class="col-sm-4">
         <h1 class="border size">Watchlists</h1>
             <% _.each(results[0], function(data) { %>
-                <%  if (data.owner.id == results[1].id) {%>
+                <%  if (data.owner.id === results[1].id) {%>
+
                     <h4>Name: <%= data.name %></h4>
                     <ul class="list-inline">
                         <% _.each(data.movies, function(movie) { %>

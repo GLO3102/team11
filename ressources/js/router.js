@@ -61,6 +61,8 @@ define([
             });
         };
 
+        var idCurrentUser = $.cookie('user_id');
+
         var app_router = new AppRouter;
 
         app_router.on('route:signup', function(){
@@ -74,6 +76,7 @@ define([
         app_router.on('route:home', function(){
             customHeader();
             new HomeView().render();
+            menuView.render();
         });
 
         app_router.on('route:defaultAction', function(){
@@ -128,12 +131,14 @@ define([
             watchlistCollection.url = URL + '/watchlists';
 
             var watchListView = new WatchListView({
-                collection: watchlistCollection
+                collection: watchlistCollection,
+                id: idCurrentUser
             });
             this.lastWatchlist = watchListView;
             watchlistCollection.fetch().complete(function () {
                 watchListView.render();
             });
+            menuView.render();
         });
 
         app_router.on('route:actor', function(id){
