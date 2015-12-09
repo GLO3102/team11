@@ -40,9 +40,10 @@ define([
                 window.location.replace('#home');
             }).error( function (data){
                 if(data.status == 401){
-                    $('.alert-error').text("email/password incorrect").show();
+                    $('#loginError').text("email/password incorrect").fadeIn();
                 }else{
-                    $('.alert-error').text("unexpected error").show();
+                    //console.log($('#loginError'));
+                    $('#loginError').text("unexpected error").fadeIn();
                 }
             });
         }

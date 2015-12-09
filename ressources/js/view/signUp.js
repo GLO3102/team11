@@ -42,7 +42,7 @@ define([
                     window.location.replace('#login');
                 },
                 error:function (data){
-                    $('.alert-error').text("unexpected error").show();
+                    $('.alert-danger').text("unexpected error").fadeIn();
                 }
             });
         }

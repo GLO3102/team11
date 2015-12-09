@@ -41,7 +41,6 @@ define([
                             table.push(watchlists.toJSON());
                             table.push(printMovie.toJSON());
                             table.push(that.idUserCurrent);
-                            console.log(table);
                             that.$el.html(that.template({results: table}));
 
                         }
