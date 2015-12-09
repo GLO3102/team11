@@ -7,17 +7,17 @@
 
         <div class="col-sm-6 col-md-4 datazone ">
             <div class="thumbnail">
-                <% if(data.type == "track"){ %>
+                <% if(data.type === "track"){ %>
 
                     <p class="track-type"><label id="<%= data.trackId %>" onclick="addToWatchlist(<%=data.trackId%>)" class="glyphicon glyphicon-star-empty addTo"></label><span>MOVIE</span></p>
-                <% }else if(data.type == "artist"){%>
+                <% }else if(data.type === "artist"){%>
                 <p class="track-type actor_ribbon">ACTOR</p>
-                    <% }else if(data.type == "user"){%>
+                    <% }else if(data.type === "user"){%>
                 <p class="track-type user">USER</p>
                 <% }else{%>
                     <p class="track-type tvshow">TV SHOW</p>
                 <% } %>
-                <% if (data.type == "artist"){
+                <% if (data.type === "artist"){
                 getImageActor(data.title, function(src_url){
                 $('.picturezone').attr('src',src_url);
                 });
@@ -53,16 +53,22 @@
                 <div id="watchlist-named">
                     <b>Select a watchlist</b>
                     <ul class="list-inline">
-                        <!-- ICI LES WATCHELIST-->
+                        <% _.each(watchlist, function(data) { %>
+                        <% if(data.owner.id === idUser){ %>
+                        <li>
+                            <input type="radio" name="watchlistName" value="<%= data.id %>" class="radio-watch"/> <%= data.name %>
+                        </li>
+                        <% } %>
+                        <% }) %>
                     </ul>
                     <br>
                     <span id="idOfMovie" hidden></span>
                     <button type="button" class="btn btn-default" id="addWatchlist">Add</button><br><br>
                     <div class="alert alert-danger" id="alert-danger" hidden>
-                        You can add the same movie twice
+                        You <strong>can't</strong> add the same movie twice
                     </div>
                     <div class="alert alert-success" id="alert-success" hidden>
-                        <b>Success ! </b>Your movie have beed added to your watchlist
+                        <strong>Success ! </strong>Your movie have been added to your watchlist
                     </div>
                 </div>
             </div>

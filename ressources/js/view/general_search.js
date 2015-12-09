@@ -1,10 +1,14 @@
 define([
-'backbone',
-'underscore',
-'jquery',
-'bootstrap',
-'text!template/search_results_Template.html'
-], function(Backbone,_,$,Bootstrap,GSTemplate){
+    'backbone',
+    'underscore',
+    'jquery',
+    'bootstrap',
+    'text!template/search_results_Template.html',
+    'collection/watchlist',
+    'jqueryCookie',
+    'model/movie',
+    'model/watchlist'
+], function(Backbone,_,$,Bootstrap,GSTemplate, WatchListCollection, Cookie, Movie, WatchlistModel){
 
 var General_SearchView = Backbone.View.extend({
     template: _.template(GSTemplate),
@@ -13,6 +17,7 @@ var General_SearchView = Backbone.View.extend({
         'click #addWatchlist' : 'addWatchlist'
     },
     render: function(){
+        var that = this;
             var resultJSON = this.collection.toJSON();
             var displayCol = [];
             var title = '';
@@ -88,46 +93,46 @@ var General_SearchView = Backbone.View.extend({
                 });
             }
         }
-        this.$el.html(this.template({results:displayCol}));
-    },
-    addWatchlist: function(){
-        var that = this;
-        var id=$('#idOfMovie').html();
-        /*
 
-        A TOI DE VOIR SI T'AS BESOIN DE CA
+        var idCurrentUser = $.cookie('user_id');
 
-        var id = $('.radio-watch:checked').val();
-        var watchlistModel = new WatchlistModel();
-        watchlistModel.url = URL + '/watchlists/' + id;
-        watchlistModel.fetch({
-            success: function(data){
-                var json = that.movie.toJSON();
-                for(var i = 0; i < data.attributes.movies.length; i++){
-                    if(data.attributes.movies[i].trackId === json.trackId){
-                        $('#alert-success').hide();
-                        $('#alert-danger').fadeIn();
-                        return
-                    }
-                }
-                data.attributes.movies.push(that.movie.toJSON());
-                data.save();
-                $('#alert-success').fadeIn();
+        var watchlistCollection = new WatchListCollection();
+        watchlistCollection.url = URL + '/watchlists';
+        watchlistCollection.fetch({
+            success: function (watchlists) {
+
+                that.$el.html(that.template({results:displayCol, watchlist:watchlists.toJSON(), idUser: idCurrentUser}));
             }
         });
 
-        */
 
+    },
+    addWatchlist: function(){
+        var that = this;
+        var idWatchlist = $('.radio-watch:checked').val();
+        var idMovie = $('#idOfMovie').text();
 
-        /* PLACE CES LIGNES QUAND LE FORMULAIRE SERA VALIDE
-        * Le bouton doit rester allum� tant que le nombre de watchlist est >0
-        */
+        var watchlistModel = new WatchlistModel();
+        watchlistModel.url = URL + '/watchlists/' + idWatchlist;
+        watchlistModel.fetch({
+            success: function(data){
+                var movie = new Movie({id: idMovie});
+                movie.fetch({
+                    success: function(movieFetch){
+                        for(var i = 0; i < data.attributes.movies.length; i++){
+                            if(data.attributes.movies[i].trackId === movie.toJSON().trackId){
+                                $('#alert-danger').fadeIn().delay(5000).fadeOut();
+                                return
+                            }
+                        }
+                        data.attributes.movies.push(movie.toJSON());
+                        data.save();
+                        $('#alert-success').fadeIn().delay(5000).fadeOut();
+                    }
 
-        if(/*R�el : Nombre watchlist == 0 -- Pour les tests :*/$("#"+id).hasClass('glyphicon glyphicon-star-empty addTo'))
-            $("#"+id).attr('class',"glyphicon glyphicon-star addTo");
-        else
-            $("#"+id).attr('class',"glyphicon glyphicon-star-empty addTo");
-        $("#modalWatchlist").modal('hide');
+                })
+            }
+        });
     }
 
 });
