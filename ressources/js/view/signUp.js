@@ -4,7 +4,7 @@ define([
     'jquery',
     'jqueryCookie',
     'bootstrap',
-    'text!template/signUp_Template.html',
+    'text!template/signUp_Template.html'
 ], function(Backbone,_,$,Cookie,Bootstrap, SignUpTemplate) {
 
     var SignUpView = Backbone.View.extend({
@@ -27,7 +27,7 @@ define([
             event.preventDefault();
             var url = 'https://umovie.herokuapp.com/signup';
             var formValues = {
-                nom: $('#inputNom').val(),
+                name: $('#inputNom').val(),
                 email: $('#inputEmail').val(),
                 password: $('#inputPassword').val()
             };
