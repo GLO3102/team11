@@ -13,7 +13,8 @@ define([
         defaults: {
             name:'User',
             email: 'user@umovie.com',
-            id:''
+            id:'',
+            avatar:'ressources/img/avatar/default.png'
         }
     });
 

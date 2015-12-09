@@ -71,7 +71,7 @@ var General_SearchView = Backbone.View.extend({
                 by = data.email
                 url = '#/users/' + id;
                 if (typeof data.avatar === 'undefined') {
-                    artworkUrl100 = 'http://www.omprakashsharma.com/images/Default.gif';//resultJSON[i].artworkUrl100;
+                    artworkUrl100 = 'ressources/img/avatar/default.png';//resultJSON[i].artworkUrl100;
                 }
                 else {
                     artworkUrl100 = data.avatar;
