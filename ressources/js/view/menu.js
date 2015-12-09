@@ -30,11 +30,14 @@ define([
             var idUserCurrent = $.cookie('user_id');
             var userCurrent = new User({id : idUserCurrent});
 
-            userCurrent.fetch({
+            /*userCurrent.fetch({
                 success: function(userCurr){
+                    console.log(userCurr.toJSON());
                     that.$el.html(that.template({user: userCurr.toJSON()}));
                 }
-            });
+            });*/
+            var user = userCurrent.get(idUserCurrent);
+            console.log(user);
 
         },
         general_search : function() {

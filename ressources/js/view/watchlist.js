@@ -43,7 +43,6 @@ define([
 
             });
 
-            //console.log('ICI : ' + this.id);
 
         },
 
@@ -52,7 +51,6 @@ define([
                 results: this.collection.toJSON(),
                 userId: this.id
             }));
-            //console.log('id : '+this.idCurrentUser);
         },
 
         createWatchlist: function(){

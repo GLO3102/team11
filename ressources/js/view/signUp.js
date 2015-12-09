@@ -4,8 +4,9 @@ define([
     'jquery',
     'jqueryCookie',
     'bootstrap',
-    'text!template/signUp_Template.html'
-], function(Backbone,_,$,Cookie,Bootstrap, SignUpTemplate) {
+    'text!template/signUp_Template.html',
+    'model/user'
+], function(Backbone,_,$,Cookie,Bootstrap, SignUpTemplate, User) {
 
     var SignUpView = Backbone.View.extend({
         template: _.template(SignUpTemplate),
@@ -25,20 +26,20 @@ define([
 
         signUp:function (event) {
             event.preventDefault();
-            var url = 'https://umovie.herokuapp.com/signup';
+
             var formValues = {
-                name: $('#inputNom').val(),
+                name: ('#inputNom').val(),
                 email: $('#inputEmail').val(),
                 password: $('#inputPassword').val()
             };
+            var avatarUser = $('input[name=radioAvatar]:checked', '#signupForm').val();
 
             $.ajax({
-                url:url,
+                url:URL + '/signup',
                 type:'POST',
                 dataType:"json",
                 data: formValues,
                 success:function (data) {
-                    console.log(data);
                     window.location.replace('#login');
                 },
                 error:function (data){
