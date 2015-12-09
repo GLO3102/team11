@@ -22,8 +22,8 @@ define([
         },
         events: {
             "click #search_button": "general_search",
-            'click #logout' : 'logout'
-            "click .search_type": "search_type",
+            'click #logout' : 'logout',
+            'click .search_type': 'search_type'
         },
         render: function(){
             var that = this;
