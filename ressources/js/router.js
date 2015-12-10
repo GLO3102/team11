@@ -133,7 +133,7 @@ define([
                 collection: watchlistCollection,
                 id: idCurrentUser
             });
-            
+
             watchlistCollection.fetch().complete(function () {
                 watchListView.render();
             });

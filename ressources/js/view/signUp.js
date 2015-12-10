@@ -40,8 +40,8 @@ define([
                 dataType:"json",
                 data: formValues,
                 success:function (data) {
-                    that.user = new User({id: data.id});
-                    that.user.set({avatar : avatarUser});
+                    /*that.user = new User({id: data.id});
+                    that.user.set({avatar : avatarUser});*/
 
                     window.location.replace('#login');
                 },
