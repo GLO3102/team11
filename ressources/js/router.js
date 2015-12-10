@@ -167,8 +167,10 @@ define([
 
         app_router.on('route:user', function(id){
             customHeader();
+            stopZombies(this.lastEpisodes);
             var userView = new UserView();
             userView.render({id: id});
+            this.lastUser = userView;
         });
 
 

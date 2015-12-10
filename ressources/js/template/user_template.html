@@ -1,13 +1,4 @@
-<% var idUnfollow = -1; var idFollow = results[1].id; %>
-<% _.each(results[2].following, function(follower) { %>
-    <% if(follower.email === results[1].email) { %>
-        <% idUnfollow = follower._id; }%>
-<% }) %>
 
-    <% _.each(results[2].following, function(follower) { %>
-        <% if(results[2].email === results[1].email || follower.email === results[1].email) { %>
-            <% idFollow = -1; }%>
-    <% }) %>
 
 <div class="row top-buffer row-bottom">
     <div class="col-sm-4">
@@ -15,14 +6,15 @@
         <h3>Name: <%= results[1].name %></h3>
         <h3>Email: <%= results[1].email %></h3>
         <div class="row">
-            <button id="followUser" type="button" class="btn btn-success margin" data-id="<%= idFollow %>">Follow</button>
-            <button id="unfollowUser" type="button" class="btn btn-danger margin" data-id="<%= idUnfollow %>">Unfollow</button>
+            <button id="followUser" type="button" class="btn btn-success margin" data-id="<%= results[1].id %>">Follow</button>
+            <button id="unfollowUser" type="button" class="btn btn-danger margin" data-id="<%= results[1].id %>">Unfollow</button>
 
             <div id="followSuccess" class="alert alert-success" role="alert" hidden>You <strong>follow</strong> <%= results[1].name %> ! </div>
-            <div id="followError" class="alert alert-danger" role="alert" hidden>You <strong>already</strong> have this user in friend or you can't add yourself ! </div>
+            <div id="followError" class="alert alert-danger" role="alert" hidden>You <strong>already</strong> follow this user ! </div>
+            <div id="errorUnexpected" class="alert alert-danger" role="alert" hidden>Error <strong>unerxpecte</strong> ! </div>
 
             <div id="unfollowSuccess" class="alert alert-success" role="alert" hidden>You <strong>unfollow</strong> <%= results[1].name %> ! </div>
-            <div id="unfollowError" class="alert alert-danger" role="alert" hidden>You <strong>don't</strong> have this user in friend ! </div>
+
         </div>
     </div>
 
@@ -54,7 +46,7 @@
             <% _.each(results[1].following, function(follower) { %>
             <li>
                 <div class="thumbnail thb-friends">
-                    <h4 class="friend-name"><%= follower.name%></h4>
+                    <a href="#/users/<%= follower.id %>"> <h4 class="friend-name"><%= follower.name%></h4></a>
                 </div>
             </li>
             <% }) %>

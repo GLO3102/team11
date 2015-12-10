@@ -58,7 +58,6 @@ define([
 
         followUser: function(){
             var id = $(event.target).data('id');
-            if(id != -1) {
                 var idData = JSON.stringify({id: id});
                 $.ajax({
                     url: URL + '/follow',
@@ -71,18 +70,19 @@ define([
                         $('#followSuccess').fadeIn().delay(5000).fadeOut();
 
                     })
-                    .fail(function () {
-                        $('#followError').fadeIn().delay(5000).fadeOut();
+                    .fail(function (jqXHR, textStatus) {
+                        if(jqXHR.status === 412)
+                            $('#followError').fadeIn().delay(5000).fadeOut();
+                        else{
+                            $('#errorUnexpected').fadeIn().delay(5000).fadeOut();
+                        }
                     })
-            }
-            else{
-                $('#followError').fadeIn().delay(5000).fadeOut();
-            }
+
         },
 
         unfollowUser: function(){
             var id = $(event.target).data('id');
-            if (id != -1) {
+
                 $.ajax({
                     url: URL + '/follow/' + id,
                     type: 'DELETE'
@@ -90,13 +90,9 @@ define([
                     .done(function () {
                         $('#unfollowSuccess').fadeIn().delay(5000).fadeOut();
                     })
-                    .fail(function () {
-                        $('#unfollowError').fadeIn().delay(5000).fadeOut();
+                    .fail(function (jqXHR, textStatus) {
+                        $('#errorUnexpected').fadeIn().delay(5000).fadeOut();
                     })
-            }
-            else{
-                $('#unfollowError').fadeIn().delay(5000).fadeOut();
-            }
         }
 
     });
