@@ -17,10 +17,12 @@
                     <% _.each(data.movies, function(movie) { %>
                         <% if(movie.trackId != undefined){%>
                             <li>
-                                <a href="#/movies/<%= movie.trackId %>">
-                                    <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
-                                    <span><%= movie.trackName %></span></a>
-                                    <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
+                                <div class="thumbnail thb-size">
+                                    <a href="#/movies/<%= movie.trackId %>">
+                                        <img src="<%= formatImageSize(movie.artworkUrl100, 100) %>" class="img-responsive">
+                                        <p class="title-limit"><%= movie.trackName %></p></a>
+                                        <span class="glyphicon glyphicon-trash delete-movie"  data-id="<%= movie.trackId %>" data-watchlist="<%= data.id %>"></span>
+                                </div>
                             </li>
                         <%}%>
                     <% }) %>
