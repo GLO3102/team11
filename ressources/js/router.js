@@ -133,11 +133,12 @@ define([
                 collection: watchlistCollection,
                 id: idCurrentUser
             });
-            this.lastWatchlist = watchListView;
+            
             watchlistCollection.fetch().complete(function () {
                 watchListView.render();
             });
             menuView.render();
+            this.lastWatchlist = watchListView;
         });
 
         app_router.on('route:actor', function(id){

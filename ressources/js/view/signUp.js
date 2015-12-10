@@ -17,7 +17,6 @@ define([
         },
 
         initialize: function () {
-
         },
 
         render:function () {
@@ -25,10 +24,11 @@ define([
         },
 
         signUp:function (event) {
+            var that = this;
             event.preventDefault();
 
             var formValues = {
-                name: ('#inputNom').val(),
+                name: $('#inputNom').val(),
                 email: $('#inputEmail').val(),
                 password: $('#inputPassword').val()
             };
@@ -40,6 +40,9 @@ define([
                 dataType:"json",
                 data: formValues,
                 success:function (data) {
+                    that.user = new User({id: data.id});
+                    that.user.set({avatar : avatarUser});
+
                     window.location.replace('#login');
                 },
                 error:function (data){
