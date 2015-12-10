@@ -44,9 +44,13 @@
         <h1 class="border size">Friends</h1>
         <ul class="list-inline">
             <% _.each(results[1].following, function(follower) { %>
+            <% var img = typeof follower.avatar !== 'undefined' ? follower.avatar : "ressources/img/avatar/default.png" %>
             <li>
                 <div class="thumbnail thb-friends">
-                    <a href="#/users/<%= follower.id %>"> <h4 class="friend-name"><%= follower.name%></h4></a>
+                    <a href="#/users/<%= follower.id %>">
+                        <img src="<%= img %>" class="avatar-friend">
+                        <h4 class="friend-name"><%= follower.name%></h4>
+                    </a>
                 </div>
             </li>
             <% }) %>
