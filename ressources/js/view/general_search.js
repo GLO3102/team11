@@ -120,8 +120,18 @@ var General_SearchView = Backbone.View.extend({
                     idUser: idCurrentUser,
                     genres: genreFilter
                 }));
+
+
+                watchlists.toJSON().forEach(function (wl) {
+                    if (wl.owner.id == idCurrentUser) {
+                        wl.movies.forEach(function (movie) {
+                            $('#' + movie.trackId).removeClass('glyphicon glyphicon-star-empty addTo').addClass("glyphicon glyphicon-star addTo");
+                        });
+                    }
+                });
             }
         });
+
 
 
     },
@@ -146,6 +156,7 @@ var General_SearchView = Backbone.View.extend({
                         data.attributes.movies.push(movie.toJSON());
                         data.save();
                         $('#alert-success').fadeIn().delay(5000).fadeOut();
+                        $('#' + idMovie).removeClass('glyphicon glyphicon-star-empty addTo').addClass("glyphicon glyphicon-star addTo");
                     }
 
                 })
