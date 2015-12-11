@@ -45,7 +45,10 @@ define([
                                     table.push(watchlists.toJSON());
                                     table.push(userToPrint.toJSON());
                                     table.push(userCurr.toJSON());
-                                    that.$el.html(that.template({results: table}));
+                                    that.$el.html(that.template({
+                                        results: table,
+                                        idCUser: idUserCurrent,
+                                    }));
                                 }
                             })
 
