@@ -6,7 +6,7 @@
         <h3>Name: <%= results[1].name %></h3>
         <h3>Email: <%= results[1].email %></h3>
 
-        <% if( results[1].id != idCUser){%>
+        <% if( results[1].id != results[2].id){%>
         <div class="row">
             <button id="followUser" type="button" class="btn btn-success margin" data-id="<%= results[1].id %>">Follow</button>
             <button id="unfollowUser" type="button" class="btn btn-danger margin" data-id="<%= results[1].id %>">Unfollow</button>
