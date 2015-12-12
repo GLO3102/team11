@@ -2,7 +2,7 @@
  * Author: Franco Cavestri
  * source: https://github.com/cavestri/themoviedb-javascript-library/blob/master/themoviedb.js
  *
- * Ce fichier est utilisé pour obtenir la photo d'un acteur. Cette un librairie qui appelle l'API https://www.themoviedb.org/documentation/api
+ * Ce fichier est utilisé pour obtenir la photo d'un acteur. Cette une librairie qui appelle l'API https://www.themoviedb.org/documentation/api
  */
 
 var theMovieDb = {};
