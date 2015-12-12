@@ -173,8 +173,8 @@ var General_SearchView = Backbone.View.extend({
     followUser: function () {
         var id = $(event.target).data('id');
         var idData = JSON.stringify({id: id});
-        console.log(idData);
-       if ($(event.target).hasClass('glyphicon glyphicon-star-empty addToUser')) {
+        var save = $(event.target);
+       if (save.hasClass('glyphicon glyphicon-star-empty addToUser')) {
             $.ajax({
                 url: URL + '/follow',
                 type: 'POST',
@@ -183,7 +183,7 @@ var General_SearchView = Backbone.View.extend({
                 contentType: 'application/json'
             }).done(function () {
                 $('#followSuccess').fadeIn().delay(5000).fadeOut();
-                $(event.target).removeClass('glyphicon glyphicon-star-empty addToUser').addClass("glyphicon glyphicon-star addToUser");
+                save.removeClass('glyphicon glyphicon-star-empty addToUser').addClass("glyphicon glyphicon-star addToUser");
             }).fail(function (jqXHR, textStatus) {
                 if (jqXHR.status === 412)
                     $('#followError').fadeIn().delay(5000).fadeOut();
@@ -198,7 +198,7 @@ var General_SearchView = Backbone.View.extend({
                 type: 'DELETE'
             }).done(function () {
                 $('#unfollowSuccess').fadeIn().delay(5000).fadeOut();
-                $(event.target).removeClass('glyphicon glyphicon-star addToUser').addClass("glyphicon glyphicon-star-empty addToUser");
+                save.removeClass('glyphicon glyphicon-star addToUser').addClass("glyphicon glyphicon-star-empty addToUser");
             }).fail(function (jqXHR, textStatus) {
                 $('#errorUnexpected').fadeIn().delay(5000).fadeOut();
             });

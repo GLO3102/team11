@@ -43,9 +43,8 @@
                     <p class="track-type"><label id="<%= data.trackId %>" onclick="addToWatchlist(<%=data.trackId%>)" class="glyphicon glyphicon-star-empty addTo"></label><span>MOVIE</span></p>
                 <% }else if(data.type === "artist"){%>
                 <p class="track-type actor_ribbon">ACTOR</p>
-                <% }else if(data.type === "user"){%>
-                <p class="track-type user"><label id="<%= data.userId %>"
-                                                  class="glyphicon glyphicon-star-empty addToUser"></label><span>USER</span>
+                <% }else if(data.type === "user"){   %>
+                <p class="track-type user"><label data-id="<%= data.trackId %>" class="glyphicon glyphicon-star-empty addToUser"></label><span>USER</span>
                 </p>
                 <% }else{%>
                     <p class="track-type tvshow">TV SHOW</p>
@@ -57,7 +56,7 @@
                 }
                 %>
                 <img src="<% if(data.type != 'artist'){ print(formatImageSize(data.artworkUrl100, 230))} %>"
-                     class="picturezone" alt="">
+                     class="picturezone" >
 
                 <div class="caption">
                     <h3 class="title-limit"><a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
