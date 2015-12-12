@@ -24,7 +24,7 @@ define([
             "click #search_button": "general_search",
             'click #logout' : 'logout',
             'click .search_type': 'search_type',
-            'keyup #search_text': 'search_text'
+            'keyup #search_text': 'auto_complete_text'
         },
         render: function(){
             var that = this;
@@ -85,7 +85,7 @@ define([
              $('#type').html(event.target.innerText + " <span class='caret'></span>");
          },
 
-         search_text: function () {
+         auto_complete_text: function () {
 
              var url = '';
              var option = '';

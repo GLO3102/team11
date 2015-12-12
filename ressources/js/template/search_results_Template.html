@@ -9,13 +9,13 @@
     <div id="unfollowSuccess" class="alert alert-success" role="alert" hidden>You <strong>unfollow</strong> <%=
         results[1].name %> !
     </div>
-    <!-- Single button -->
+    <% if(genres.length > 0){ %>        <!-- Single button -->
     <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-            Action <span class="caret"></span>
+            Genres <span class="caret"></span>
         </button>
-        <% if(genres.length > 0){ %>
+
         <ul class="dropdown-menu">
             <li><input id="allFilter" type="checkbox" checked>All</li>
             <li role="separator" class="divider"></li>
@@ -23,8 +23,9 @@
             <li><input class="genreFilter" type="checkbox"><%= genre %></li>
             <% }); %>
         </ul>
-        <% } %>
+
     </div>
+    <% } %>
     <div class="row">
         <% var index = 0;  %>
         <% _.each(results,function(data){ %>
