@@ -105,7 +105,15 @@ define([
                                  response($.map(data, function (object) {
                                      return object.name;
                                  }));
-                             } else {
+                             } else if(option == ''){
+                                 response($.map(data.results, function (object) {
+                                     if(object.wrapperType == "track"){
+                                         return object.trackName;
+                                     }else{
+                                         return object.artistName;
+                                     }
+                                 }));
+                             }else {
                                  response($.map(data.results, function (object) {
                                      if (option == 'movies') {
                                          return object.trackName;
@@ -119,9 +127,6 @@ define([
                              }
                          }
                      });
-                 },
-                 select: function () {
-
                  }
              });
          }
