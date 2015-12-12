@@ -6,7 +6,8 @@ define([
     'text!template/menuBar_Template.html',
     'model/menu',
     'model/user',
-    'jqueryCookie'
+    'jqueryCookie',
+    'jqueryUI'
 ], function (Backbone, _, $, Bootstrap, MenuBarTemplate, MenuModel, User, Cookie, UI) {
 
      var MenuView = Backbone.View.extend({
@@ -94,10 +95,10 @@ define([
                  if (option == 'tvshows') {
                      option = option + '/' + $('#type').data('data-target');
                  }
-                 url = 'search/' + option + '?q=';
+                 url = '/search/' + option + '?q=';
              }
              else {
-                 url = 'search?q=';
+                 url = '/search?q=';
              }
 
              $("#search_text").autocomplete({
