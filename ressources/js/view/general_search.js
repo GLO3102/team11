@@ -16,7 +16,8 @@ var General_SearchView = Backbone.View.extend({
     events:{
         'click #addWatchlist': 'addWatchlist',
         'click #allFilter': 'allGenre',
-        'click .genreFilter': 'filterByGenre'
+        'click .genreFilter': 'filterByGenre',
+        'click .addToUser': 'followUser'
     },
     render: function(){
         var that = this;
@@ -168,6 +169,40 @@ var General_SearchView = Backbone.View.extend({
             $('.genreFilter').prop('checked', false);
             this.render();
         }
+    },
+    followUser: function () {
+        var id = $(event.target).data('id');
+        var idData = JSON.stringify({id: id});
+        if ($(event.target).hasClass('glyphicon glyphicon-star-empty addToUser')) {
+            $.ajax({
+                url: URL + '/follow',
+                type: 'POST',
+                data: idData,
+                dataType: "json",
+                contentType: 'application/json'
+            }).done(function () {
+                $('#followSuccess').fadeIn().delay(5000).fadeOut();
+                $(event.target).removeClass('glyphicon glyphicon-star-empty addToUser').addClass("glyphicon glyphicon-star addToUser");
+            }).fail(function (jqXHR, textStatus) {
+                if (jqXHR.status === 412)
+                    $('#followError').fadeIn().delay(5000).fadeOut();
+                else {
+                    $('#errorUnexpected').fadeIn().delay(5000).fadeOut();
+                }
+            });
+        }
+        else {
+            $.ajax({
+                url: URL + '/follow/' + id,
+                type: 'DELETE'
+            }).done(function () {
+                $('#unfollowSuccess').fadeIn().delay(5000).fadeOut();
+                $(event.target).removeClass('glyphicon glyphicon-star addToUser').addClass("glyphicon glyphicon-star-empty addToUser");
+            }).fail(function (jqXHR, textStatus) {
+                $('#errorUnexpected').fadeIn().delay(5000).fadeOut();
+            });
+        }
+
     },
     filterByGenre: function () {
         if ($('.genreFilter').is(':checked')) {

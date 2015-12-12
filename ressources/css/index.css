@@ -138,6 +138,13 @@ a:hover{
     top:2px;
 }
 
+.addToUser {
+    display: inline-block;
+    float: left;
+    left: 20px;
+    top: 2px;
+}
+
 .track-type span{
     margin-left:-10px;
 }

@@ -1,4 +1,14 @@
 <div class="container">
+    <div id="followSuccess" class="alert alert-success" role="alert" hidden>You <strong>follow</strong> <%=
+        results[1].name %> !
+    </div>
+    <div id="followError" class="alert alert-danger" role="alert" hidden>You <strong>already</strong> follow this user !
+    </div>
+    <div id="errorUnexpected" class="alert alert-danger" role="alert" hidden><strong>Unexpected</strong> error !</div>
+
+    <div id="unfollowSuccess" class="alert alert-success" role="alert" hidden>You <strong>unfollow</strong> <%=
+        results[1].name %> !
+    </div>
     <!-- Single button -->
     <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -24,12 +34,13 @@
         <div class="col-sm-6 col-md-4 datazone ">
             <div class="thumbnail">
                 <% if(data.type === "track"){ %>
-
                     <p class="track-type"><label id="<%= data.trackId %>" onclick="addToWatchlist(<%=data.trackId%>)" class="glyphicon glyphicon-star-empty addTo"></label><span>MOVIE</span></p>
                 <% }else if(data.type === "artist"){%>
                 <p class="track-type actor_ribbon">ACTOR</p>
-                    <% }else if(data.type === "user"){%>
-                <p class="track-type user">USER</p>
+                <% }else if(data.type === "user"){%>
+                <p class="track-type user"><label id="<%= data.userId %>"
+                                                  class="glyphicon glyphicon-star-empty addToUser"></label><span>USER</span>
+                </p>
                 <% }else{%>
                     <p class="track-type tvshow">TV SHOW</p>
                 <% } %>

@@ -89,13 +89,12 @@ define([
                 $.ajax({
                     url: URL + '/follow/' + id,
                     type: 'DELETE'
+                }).done(function () {
+                    $('#unfollowSuccess').fadeIn().delay(5000).fadeOut();
                 })
-                    .done(function () {
-                        $('#unfollowSuccess').fadeIn().delay(5000).fadeOut();
-                    })
                     .fail(function (jqXHR, textStatus) {
                         $('#errorUnexpected').fadeIn().delay(5000).fadeOut();
-                    })
+                    });
         }
 
     });
