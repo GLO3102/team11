@@ -42,6 +42,7 @@ define([
                         success: function (userToPrint) {
                             userCurrent.fetch({
                                 success: function(userCurr){
+                                    userCurr.getGravatarImage();
                                     table.push(watchlists.toJSON());
                                     table.push(userToPrint.toJSON());
                                     table.push(userCurr.toJSON());

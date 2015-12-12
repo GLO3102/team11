@@ -1,5 +1,5 @@
 var URL ='https://umovie.herokuapp.com';
-//var URL ='http://localhost:3000/unsecure';
+//var URL ='http://localhost:3000';
 require.config({
     paths: {
         jquery:'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery',

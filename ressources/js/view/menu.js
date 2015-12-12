@@ -103,7 +103,7 @@ define([
              $("#search_text").autocomplete({
                  source: function (request, response) {
                      $.ajax({
-                         url: "https://umovie.herokuapp.com/" + url + $('#search_text').val(),
+                         url: URL + url + $('#search_text').val(),
                          dataType: "json",
                          headers: {
                              Authorization: $.cookie('auth_token')
