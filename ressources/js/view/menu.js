@@ -6,8 +6,7 @@ define([
     'text!template/menuBar_Template.html',
     'model/menu',
     'model/user',
-    'jqueryCookie',
-    'jqueryUI'
+    'jqueryCookie'
 ], function (Backbone, _, $, Bootstrap, MenuBarTemplate, MenuModel, User, Cookie, UI) {
 
      var MenuView = Backbone.View.extend({
@@ -34,7 +33,9 @@ define([
 
             userCurrent.fetch({
                 success: function(userCurr){
-                    that.$el.html(that.template({user: userCurr.toJSON()}));
+                    userCurr.getGravatarImage();
+                    var currentUser = userCurr.toJSON();
+                    that.$el.html(that.template({user: currentUser}));
                 }
             });
 

@@ -1,5 +1,5 @@
 /**
- * Created by Timothée on 24/11/2015.
+ * Created by Timothï¿½e on 24/11/2015.
  */
 /**
  * Created by Timoth?e on 29/10/2015.
