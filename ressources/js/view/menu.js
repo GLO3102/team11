@@ -32,11 +32,17 @@ define([
             var idUserCurrent = $.cookie('user_id');
             var userCurrent = new User({id : idUserCurrent});
 
+            if($.cookie('auth_token') == null){
+                $('#user').hide();
+            }
+
             userCurrent.fetch({
                 success: function(userCurr){
                     that.$el.html(that.template({user: userCurr.toJSON()}));
                 }
             });
+
+
 
         },
         general_search : function() {
@@ -69,6 +75,7 @@ define([
              });
              $.removeCookie('auth_token');
              $.removeCookie('user_id');
+             $('#user').hide();
          
         },
          search_type: function () {

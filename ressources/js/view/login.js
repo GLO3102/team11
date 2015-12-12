@@ -39,7 +39,6 @@ define([
                     dataType: "json",
                     data: formValues
                 }).success(function (data) {
-                    console.log("ok");
                     $.cookie('user_id', data.id);
                     $.cookie('auth_token', data.token);
                     window.location.replace('#home');
@@ -47,12 +46,10 @@ define([
                     if (data.status == 401) {
                         $('#loginError').text("email/password incorrect").fadeIn();
                     } else {
-                        //console.log($('#loginError'));
                         $('#loginError').text("unexpected error").fadeIn();
                     }
                 });
             }
-            console.log("fin click");
         }
     });
 
