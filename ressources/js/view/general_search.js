@@ -173,7 +173,8 @@ var General_SearchView = Backbone.View.extend({
     followUser: function () {
         var id = $(event.target).data('id');
         var idData = JSON.stringify({id: id});
-        if ($(event.target).hasClass('glyphicon glyphicon-star-empty addToUser')) {
+        console.log(idData);
+       if ($(event.target).hasClass('glyphicon glyphicon-star-empty addToUser')) {
             $.ajax({
                 url: URL + '/follow',
                 type: 'POST',
