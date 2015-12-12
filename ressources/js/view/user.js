@@ -29,10 +29,10 @@ define([
         render: function (options) {
             var idUserCurrent = $.cookie('user_id');
             var userCurrent = new User({id : idUserCurrent});
-
             var table = new Array();
             var that = this;
             this.user = new User({id: options.id});
+            //console.log(userCurrent.toJSON());
 
             var watchlistCollection = new WatchListCollection();
             watchlistCollection.url = URL + '/watchlists';
@@ -46,10 +46,8 @@ define([
                                     table.push(watchlists.toJSON());
                                     table.push(userToPrint.toJSON());
                                     table.push(userCurr.toJSON());
-                                    that.$el.html(that.template({
-                                        results: table,
-                                        idCUser: idUserCurrent,
-                                    }));
+                                    that.$el.html(that.template({results: table}));
+                                    //console.log(table);
                                 }
                             })
 
