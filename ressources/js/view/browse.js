@@ -34,7 +34,7 @@ define([
                 var url = '';
                 var artworkUrl100;
                 var type ='';
-                 for (var i = 0;i < 75;i++)
+                for (var i = 0; i < 20; i++)
                  {
                      var data = resultJSON[0].results[i];
                      type = data.wrapperType;

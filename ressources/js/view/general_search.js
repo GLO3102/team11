@@ -276,7 +276,6 @@ var General_SearchView = Backbone.View.extend({
             watchlistCollection.url = URL + '/watchlists';
             watchlistCollection.fetch({
                 success: function (watchlists) {
-
                     that.$el.html(that.template({
                         results: displayCol,
                         watchlist: watchlists.toJSON(),

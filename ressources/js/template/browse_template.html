@@ -3,34 +3,42 @@
 <div class="container" id="browseContainer">
     <h2>Browse</h2>
 
-    <div class="row">
+
         <% var index = 0; %>
-        <% _.each(resultsCol,function(data){ %>
-        <% if (index < 4){ %>
-                <% index++ %>
+    <% var latestIndexRow = 4; %>
+    <% var resultPerRow = 4; %>
+    <% var nbRow = 4; %>
 
+    <% for (var j = 0;j < nbRow;j++ ){ %>
+    <div class="row">
+        <% for (var i = index;i < latestIndexRow;i++ ){ %>
+        <% var data = resultsCol[i]; %>
         <div class="col-sm-6 col-md-4 datazone ">
-                <div class="thumbnail">
-                    <% if(data.type == "track"){ %>
+            <div class="thumbnail">
+                <% if(data.type == "track"){ %>
                         <p class="track-type">MOVIE</p>
-                    <% }else{%>
+                <% }else{%>
                         <p class="track-type tvshow">TV SHOW</p>
-                    <% } %>
+                <% } %>
 
-                    <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
-                    <div class="caption">
-                        <h3 class="title-limit"> <a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
-                        <p class="title-limit"><%= data.by %></p>
-                        <p><%= data.shortDesc %>
+                <img src="<%= formatImageSize(data.artworkUrl100, 230) %>" class="picturezone" alt="">
+
+                <div class="caption">
+                    <h3 class="title-limit"><a href="<%=  data.url  %>" class="title-limit"> <%= data.title %></a></h3>
+
+                    <p class="title-limit"><%= data.by %></p>
+
+                    <p><%= data.shortDesc %>
+                </div>
                     </div>
                 </div>
+        <% } %>
             </div>
-        <% } else { %>
-        <% index = 0 %>
-    </div>
-    <div class="row">
-        <% } }) %>
-    </div>
+    <% index = latestIndexRow ; %>
+    <% latestIndexRow +=resultPerRow; %>
+    <% } %>
+
+
     <ul class="pager">
         <li><a id="previousPage" role="button" href="#">Previous</a></li>
         <li><a id="nextPage" role="button" href="#">Next</a></li>

@@ -30,6 +30,11 @@
         <% _.each(results,function(data){ %>
         <% if (index < 4){ %>
         <% index++ %>
+        <% } else { %>
+        <% index = 0 %>
+    </div>
+    <div class="row">
+        <% } %>
 
         <div class="col-sm-6 col-md-4 datazone ">
             <div class="thumbnail">
@@ -61,11 +66,8 @@
                 </div>
             </div>
         </div>
-        <% } else { %>
-        <% index = 0 %>
-    </div>
-    <div class="row">
-        <% } }) %>
+
+        <% }) %>
     </div>
 </div>
 
