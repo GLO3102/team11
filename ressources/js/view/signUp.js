@@ -26,29 +26,35 @@ define([
         signUp:function (event) {
             var that = this;
             event.preventDefault();
+            if($('#inputNom').val() == '' || $('#inputNom').val() == null || $('#inputEmail').val() == '' || $('#inputEmail').val() == null ||
+                $('#inputPassword').val() == '' || $('#inputPassword').val() == null ){
 
-            var formValues = {
-                name: $('#inputNom').val(),
-                email: $('#inputEmail').val(),
-                password: $('#inputPassword').val()
-            };
-            var avatarUser = $('input[name=radioAvatar]:checked', '#signupForm').val();
+                $('.alert-danger').text("Error: All fields are mandatory").fadeIn();
 
-            $.ajax({
-                url:URL + '/signup',
-                type:'POST',
-                dataType:"json",
-                data: formValues,
-                success:function (data) {
-                    /*that.user = new User({id: data.id});
-                    that.user.set({avatar : avatarUser});*/
+            }else {
+                var formValues = {
+                    name: $('#inputNom').val(),
+                    email: $('#inputEmail').val(),
+                    password: $('#inputPassword').val()
+                };
+                var avatarUser = $('input[name=radioAvatar]:checked', '#signupForm').val();
 
-                    window.location.replace('#login');
-                },
-                error:function (data){
-                    $('.alert-danger').text("unexpected error").fadeIn();
-                }
-            });
+                $.ajax({
+                    url: URL + '/signup',
+                    type: 'POST',
+                    dataType: "json",
+                    data: formValues,
+                    success: function (data) {
+                        /*that.user = new User({id: data.id});
+                         that.user.set({avatar : avatarUser});*/
+
+                        window.location.replace('#login');
+                    },
+                    error: function (data) {
+                        $('.alert-danger').text("unexpected error").fadeIn();
+                    }
+                });
+            }
         }
     });
 
