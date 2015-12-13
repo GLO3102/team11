@@ -20,6 +20,10 @@ define([
         },
 
         render:function () {
+            if(!$.cookie('auth_token')){
+                $('#user').hide();
+            }
+
             this.$el.html(LoginTemplate);
         },
 
