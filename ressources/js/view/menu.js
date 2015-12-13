@@ -45,7 +45,6 @@ define([
             });
 
 
-
         },
         general_search : function() {
             if ($('#search_text').val() != '') {
