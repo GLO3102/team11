@@ -8,12 +8,14 @@ define([
     'jqueryCookie',
     'model/movie',
     'model/watchlist',
-    'model/user'
-], function (Backbone, _, $, Bootstrap, GSTemplate, WatchListCollection, Cookie, Movie, WatchlistModel, User) {
+    'model/user',
+    'view/carousel',
+    'view/genres'
+], function (Backbone, _, $, Bootstrap, GSTemplate, WatchListCollection, Cookie, Movie, WatchlistModel, User, CarouselView, GenresView) {
 
 var General_SearchView = Backbone.View.extend({
     template: _.template(GSTemplate),
-    el: "#browseContainer",
+    el: "#main_container",
     events:{
         'click #addWatchlist': 'addWatchlist',
         'click #allFilter': 'allGenre',
@@ -117,14 +119,14 @@ var General_SearchView = Backbone.View.extend({
         watchlistCollection.url = URL + '/watchlists';
         watchlistCollection.fetch({
             success: function (watchlists) {
-
-                that.$el.html(that.template({
+                new CarouselView().render();
+                that.$el.append(that.template({
                     results: displayCol,
                     watchlist: watchlists.toJSON(),
                     idUser: idCurrentUser,
                     genres: genreFilter
                 }));
-
+                new GenresView().render();
 
                 watchlists.toJSON().forEach(function (wl) {
                     if (wl.owner.id == idCurrentUser) {
@@ -280,12 +282,14 @@ var General_SearchView = Backbone.View.extend({
             watchlistCollection.url = URL + '/watchlists';
             watchlistCollection.fetch({
                 success: function (watchlists) {
-                    that.$el.html(that.template({
+                    new CarouselView().render();
+                    that.$el.append(that.template({
                         results: displayCol,
                         watchlist: watchlists.toJSON(),
                         idUser: idCurrentUser,
                         genres: genreFilter
                     }));
+                    new GenresView().render();
                     $('#allFilter').prop('checked', false);
                     for (var i = 0; i < checkedFilter.length; i++) {
                         if (checkedFilter[i].parentElement.innerText === $('.genreFilter')[i].parentElement.innerText) {
