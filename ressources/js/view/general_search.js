@@ -7,8 +7,9 @@ define([
     'collection/watchlist',
     'jqueryCookie',
     'model/movie',
-    'model/watchlist'
-], function(Backbone,_,$,Bootstrap,GSTemplate, WatchListCollection, Cookie, Movie, WatchlistModel){
+    'model/watchlist',
+    'model/user'
+], function (Backbone, _, $, Bootstrap, GSTemplate, WatchListCollection, Cookie, Movie, WatchlistModel, User) {
 
 var General_SearchView = Backbone.View.extend({
     template: _.template(GSTemplate),
@@ -84,17 +85,19 @@ var General_SearchView = Backbone.View.extend({
         else {
             for (var i = 0; i < resultJSON.length; i++) {
                 var data = resultJSON[i];
-                id = data.id;
+                var tempUser = new User({
+                    id: data.id,
+                    name: data.name,
+                    email: data.email
+                });
+                id = tempUser.attributes.id;
                 type = 'user';
-                title = data.name
-                by = data.email
+                title = tempUser.attributes.name
+                by = tempUser.attributes.email
                 url = '#/users/' + id;
-                if (typeof data.avatar === 'undefined') {
-                    artworkUrl100 = 'ressources/img/avatar/default.png';//resultJSON[i].artworkUrl100;
-                }
-                else {
-                    artworkUrl100 = data.avatar;
-                }
+                tempUser.getGravatarImage();
+                artworkUrl100 = tempUser.attributes.avatar;
+
 
                 displayCol.push({
                     title: title,

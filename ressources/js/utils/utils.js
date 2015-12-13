@@ -55,7 +55,9 @@ getImageActor = function (actorName, callback) {
 
     function successCB(data) {
         jsonData = JSON.parse(data);
-        theMovieDb.people.getImages({"id": jsonData.results[0].id}, successImageCB, errorImageCB);
+        if (typeof jsonData.results[0] != 'undefined') {
+            theMovieDb.people.getImages({"id": jsonData.results[0].id}, successImageCB, errorImageCB);
+        }
         function successImageCB(dataImage) {
             jsonDataImage = JSON.parse(dataImage);
             image = jsonDataImage.profiles[0].file_path;
@@ -66,7 +68,7 @@ getImageActor = function (actorName, callback) {
             console.log(dataImage);
         }
 
-        callback('http://www.omprakashsharma.com/images/Default.gif');//Image par d�faut. On l'a prit sur internet.
+        callback('ressources/img/avatar/default.png');
     }
 
     function errorCB(data) {

@@ -44,7 +44,23 @@ define([
                                 success: function(userCurr){
                                     userCurr.getGravatarImage();
                                     table.push(watchlists.toJSON());
-                                    table.push(userToPrint.toJSON());
+                                    var userF = [];
+                                    var utp = userToPrint.toJSON();
+                                    utp.following.forEach(function (follower) {
+                                        var tempUser = new User({
+                                            id: follower.id,
+                                            name: follower.name,
+                                            email: follower.email
+                                        });
+                                        tempUser.getGravatarImage();
+                                        userF.push(tempUser);
+                                    });
+                                    table.push({
+                                        id: utp.id,
+                                        name: utp.name,
+                                        email: utp.email,
+                                        followers: userF
+                                    });
                                     table.push(userCurr.toJSON());
                                     that.$el.html(that.template({results: table}));
                                     //console.log(table);
