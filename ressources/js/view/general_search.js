@@ -47,6 +47,7 @@ var General_SearchView = Backbone.View.extend({
                 id = data.trackId;
                 type = data.wrapperType;
                 pushGenreIfNotExist(data.primaryGenreName);
+                artworkUrl100 = data.artworkUrl100;
                 if (data.wrapperType == "track") {
                     title = data.trackName
                     by = data.artistName
@@ -58,6 +59,7 @@ var General_SearchView = Backbone.View.extend({
                 else if (data.wrapperType == "artist") {
                     title = data.artistName
                     by = data.primaryGenreName
+                    //getImageActor(title, function(src){artworkUrl100 = src});
                     url = '#/actors/' + data.artistId;
                 }
                 else {
@@ -69,7 +71,7 @@ var General_SearchView = Backbone.View.extend({
                         shortDesc = data.longDescription.substring(0, 80);
                     url = '#/tvshows/seasons/' + data.collectionId
                 }
-                artworkUrl100 = resultJSON[0].results[i].artworkUrl100;
+
                 displayCol.push({
                     title: title,
                     by: by,
