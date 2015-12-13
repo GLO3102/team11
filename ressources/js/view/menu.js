@@ -77,7 +77,7 @@ define([
              });
              $.removeCookie('auth_token');
              $.removeCookie('user_id');
-             $('#user').hide();
+
          
         },
          search_type: function () {
