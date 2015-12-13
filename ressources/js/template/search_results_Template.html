@@ -94,6 +94,7 @@
             <div class="modal-body">
                 <div id="watchlist-named">
                     <b>Select a watchlist</b>
+                    <div id="noId" class="alert alert-danger" hidden>Please <strong>select</strong> a watchlist !</div>
                     <ul class="list-inline">
                         <% _.each(watchlist, function(data) { %>
                         <% if(data.owner.id === idUser){ %>

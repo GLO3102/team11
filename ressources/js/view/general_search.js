@@ -146,30 +146,35 @@ var General_SearchView = Backbone.View.extend({
     addWatchlist: function(){
         var that = this;
         var idWatchlist = $('.radio-watch:checked').val();
-        var idMovie = $('#idOfMovie').text();
+        if(typeof idWatchlist == 'undefined')
+            $('#noId').fadeIn().delay(5000).fadeOut();
+        else
+        {
+            var idMovie = $('#idOfMovie').text();
 
-        var watchlistModel = new WatchlistModel();
-        watchlistModel.url = URL + '/watchlists/' + idWatchlist;
-        watchlistModel.fetch({
-            success: function(data){
-                var movie = new Movie({id: idMovie});
-                movie.fetch({
-                    success: function(movieFetch){
-                        for(var i = 0; i < data.attributes.movies.length; i++){
-                            if(data.attributes.movies[i].trackId === movie.toJSON().trackId){
-                                $('#alert-danger').fadeIn().delay(5000).fadeOut();
-                                return
+            var watchlistModel = new WatchlistModel();
+            watchlistModel.url = URL + '/watchlists/' + idWatchlist;
+            watchlistModel.fetch({
+                success: function (data) {
+                    var movie = new Movie({id: idMovie});
+                    movie.fetch({
+                        success: function (movieFetch) {
+                            for (var i = 0; i < data.attributes.movies.length; i++) {
+                                if (data.attributes.movies[i].trackId === movie.toJSON().trackId) {
+                                    $('#alert-danger').fadeIn().delay(5000).fadeOut();
+                                    return
+                                }
                             }
+                            data.attributes.movies.push(movie.toJSON());
+                            data.save();
+                            $('#alert-success').fadeIn().delay(5000).fadeOut();
+                            $('#' + idMovie).removeClass('glyphicon glyphicon-star-empty addTo').addClass("glyphicon glyphicon-star addTo");
                         }
-                        data.attributes.movies.push(movie.toJSON());
-                        data.save();
-                        $('#alert-success').fadeIn().delay(5000).fadeOut();
-                        $('#' + idMovie).removeClass('glyphicon glyphicon-star-empty addTo').addClass("glyphicon glyphicon-star addTo");
-                    }
 
-                })
-            }
-        });
+                    })
+                }
+            });
+        }
     },
     allGenre: function () {
         if ($('#allFilter').is(':checked')) {
