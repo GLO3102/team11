@@ -6,8 +6,10 @@
     <div id="followSuccess" class="alert alert-success" role="alert" hidden>You <strong>follow</strong>
         <% if (typeof results[0]!= 'undefined'){ %>
         <%= results[0].name %> !
-        <% } else{ %>
+        <% } else if (typeof results[1]!= 'undefined') { %>
         <%= results[1].name %>
+        <% } else{ %>
+        Succcès!
         <% } %>
     </div>
     <div id="followError" class="alert alert-danger" role="alert" hidden>You <strong>already</strong> follow this user !
@@ -17,8 +19,10 @@
     <div id="unfollowSuccess" class="alert alert-success" role="alert" hidden>You <strong>unfollow</strong>
         <% if (typeof results[0]!= 'undefined'){ %>
         <%= results[0].name %> !
-        <% } else{ %>
+        <% } else if (typeof results[1]!= 'undefined'){ %>
         <%= results[1].name %>
+        <% } else{ %>
+        Succcès!
         <% } %>
     </div>
 
