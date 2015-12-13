@@ -39,8 +39,8 @@ define([
                     dataType: "json",
                     data: formValues
                 }).success(function (data) {
-                    $.cookie('user_id', data.id);
-                    $.cookie('auth_token', data.token);
+                    $.cookie('user_id', data.id, { expires: 1 });
+                    $.cookie('auth_token', data.token, { expires: 1 });
                     window.location.replace('#home');
                 }).error(function (data) {
                     if (data.status == 401) {
