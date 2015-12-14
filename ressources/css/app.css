@@ -136,15 +136,6 @@ label > input:checked + img{
     *border-bottom-width: 2px;
 }
 
-/*.ui-menu-item > a.ui-corner-all {
-    display: block;
-    padding: 3px 15px;
-    clear: both;
-    font-weight: normal;
-    line-height: 18px;
-    color: #555555;
-    white-space: nowrap;
-}*/
 
 .ui-menu-item:hover {
     background-color: #0088cc;

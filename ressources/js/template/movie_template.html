@@ -29,6 +29,7 @@
                 </button>
                 <div id="watchlist-name">
                     <h4>Select a watchlist</h4>
+                    <div id="noId" class="alert alert-danger" role="alert" hidden>Please <strong>select</strong> a Watchlist !</div>
                     <ul class="list-inline">
                     <% _.each(results[0], function(data) { %>
                             <%  if (data.owner.id === results[2]) {%>

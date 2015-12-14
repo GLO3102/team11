@@ -73,23 +73,29 @@ define([
         addWatchlist: function(){
             var that = this;
             var id = $('.radio-watch:checked').val();
-            var watchlistModel = new WatchlistModel();
-            watchlistModel.url = URL + '/watchlists/' + id;
-            watchlistModel.fetch({
-                success: function(data){
-                    var json = that.movie.toJSON();
-                    for(var i = 0; i < data.attributes.movies.length; i++){
-                          if(data.attributes.movies[i].trackId === json.trackId){
-                              $('#alert-success').hide();
-                              $('#alert-danger').fadeIn();
-                              return
-                          }
+            if(typeof id == 'undefined')
+                $('#noId').fadeIn().delay(5000).fadeOut();
+
+            else
+            {
+                var watchlistModel = new WatchlistModel();
+                watchlistModel.url = URL + '/watchlists/' + id;
+                watchlistModel.fetch({
+                    success: function (data) {
+                        var json = that.movie.toJSON();
+                        for (var i = 0; i < data.attributes.movies.length; i++) {
+                            if (data.attributes.movies[i].trackId === json.trackId) {
+                                $('#alert-success').hide();
+                                $('#alert-danger').fadeIn();
+                                return
+                            }
+                        }
+                        data.attributes.movies.push(that.movie.toJSON());
+                        data.save();
+                        $('#alert-success').fadeIn();
                     }
-                    data.attributes.movies.push(that.movie.toJSON());
-                    data.save();
-                    $('#alert-success').fadeIn();
-                }
-            });
+                });
+            }
 
         }
     });

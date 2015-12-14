@@ -60,8 +60,13 @@ getImageActor = function (actorName, callback) {
         }
         function successImageCB(dataImage) {
             jsonDataImage = JSON.parse(dataImage);
-            image = jsonDataImage.profiles[0].file_path;
-            callback("http://image.tmdb.org/t/p/w500" + image);
+            if (typeof jsonDataImage.profiles[0] != 'undefined') {
+                image = jsonDataImage.profiles[0].file_path;
+                callback("http://image.tmdb.org/t/p/w500" + image);
+            }
+            else {
+                callback('ressources/img/avatar/default.png');
+            }
         }
 
         function errorImageCB(dataImage) {
