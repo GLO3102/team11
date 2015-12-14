@@ -17,7 +17,9 @@ define([
         el: '#main_container',
 
         events:{
-            "click #btn-trailer": "showTrailer"
+            "click #btn-trailer": "showTrailer",
+            "click #episodeButton": "searchEpisode",
+            "keyup #search_episodes": "searchEpisode",
         },
         initialize: function () {
         },
@@ -27,8 +29,9 @@ define([
             this.tvshow = new TvShow({id: options.id});
             this.tvshow.fetch({
                 success: function(printTvShow){
-                    that.$el.html(that.template({results:printTvShow.toJSON()}))
+                    that.$el.html(that.template({results: printTvShow.toJSON()}));
                     $('#video-trailer').hide();
+
                 }
             })
         },
@@ -42,6 +45,16 @@ define([
             else {
                 $('#video-trailer').hide();
             }
+        },
+        searchEpisode: function () {
+            var critere = $("#search_episodes").val();
+            if (critere != "") {
+                $("li[name^='ep-']").hide();
+                $("li[name*='" + critere + "']").show();
+            } else
+                $("li[name^='ep-']").show();
+
+
         }
     });
 

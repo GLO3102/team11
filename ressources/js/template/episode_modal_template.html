@@ -1,12 +1,15 @@
+<ul>
 <% _.each(results[0]["results"],function(episode){ %>
 
-    <a data-toggle="modal" id='<%= episode.trackId %>-ep' data-target="#myModal">
+    <li name='ep-<%= episode.trackName %>-ep'><a data-toggle="modal" id='<%= episode.trackId %>-ep'
+                                                 data-target="#myModal">
         <b><%= episode.trackName %></b>
-    </a>
-    <br>
+    </a></li>
 
-<% }); %>
 
+    <% }); %>
+</ul>
+<br>
 <div class="modal fade" tabindex="-1" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
